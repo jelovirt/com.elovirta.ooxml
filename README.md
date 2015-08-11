@@ -8,10 +8,18 @@ Installation
 
 Standard DITA-OT plug-in installation, see [DITA-OT documentation](http://www.dita-ot.org/2.1/user-guide/plugins-installing.html).
 
+```shell
+$ dita -install https://github.com/jelovirt/com.elovirta.ooxml/archive/master.zip
+```
+
 Running
 -------
 
 Use the `docx` transtype to create DOCX output.
+
+```shell
+$ dita -i guide.ditamap -f docx
+```
 
 Extending
 ---------
