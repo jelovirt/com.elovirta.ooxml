@@ -632,10 +632,13 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' glossentry/glossentry ')]" name="glossentry">
+    <xsl:call-template name="start-bookmark"/>
     <w:tr>
-      <xsl:apply-templates select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]/*[contains(@class, ' glossentry/glossAbbreviation ')]"/>
+      <!--xsl:apply-templates select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]/*[contains(@class, ' glossentry/glossAbbreviation ')]"/-->
       <xsl:apply-templates select="*[contains(@class, ' glossentry/glossterm ')]"/>
+      <xsl:apply-templates select="*[contains(@class, ' glossentry/glossdef ')]"/>
     </w:tr>
+    <xsl:call-template name="end-bookmark"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' glossentry/glossAbbreviation ')]">
@@ -652,6 +655,18 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' glossentry/glossterm ')]">
+    <w:tc>
+      <w:tcPr>
+        <w:tcW w:w="0" w:type="auto"/>
+        <xsl:apply-templates select="." mode="block-style"/>
+      </w:tcPr>
+      <w:p>
+        <xsl:apply-templates/>
+      </w:p>
+    </w:tc>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' glossentry/glossdef ')]">
     <w:tc>
       <w:tcPr>
         <w:tcW w:w="0" w:type="auto"/>
