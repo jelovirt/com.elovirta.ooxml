@@ -24,8 +24,8 @@
             <xsl:when test="*[contains(@class, ' topic/title ')]">
               <xsl:value-of select="normalize-space(*[contains(@class, ' topic/title ')])"/>
             </xsl:when>
-            <xsl:when test="@title">
-              <xsl:value-of select="normalize-space(@title)"/>
+            <xsl:when test="../@title">
+              <xsl:value-of select="normalize-space(../@title)"/>
             </xsl:when>
           </xsl:choose>
         </xsl:for-each>
