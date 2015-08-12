@@ -88,8 +88,9 @@
         </xsl:if>
         <w:tabs>
           <xsl:if test="@x:header-number">
-            <xsl:variable name="tabs" as="xs:integer+" select="(373, 795, 1217, 1639, 1772)"/>
-            <w:tab w:val="left" w:pos="{$tabs[$depth]}"/>
+            <!--xsl:variable name="tabs" as="xs:integer+" select="(373, 795, 1217, 1639, 1772, 2061, 2483, 2906, 3328)"/>
+            <w:tab w:val="left" w:pos="{$tabs[$depth]}"/-->
+            <w:tab w:val="left" w:pos="{422 * $depth}"/>
           </xsl:if>
           <w:tab w:val="right" w:leader="dot" w:pos="8290"/>
         </w:tabs>
