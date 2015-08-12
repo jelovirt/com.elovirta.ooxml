@@ -12,10 +12,35 @@
   
   <xsl:variable name="prefix" select="'application/vnd.openxmlformats-officedocument.wordprocessingml.'"/>
   <xsl:variable name="suffix" select="'+xml'"/>
+  <xsl:variable name="images" as="element()*">
+    <Default Extension="jpeg" ContentType="image/jpeg"/>
+    <Default Extension="jpg" ContentType="image/jpeg"/>
+    <Default Extension="jfif" ContentType="image/jpeg"/>
+    <Default Extension="jpe" ContentType="image/jpeg"/>
+    <Default Extension="gif" ContentType="image/gif"/>
+    <Default Extension="gfa" ContentType="image/gif"/>
+    <Default Extension="png" ContentType="image/png"/>
+    <Default Extension="tiff" ContentType="image/tiff"/>
+    <Default Extension="tif" ContentType="image/tiff"/>
+    <Default Extension="bmp" ContentType="image/bmp"/>
+    <Default Extension="dib" ContentType="image/bmp"/>
+    <Default Extension="rle" ContentType="image/bmp"/>
+    <Default Extension="bmz" ContentType="image/bmp"/>
+    <Default Extension="wmf" ContentType="windows/metafile"/>
+    <Default Extension="eps" ContentType="application/postscript"/>
+    <Default Extension="pct" ContentType="image/x-pict"/>
+  </xsl:variable>
 
   <xsl:template match="c:Types">
     <xsl:copy>
-      <xsl:apply-templates select="node() | @*"/>
+      <xsl:apply-templates select="@* | *"/>
+      <xsl:variable name="current" select="."/>
+      <xsl:for-each select="$images">
+        <xsl:variable name="ext" select="@Extension"/>
+        <xsl:if test="empty($current/c:Default[@Extension = $ext])">
+          <xsl:copy-of select="."/>
+        </xsl:if>
+      </xsl:for-each>
       <xsl:if test="empty(c:Override[@ContentType = concat($prefix, 'comments', $suffix)])">
         <Override PartName="/word/comments.xml" ContentType="{$prefix}comments{$suffix}"/>
       </xsl:if>
