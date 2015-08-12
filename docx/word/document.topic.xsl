@@ -641,6 +641,24 @@
     <xsl:call-template name="end-bookmark"/>
   </xsl:template>
   
+  <!-- Fallback for ungrouped glossary entries -->
+  <xsl:template match="*[contains(@class, ' glossentry/glossentry ')][empty(parent::*[contains(@class, ' glossgroup/glossgroup ')])]" priority="10">
+    <w:tbl>
+      <w:tblPr>
+        <w:tblLayout w:type="autofit"/>
+        <w:tblStyle w:val="TableGrid"/>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
+        <w:tblLook w:val="04A0"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol/>
+        <w:gridCol/>
+      </w:tblGrid>
+      <xsl:call-template name="glossentry"/>      
+    </w:tbl>
+  </xsl:template>
+
   <xsl:template match="*[contains(@class, ' glossentry/glossAbbreviation ')]">
     <w:tc>
       <w:tcPr>
