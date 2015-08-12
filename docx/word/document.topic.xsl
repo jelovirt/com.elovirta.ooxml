@@ -632,13 +632,11 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' glossentry/glossentry ')]" name="glossentry">
-    <xsl:call-template name="start-bookmark"/>
     <w:tr>
       <!--xsl:apply-templates select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]/*[contains(@class, ' glossentry/glossAbbreviation ')]"/-->
       <xsl:apply-templates select="*[contains(@class, ' glossentry/glossterm ')]"/>
       <xsl:apply-templates select="*[contains(@class, ' glossentry/glossdef ')]"/>
     </w:tr>
-    <xsl:call-template name="end-bookmark"/>
   </xsl:template>
   
   <!-- Fallback for ungrouped glossary entries -->
@@ -659,6 +657,24 @@
     </w:tbl>
   </xsl:template>
 
+  <xsl:template match="*[contains(@class, ' glossentry/glossterm ')]" priority="10">
+    <w:tc>
+      <w:tcPr>
+        <w:tcW w:w="0" w:type="auto"/>
+        <xsl:apply-templates select="." mode="block-style"/>
+      </w:tcPr>
+      <w:p>
+        <xsl:call-template name="start-bookmark">
+          <xsl:with-param name="node" select=".."/>
+        </xsl:call-template>
+        <xsl:apply-templates/>
+        <xsl:call-template name="end-bookmark">
+          <xsl:with-param name="node" select=".."/>
+        </xsl:call-template>
+      </w:p>
+    </w:tc>
+  </xsl:template>
+
   <xsl:template match="*[contains(@class, ' glossentry/glossAbbreviation ')]">
     <w:tc>
       <w:tcPr>
@@ -668,18 +684,6 @@
         <xsl:call-template name="start-bookmark"/>
         <xsl:apply-templates/>
         <xsl:call-template name="end-bookmark"/>
-      </w:p>
-    </w:tc>
-  </xsl:template>
-  
-  <xsl:template match="*[contains(@class, ' glossentry/glossterm ')]">
-    <w:tc>
-      <w:tcPr>
-        <w:tcW w:w="0" w:type="auto"/>
-        <xsl:apply-templates select="." mode="block-style"/>
-      </w:tcPr>
-      <w:p>
-        <xsl:apply-templates/>
       </w:p>
     </w:tc>
   </xsl:template>
@@ -696,7 +700,7 @@
     </w:tc>
   </xsl:template>
   
-  <xsl:template match="*[contains(@class, ' glossentry/glossterm ')]" mode="block-style">
+  <xsl:template match="*[contains(@class, ' glossentry/glossterm ')]" mode="block-style" priority="10">
     <w:b w:val="true"/>
   </xsl:template> 
   
