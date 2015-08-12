@@ -62,9 +62,9 @@
   <xsl:template match="*[contains(@class, ' topic/topic ')]" name="topic">
     <xsl:comment>Topic <xsl:value-of select="@id"/></xsl:comment>
     <xsl:apply-templates select="*[contains(@class, ' topic/title ')]"/>    
-    <xsl:apply-templates select="*[contains(@class, ' topic/shortdesc ')]"/>
+    <xsl:apply-templates select="*[contains(@class, ' topic/shortdesc ')] | *[contains(@class, ' topic/abstract ')]"/>
     <xsl:apply-templates select="*[contains(@class, ' topic/body ')]"/>
-    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/>
+s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/>
     <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
     <xsl:if test="empty(parent::*[contains(@class, ' topic/topic ')])">
       <xsl:copy-of select="$body-section"/>
@@ -72,6 +72,10 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/body ')]" name="body">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' topic/abstract ')]" name="abstract">
     <xsl:apply-templates select="*"/>
   </xsl:template>
   
@@ -688,15 +692,13 @@
     </w:tc>
   </xsl:template>
   
-  <xsl:template match="*[contains(@class, ' glossentry/glossdef ')]">
+  <xsl:template match="*[contains(@class, ' glossentry/glossdef ')]" priority="10">
     <w:tc>
       <w:tcPr>
         <w:tcW w:w="0" w:type="auto"/>
         <xsl:apply-templates select="." mode="block-style"/>
       </w:tcPr>
-      <w:p>
-        <xsl:apply-templates/>
-      </w:p>
+      <xsl:apply-templates select="*"/>
     </w:tc>
   </xsl:template>
   

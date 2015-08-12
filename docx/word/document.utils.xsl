@@ -68,7 +68,7 @@
     <xsl:param name="element" as="node()"/>
     <xsl:variable name="class" select="string($element/@class)"/>
     <xsl:sequence select="contains($class, ' topic/body ') or
-                          
+                          contains($class, ' topic/abstract ') or
                           contains($class, ' topic/pre ') or
                           contains($class, ' topic/note ') or
                           contains($class, ' topic/fig ') or
@@ -98,6 +98,8 @@
     <xsl:param name="element" as="node()"/>
     <xsl:variable name="class" select="string($element/@class)"/>
     <xsl:sequence select="contains($class, ' topic/body ') or
+                          contains($class, ' topic/shortdesc ') or
+                          contains($class, ' topic/abstract ') or
                           contains($class, ' topic/title ') or
                           contains($class, ' topic/section ') or 
                           contains($class, ' task/info ') or

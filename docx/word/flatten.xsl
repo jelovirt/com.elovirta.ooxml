@@ -7,7 +7,7 @@
   
   <xsl:variable name="x:block-content-classes" as="xs:string*" select="(
     ' topic/body ',
-    (:' topic/pre ',:)
+    ' topic/abstract ',
     ' topic/note ',
     ' topic/fig ',
     ' topic/li ',
@@ -30,6 +30,8 @@
   
   <xsl:variable name="x:is-block-classes" as="xs:string*" select="(
     ' topic/body ',
+    ' topic/shortdesc ',
+    ' topic/abstract ',
     ' topic/title ',
     ' topic/section ', 
     ' task/info ',
