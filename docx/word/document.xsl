@@ -38,9 +38,11 @@
 
   <xsl:param name="input.dir.url"/>
   <xsl:param name="template.dir"/>
+  
   <xsl:variable name="template" select="document(concat($template.dir, '/word/document.xml'))" as="document-node()?"/>
-
+  <xsl:variable name="root" select="/"/>
   <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map"/>
+  <xsl:variable name="language" select="string((//@xml:lang)[1])"/>
 
   <xsl:key name="map-id" match="opentopic:map//*[@id]" use="@id"/>
 
@@ -49,8 +51,6 @@
     <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id"/>
     <xsl:sequence select="key('map-id', $id, $map)"/>
   </xsl:function>
-
-  <xsl:variable name="language" select="string((//@xml:lang)[1])"/>
 
   <xsl:template match="/">
     <xsl:variable name="content" as="node()*">

@@ -22,11 +22,9 @@
                version="2.0">
   
   <xsl:template match="*[contains(@class, ' topic/related-links ')]">
-    <xsl:variable name="all-links" as="element()*"
+    <xsl:variable name="links" as="element()*"
                   select="*[contains(@class, ' topic/link ')] |
                           *[contains(@class, ' topic/linkpool ')]/*[contains(@class, ' topic/link ')]"/>
-    <xsl:variable name="links" as="element()*"
-                  select="$all-links[not(@role = ('parent', 'child')) or empty(@role)]"/>
     <xsl:if test="exists($links)">
       <w:p>
         <w:pPr>
@@ -43,10 +41,10 @@
   <xsl:template match="*[contains(@class, ' topic/link ')]">
     <xsl:variable name="target" select="x:get-target(.)" as="element()?"/>
     <xsl:if test="exists($target)">
-      <xsl:comment>
+      <!--xsl:comment>
         <xs:text>target: </xs:text>
         <xsl:value-of select="name($target)"/>
-      </xsl:comment>
+      </xsl:comment-->
       <w:p>
         <w:pPr>
           <xsl:if test="position() ne last()">
@@ -79,8 +77,6 @@
       </w:p>
     </xsl:if>
   </xsl:template>
-  
-  <xsl:variable name="root" select="/"/>
   
   <xsl:function name="x:get-target" as="element()?">
     <xsl:param name="link" as="element()?"/>
