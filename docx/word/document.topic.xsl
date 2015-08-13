@@ -558,35 +558,7 @@ s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/
   <xsl:template match="*[contains(@class, ' topic/note ')]">
     <xsl:call-template name="start-bookmark"/>
     <xsl:variable name="prefix">
-      <w:r>
-        <w:rPr>
-          <w:caps/>
-          <w:b w:val="true"/>
-        </w:rPr>
-        <w:t>
-          <!--xsl:attribute name="xml:space">preserve</xsl:attribute-->
-          <xsl:variable name="type" as="xs:string">
-            <xsl:choose>
-              <xsl:when test="@type = 'other' and @othertype">
-                <xsl:value-of select="@othertype"/>
-              </xsl:when>
-              <xsl:when test="empty(@type)">
-                <xsl:text>note</xsl:text>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="@type"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <xsl:call-template name="getVariable">
-            <xsl:with-param name="id"
-                            select="concat(upper-case(substring($type, 1, 1)),
-                                           substring($type, 2))"/>
-          </xsl:call-template>
-          <xsl:text>:</xsl:text>
-        </w:t>
-        <w:tab/>
-      </w:r>
+      <xsl:apply-templates select="." mode="prefix"/>
     </xsl:variable>
     <xsl:choose>
       <xsl:when test="*[1][contains(@class, ' topic/p ')]">
@@ -603,6 +575,37 @@ s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/
       </xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="end-bookmark"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/note ')]" mode="prefix">
+    <w:r>
+      <w:rPr>
+        <w:caps/>
+        <w:b w:val="true"/>
+      </w:rPr>
+      <w:t>
+        <xsl:variable name="type" as="xs:string">
+          <xsl:choose>
+            <xsl:when test="@type = 'other' and @othertype">
+              <xsl:value-of select="@othertype"/>
+            </xsl:when>
+            <xsl:when test="empty(@type)">
+              <xsl:text>note</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="@type"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:call-template name="getVariable">
+          <xsl:with-param name="id" select="concat(upper-case(substring($type, 1, 1)),
+                                                   substring($type, 2))"/>
+        </xsl:call-template>
+        <xsl:text>:</xsl:text>
+      </w:t>
+      <!--w:tab/-->
+      <w:t> </w:t>
+    </w:r>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/note ')]" mode="block-style">
