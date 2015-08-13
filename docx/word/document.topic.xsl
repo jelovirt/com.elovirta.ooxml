@@ -202,7 +202,7 @@ s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/
        </xsl:with-param>
      </xsl:call-template>
     </xsl:if>
-    <xsl:apply-templates/>
+    <xsl:apply-templates select="*"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fig ')]" name="fig">
@@ -545,6 +545,10 @@ s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/
     <xsl:call-template name="end-bookmark"/>
   </xsl:template>
     
+  <xsl:template match="*[contains(@class, ' topic/itemgroup ')]">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
+  
   <xsl:template match="*[contains(@class, ' topic/sli ')]">
     <xsl:call-template name="start-bookmark"/>
     <xsl:apply-templates select="*"/>
