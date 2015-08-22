@@ -21,17 +21,7 @@ Use the `docx` transtype to create DOCX output.
 $ dita -i guide.ditamap -f docx
 ```
 
-Extending
----------
-
-Use the `dotx.file` parameter to provide an alternative Word template file. To change the Word style to DITA element mapping, override `document.xsl` property with a stylesheet that changes the mappings in `block-style` and `inline-style` modes. See `docx/word/document.xsl` for example.
-
-Compatibility
--------------
-
-The plug-in has been developed with DITA-OT 2.1 and newer.
-
-The the output has been tested with Microsoft® Word for Mac 2011.
+See [documentation](https://github.com/jelovirt/com.elovirta.ooxml/wiki) for more information.
 
 License
 -------
