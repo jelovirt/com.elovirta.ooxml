@@ -29,6 +29,7 @@
   <xsl:import href="document.hi-d.xsl"/>
   <xsl:import href="document.pr-d.xsl"/>
   <xsl:import href="document.sw-d.xsl"/>
+  <xsl:import href="document.ui-d.xsl"/>
   <xsl:import href="document.toc.xsl"/>
   <xsl:import href="document.table.xsl"/>
   <xsl:import href="document.task.xsl"/>
