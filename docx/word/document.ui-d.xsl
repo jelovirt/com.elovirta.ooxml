@@ -25,8 +25,19 @@
     <w:rStyle w:val="Strong"/>
   </xsl:template>
   
-  <xsl:template match="*[contains(@class, ' ui-d/menucascade ')]" mode="inline-style">
-    <w:rStyle w:val="Strong"/>
+  <xsl:template match="*[contains(@class, ' ui-d/menucascade ')]/*[contains(@class, ' ui-d/uicontrol ')]">
+	  <w:r>
+		  <w:rPr>
+			  <w:caps/>
+			  <w:b w:val="true"/>
+		  </w:rPr>
+		  <w:t>
+			  <xsl:apply-templates/>
+			  <xsl:if test="not(position() = last())">
+				  <xsl:text> &gt; </xsl:text>
+			  </xsl:if>
+		  </w:t>
+	  </w:r>
   </xsl:template> 
 
   <xsl:template match="*[contains(@class, ' ui-d/shortcut ')]" mode="inline-style">
