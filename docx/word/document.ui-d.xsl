@@ -18,18 +18,23 @@
                version="2.0">
 
   <xsl:template match="*[contains(@class, ' ui-d/uicontrol ')]" mode="inline-style">
+    	<w:rStyle w:val="Strong"/>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' ui-d/wintitle ')]" mode="inline-style">
+    <w:rStyle w:val="Strong"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' ui-d/menucascade ')]" mode="inline-style">
+    <w:rStyle w:val="Strong"/>
   </xsl:template> 
 
   <xsl:template match="*[contains(@class, ' ui-d/shortcut ')]" mode="inline-style">
+    <w:u w:val="single"/>
   </xsl:template> 
 
   <xsl:template match="*[contains(@class, ' ui-d/screen ')]" mode="block-style">
+    <w:pStyle w:val="HTMLPreformatted"/>
   </xsl:template> 
 
 </xsl:stylesheet>
