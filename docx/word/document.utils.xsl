@@ -144,6 +144,17 @@
     </w:p>
   </xsl:template>
   
+  <xsl:template match="w:tc[empty(w:p | w:tbl)]" mode="fixup">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" mode="fixup"/>
+      <w:p>
+        <w:pPr>
+          <w:spacing w:before="0" w:after="0"/>
+        </w:pPr>
+      </w:p>
+    </xsl:copy>
+  </xsl:template>
+  
   <xsl:template match="w:body/w:bookmarkStart |
     w:body/w:bookmarkEnd"
     mode="fixup" priority="1000"/>
