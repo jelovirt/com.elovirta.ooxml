@@ -143,7 +143,46 @@
         </w:r>
       </xsl:when>
       <xsl:when test="@type = 'fn'">
-        <xsl:apply-templates select="$target"/>
+        <!--xsl:apply-templates select="$target"/-->
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="FootnoteReference"/>
+          </w:rPr>
+          <w:fldChar w:fldCharType="begin"/>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="FootnoteReference"/>
+          </w:rPr>
+          <w:instrText xml:space="preserve">
+            <xsl:text> NOTEREF _Note</xsl:text>
+            <xsl:value-of select="generate-id($target)"/>
+            <xsl:text> \h </xsl:text>
+          </w:instrText>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="FootnoteReference"/>
+          </w:rPr>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="FootnoteReference"/>
+          </w:rPr>
+          <w:fldChar w:fldCharType="separate"/>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="FootnoteReference"/>
+          </w:rPr>
+          <w:t>0</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="FootnoteReference"/>
+          </w:rPr>
+          <w:fldChar w:fldCharType="end"/>
+        </w:r>
       </xsl:when>
       <xsl:when test="@type = 'fig'">
         <xsl:apply-templates select="$target" mode="xref-prefix"/>

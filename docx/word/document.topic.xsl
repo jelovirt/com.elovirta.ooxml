@@ -807,7 +807,9 @@ s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="x:get-footnote-reference">
+    <w:bookmarkStart w:id="note_{generate-id()}" w:name="_Note{generate-id()}"/>
     <w:footnoteReference w:id="{@x:fn-number}"/>
+    <w:bookmarkEnd w:id="note_{generate-id()}"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/draft-comment ')]">
