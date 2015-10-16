@@ -382,66 +382,80 @@ s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/
   </xsl:template>
       
   <xsl:template match="*[contains(@class, ' topic/image ')][@placement = 'inline' or empty(@placement)]" name="image.inline">
-    <!-- Units are English metric units: 1 EMU = 1 div 914400 in = 1 div 360000 cm -->
-    <xsl:variable name="width" as="xs:integer?">
-      <xsl:if test="@dita-ot:image-width">
-        <xsl:sequence select="x:to-emu(@dita-ot:image-width, @dita-ot:horizontal-dpi)"/>
-      </xsl:if>
-    </xsl:variable>
-    <xsl:variable name="height" as="xs:integer?">
-      <xsl:if test="@dita-ot:image-height">
-        <xsl:sequence select="x:to-emu(@dita-ot:image-height, @dita-ot:vertical-dpi)"/>
-      </xsl:if>
-    </xsl:variable>
-    <xsl:variable name="size" as="xs:integer*"
-                  select="if (exists($width) and exists($height))
-                          then x:scale-to-max-box($width, $height)
-                          else ()"/>
-    <w:drawing>
-      <wp:inline distT="0" distB="0" distL="0" distR="0">
-        <xsl:if test="exists($size[1]) and exists($size[2])">
-          <wp:extent cx="{$size[1]}" cy="{$size[2]}"/>  
-        </xsl:if>
-        <wp:effectExtent l="0" t="0" r="0" b="0"/>
-        <wp:docPr id="1" name="Picture 1"/>
-        <wp:cNvGraphicFramePr>
-          <a:graphicFrameLocks noChangeAspect="1"/>
-        </wp:cNvGraphicFramePr>
-        <a:graphic>
-          <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
-            <pic:pic>
-              <pic:nvPicPr>
-                <pic:cNvPr id="0" name="media/{@href}"/>
-                <pic:cNvPicPr/>
-              </pic:nvPicPr>
-              <pic:blipFill>
-                <a:blip r:embed="rId{@x:image-number}">
-                  <a:extLst>
-                    <a:ext uri="{{28A0092B-C50C-407E-A947-70E740481C1C}}">
-                      <a14:useLocalDpi val="0"/>
-                    </a:ext>
-                  </a:extLst>
-                </a:blip>
-                <a:stretch>
-                  <a:fillRect/>
-                </a:stretch>
-              </pic:blipFill>
-              <pic:spPr>
-                <a:xfrm>
-                  <a:off x="0" y="0"/>
-                  <xsl:if test="exists($width) and exists($height)">
-                    <a:ext cx="{$width}" cy="{$height}"/>  
-                  </xsl:if>
-                </a:xfrm>
-                <a:prstGeom prst="rect">
-                  <a:avLst/>
-                </a:prstGeom>
-              </pic:spPr>
-            </pic:pic>
-          </a:graphicData>
-        </a:graphic>
-      </wp:inline>
-    </w:drawing>
+		<xsl:choose>
+			<xsl:when test="current()/@href[substring(., string-length()-3)='.svg']">
+				<!-- Word doesn't support SVG graphics -->
+				<w:pPr>
+					<xsl:apply-templates select="." mode="block-style"/>
+				</w:pPr>
+				<w:r>
+					<w:t>[SVG graphic not supported: <xsl:value-of select="current()/@href"/>]</w:t>
+				</w:r>
+			</xsl:when>
+			<xsl:otherwise>
+
+				<!-- Units are English metric units: 1 EMU = 1 div 914400 in = 1 div 360000 cm -->
+				<xsl:variable name="width" as="xs:integer?">
+					<xsl:if test="@dita-ot:image-width">
+						<xsl:sequence select="x:to-emu(@dita-ot:image-width, @dita-ot:horizontal-dpi)"/>
+					</xsl:if>
+				</xsl:variable>
+				<xsl:variable name="height" as="xs:integer?">
+					<xsl:if test="@dita-ot:image-height">
+						<xsl:sequence select="x:to-emu(@dita-ot:image-height, @dita-ot:vertical-dpi)"/>
+					</xsl:if>
+				</xsl:variable>
+				<xsl:variable name="size" as="xs:integer*"
+					select="if (exists($width) and exists($height))
+					then x:scale-to-max-box($width, $height)
+					else ()"/>
+				<w:drawing>
+					<wp:inline distT="0" distB="0" distL="0" distR="0">
+						<xsl:if test="exists($size[1]) and exists($size[2])">
+							<wp:extent cx="{$size[1]}" cy="{$size[2]}"/>  
+						</xsl:if>
+						<wp:effectExtent l="0" t="0" r="0" b="0"/>
+						<wp:docPr id="1" name="Picture 1"/>
+						<wp:cNvGraphicFramePr>
+							<a:graphicFrameLocks noChangeAspect="1"/>
+						</wp:cNvGraphicFramePr>
+						<a:graphic>
+							<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+								<pic:pic>
+									<pic:nvPicPr>
+										<pic:cNvPr id="0" name="media/{@href}"/>
+										<pic:cNvPicPr/>
+									</pic:nvPicPr>
+									<pic:blipFill>
+										<a:blip r:embed="rId{@x:image-number}">
+											<a:extLst>
+												<a:ext uri="{{28A0092B-C50C-407E-A947-70E740481C1C}}">
+													<a14:useLocalDpi val="0"/>
+												</a:ext>
+											</a:extLst>
+										</a:blip>
+										<a:stretch>
+											<a:fillRect/>
+										</a:stretch>
+									</pic:blipFill>
+									<pic:spPr>
+										<a:xfrm>
+											<a:off x="0" y="0"/>
+											<xsl:if test="exists($width) and exists($height)">
+												<a:ext cx="{$width}" cy="{$height}"/>  
+											</xsl:if>
+										</a:xfrm>
+										<a:prstGeom prst="rect">
+											<a:avLst/>
+										</a:prstGeom>
+									</pic:spPr>
+								</pic:pic>
+							</a:graphicData>
+						</a:graphic>
+					</wp:inline>
+				</w:drawing>
+			</xsl:otherwise>
+		</xsl:choose>
   </xsl:template>
   
   <xsl:function name="x:scale-to-max-box" as="xs:integer+">
