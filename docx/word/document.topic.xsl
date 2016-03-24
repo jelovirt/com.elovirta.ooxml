@@ -64,7 +64,7 @@
     <xsl:apply-templates select="*[contains(@class, ' topic/title ')]"/>    
     <xsl:apply-templates select="*[contains(@class, ' topic/shortdesc ')] | *[contains(@class, ' topic/abstract ')]"/>
     <xsl:apply-templates select="*[contains(@class, ' topic/body ')]"/>
-s    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/>
+    <xsl:apply-templates select="*[contains(@class, ' topic/related-links ')]"/>
     <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
     <xsl:if test="empty(parent::*[contains(@class, ' topic/topic ')])">
       <xsl:copy-of select="$body-section"/>
