@@ -10,7 +10,7 @@
                 
   <xsl:template match="/">
     <Properties>
-      <Template>Normal.dotm</Template>
+      <Template>Normal.dotx</Template>
       <Application>DITA-OT</Application>
       <Company>Corporation</Company>
       <LinksUpToDate>false</LinksUpToDate>
