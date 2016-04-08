@@ -22,9 +22,11 @@
                version="2.0">
   
   <xsl:template match="*[contains(@class, ' topic/related-links ')]">
-    <xsl:variable name="links" as="element()*"
+    <xsl:variable name="all-links" as="element()*"
                   select="*[contains(@class, ' topic/link ')] |
                           *[contains(@class, ' topic/linkpool ')]/*[contains(@class, ' topic/link ')]"/>
+    <xsl:variable name="links" as="element()*"
+                  select="$all-links[not(@role = ('parent', 'child')) or empty(@role)]"/>
     <xsl:if test="exists($links)">
       <w:p>
         <w:pPr>
