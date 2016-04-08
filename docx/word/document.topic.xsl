@@ -584,19 +584,7 @@
         <w:b w:val="true"/>
       </w:rPr>
       <w:t>
-        <xsl:variable name="type" as="xs:string">
-          <xsl:choose>
-            <xsl:when test="@type = 'other' and @othertype">
-              <xsl:value-of select="@othertype"/>
-            </xsl:when>
-            <xsl:when test="empty(@type)">
-              <xsl:text>note</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="@type"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+        <xsl:variable name="type" select="x:note-type(.)" as="xs:string"/>
         <xsl:call-template name="getVariable">
           <xsl:with-param name="id" select="concat(upper-case(substring($type, 1, 1)),
                                                    substring($type, 2))"/>
@@ -607,6 +595,21 @@
       <w:t> </w:t>
     </w:r>
   </xsl:template>
+  
+  <xsl:function name="x:note-type" as="xs:string">
+    <xsl:param name="note" as="element()"/>
+    <xsl:choose>
+      <xsl:when test="$note/@type = 'other' and $note/@othertype">
+        <xsl:value-of select="$note/@othertype"/>
+      </xsl:when>
+      <xsl:when test="empty($note/@type)">
+        <xsl:text>note</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$note/@type"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
   
   <xsl:template match="*[contains(@class, ' topic/note ')]" mode="block-style">
     <w:pStyle w:val="Note"/>
