@@ -108,6 +108,11 @@
       <xsl:apply-templates/>
     </xsl:param>
     <xsl:variable name="target" as="element()?" select="x:get-target(.)"/>
+    
+    <!-- Attempt to determine whether the reference is at the beginning of a sentence. -->
+    <xsl:variable name="context" select="normalize-space(string-join(./preceding-sibling::text(),' '))" as="xs:string"/>
+    <xsl:variable name="capitalize" select="ends-with(translate($context,'!?','.'),'.')" as="xs:boolean"/>
+    
     <xsl:choose>
       <xsl:when test="@scope = 'external'">
         <w:hyperlink r:id="rIdHyperlink{@x:external-link-number}">
@@ -118,7 +123,9 @@
         <xsl:copy-of select="$contents"/>
       </xsl:when>
       <xsl:when test="contains($target/@class, ' topic/topic ') and not(contains($target/@class, ' glossentry/glossentry '))">
-        <xsl:apply-templates select="$target" mode="xref-prefix"/>
+        <xsl:apply-templates select="$target" mode="xref-prefix">
+          <xsl:with-param name="capitalize" select="$capitalize"/>
+        </xsl:apply-templates>
         <w:r>
           <w:fldChar w:fldCharType="begin"/>
         </w:r>
@@ -185,7 +192,9 @@
         </w:r>
       </xsl:when>
       <xsl:when test="@type = 'fig'">
-        <xsl:apply-templates select="$target" mode="xref-prefix"/>
+        <xsl:apply-templates select="$target" mode="xref-prefix">
+          <xsl:with-param name="capitalize" select="$capitalize"/>
+        </xsl:apply-templates>
         <w:r>
           <w:fldChar w:fldCharType="begin"/>
         </w:r>
@@ -206,7 +215,9 @@
         </w:r>
       </xsl:when>
       <xsl:when test="@type = 'table'">
-        <xsl:apply-templates select="$target" mode="xref-prefix"/>
+        <xsl:apply-templates select="$target" mode="xref-prefix">
+          <xsl:with-param name="capitalize" select="$capitalize"/>
+        </xsl:apply-templates>
         <w:r>
           <w:fldChar w:fldCharType="begin"/>
         </w:r>
@@ -282,14 +293,31 @@
   <xsl:template match="node()" mode="xref-prefix"/>
   
   <xsl:template match="*[contains(@class, ' topic/table ')]" mode="xref-prefix">
+    <xsl:param name="capitalize" select="true()" as="xs:boolean"/>
     <w:r>
-      <w:t>Table&#xA0;</w:t>
+      <!-- FIXME: Maybe this should be done with a text-transform -->
+      <xsl:choose>
+        <xsl:when test="$capitalize">
+          <w:t>Table&#xA0;</w:t>
+        </xsl:when>
+        <xsl:otherwise>
+          <w:t>table&#xA0;</w:t>
+        </xsl:otherwise>
+      </xsl:choose>
     </w:r>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fig ')]" mode="xref-prefix">
+    <xsl:param name="capitalize" select="true()" as="xs:boolean"/>
     <w:r>
-      <w:t>Figure&#xA0;</w:t>
+      <xsl:choose>
+        <xsl:when test="$capitalize">
+          <w:t>Figure&#xA0;</w:t>
+        </xsl:when>
+        <xsl:otherwise>
+          <w:t>figure&#xA0;</w:t>
+        </xsl:otherwise>
+      </xsl:choose>
     </w:r>
   </xsl:template>
   
