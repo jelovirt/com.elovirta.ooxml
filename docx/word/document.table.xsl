@@ -36,7 +36,7 @@
         <xsl:with-param name="node" select=".."/>
       </xsl:call-template>
       <xsl:variable name="number">
-        <xsl:number count="*[contains(@class, ' topic/table ')]" level="any"/>
+        <xsl:number count="*[contains(@class, ' topic/table ')][*[contains(@class, ' topic/title ')]]" level="any"/>
       </xsl:variable>
       <xsl:choose>
         <xsl:when test="$auto-number">
