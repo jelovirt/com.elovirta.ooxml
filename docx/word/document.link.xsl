@@ -112,9 +112,27 @@
     <xsl:variable name="target" as="element()?" select="x:get-target(.)"/>
     
     <!-- Attempt to determine whether the reference is at the beginning of a sentence. -->
-    <xsl:variable name="context" select="normalize-space(string-join(./preceding-sibling::text(),' '))" as="xs:string"/>
-    <xsl:variable name="capitalize" select="ends-with(translate($context,'!?','.'),'.')" as="xs:boolean"/>
-    
+    <xsl:variable name="context" select="normalize-space(string-join(preceding-sibling::text(),' '))" as="xs:string"/>
+    <!-- pick the containing element, disregarding p -->
+    <xsl:variable name="container" select="ancestor::*[not(contains(@class, ' topic/p '))][1]"/>
+    <xsl:variable name="capitalize" as="xs:boolean">
+      <xsl:choose>
+        <!-- capitalize when at the start of a sentence -->
+        <xsl:when test="ends-with(translate($context,'!?','.'),'.')">
+          <xsl:sequence select="true()"/>
+        </xsl:when>
+        <!-- capitalize when this is the first element in an enumeration, note, or table -->
+        <xsl:when test="$container[contains(@class, ' topic/note ') or
+                                   contains(@class, ' topic/li ') or
+                                   contains(@class, ' topic/entry ')] and empty(preceding-sibling::node())">
+          <xsl:sequence select="true()"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:sequence select="false()"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
     <xsl:choose>
       <xsl:when test="@scope = 'external'">
         <w:hyperlink r:id="rIdHyperlink{@x:external-link-number}">
