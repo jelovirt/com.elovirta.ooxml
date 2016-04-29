@@ -207,8 +207,10 @@
     <xsl:param name="t" select="string(.)" as="xs:string"/>
     <xsl:copy>
       <xsl:apply-templates select="@*" mode="whitespace"/>
+      <xsl:variable name="only-whitespace" select="matches($t, '^\s+$')" as="xs:boolean"/>
       <xsl:choose>
-        <xsl:when test="matches($t, '^\s$')">
+        <xsl:when test="$only-whitespace and exists(parent::w:r) and empty(parent::w:r/preceding-sibling::w:r)"/>
+        <xsl:when test="$only-whitespace">
           <xsl:attribute name="xml:space">preserve</xsl:attribute>
           <xsl:text> </xsl:text>
         </xsl:when>
