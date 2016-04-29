@@ -111,7 +111,7 @@
       </xsl:if>
       <w:r>
         <w:t>
-          <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+          <xsl:apply-templates select="*[contains(@class, ' topic/title ')]/node()"/>
         </w:t>
       </w:r>
       <w:r>
