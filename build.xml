@@ -5,6 +5,8 @@
     <property name="docx.dir" location="${dita.plugin.com.elovirta.ooxml.dir}/docx"/>
     <property name="dotx.file" location="${dita.plugin.com.elovirta.ooxml.dir}/resources/Normal.dotm"/>
     <property name="args.rellinks" value="nofamily"/>
+    <property name="preprocess.copy-image.skip" value="true"/>
+    <property name="preprocess.copy-html.skip" value="true"/>
   </target>
   
   <target name="dita2docx"
@@ -95,7 +97,8 @@
           force="true">
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
-    <xslt style="${docx.dir}/word/_rels/document.xml.xsl"
+    <property name="document.xml.xsl" location="${docx.dir}/word/_rels/document.xml.xsl"/>
+    <xslt style="${document.xml.xsl}"
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/word/_rels/document.xml.rels"
           force="true">
