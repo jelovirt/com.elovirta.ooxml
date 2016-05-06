@@ -382,6 +382,9 @@
   </xsl:template>
       
   <xsl:template match="*[contains(@class, ' topic/image ')][@placement = 'inline' or empty(@placement)]" name="image.inline">
+    <xsl:param name="styles" as="element()*" tunnel="yes">
+      <xsl:apply-templates select="." mode="inline-style"/>
+    </xsl:param>
     <!-- Units are English metric units: 1 EMU = 1 div 914400 in = 1 div 360000 cm -->
     <xsl:variable name="width" as="xs:integer?">
       <xsl:if test="@dita-ot:image-width">
@@ -397,51 +400,58 @@
                   select="if (exists($width) and exists($height))
                           then x:scale-to-max-box($width, $height)
                           else ()"/>
-    <w:drawing>
-      <wp:inline distT="0" distB="0" distL="0" distR="0">
-        <xsl:if test="exists($size[1]) and exists($size[2])">
-          <wp:extent cx="{$size[1]}" cy="{$size[2]}"/>  
-        </xsl:if>
-        <wp:effectExtent l="0" t="0" r="0" b="0"/>
-        <wp:docPr id="1" name="Picture 1"/>
-        <wp:cNvGraphicFramePr>
-          <a:graphicFrameLocks noChangeAspect="1"/>
-        </wp:cNvGraphicFramePr>
-        <a:graphic>
-          <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
-            <pic:pic>
-              <pic:nvPicPr>
-                <pic:cNvPr id="0" name="media/{@href}"/>
-                <pic:cNvPicPr/>
-              </pic:nvPicPr>
-              <pic:blipFill>
-                <a:blip r:embed="rId{@x:image-number}">
-                  <a:extLst>
-                    <a:ext uri="{{28A0092B-C50C-407E-A947-70E740481C1C}}">
-                      <a14:useLocalDpi val="0"/>
-                    </a:ext>
-                  </a:extLst>
-                </a:blip>
-                <a:stretch>
-                  <a:fillRect/>
-                </a:stretch>
-              </pic:blipFill>
-              <pic:spPr>
-                <a:xfrm>
-                  <a:off x="0" y="0"/>
-                  <xsl:if test="exists($width) and exists($height)">
-                    <a:ext cx="{$width}" cy="{$height}"/>  
-                  </xsl:if>
-                </a:xfrm>
-                <a:prstGeom prst="rect">
-                  <a:avLst/>
-                </a:prstGeom>
-              </pic:spPr>
-            </pic:pic>
-          </a:graphicData>
-        </a:graphic>
-      </wp:inline>
-    </w:drawing>
+    <w:r>
+      <xsl:if test="exists($styles)">
+        <w:rPr>
+          <xsl:copy-of select="$styles"/>
+        </w:rPr>
+      </xsl:if>
+      <w:drawing>
+       <wp:inline distT="0" distB="0" distL="0" distR="0">
+         <xsl:if test="exists($size[1]) and exists($size[2])">
+           <wp:extent cx="{$size[1]}" cy="{$size[2]}"/>  
+         </xsl:if>
+         <wp:effectExtent l="0" t="0" r="0" b="0"/>
+         <wp:docPr id="1" name="Picture 1"/>
+         <wp:cNvGraphicFramePr>
+           <a:graphicFrameLocks noChangeAspect="1"/>
+         </wp:cNvGraphicFramePr>
+         <a:graphic>
+           <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+             <pic:pic>
+               <pic:nvPicPr>
+                 <pic:cNvPr id="0" name="media/{@href}"/>
+                 <pic:cNvPicPr/>
+               </pic:nvPicPr>
+               <pic:blipFill>
+                 <a:blip r:embed="rId{@x:image-number}">
+                   <a:extLst>
+                     <a:ext uri="{{28A0092B-C50C-407E-A947-70E740481C1C}}">
+                       <a14:useLocalDpi val="0"/>
+                     </a:ext>
+                   </a:extLst>
+                 </a:blip>
+                 <a:stretch>
+                   <a:fillRect/>
+                 </a:stretch>
+               </pic:blipFill>
+               <pic:spPr>
+                 <a:xfrm>
+                   <a:off x="0" y="0"/>
+                   <xsl:if test="exists($width) and exists($height)">
+                     <a:ext cx="{$width}" cy="{$height}"/>  
+                   </xsl:if>
+                 </a:xfrm>
+                 <a:prstGeom prst="rect">
+                   <a:avLst/>
+                 </a:prstGeom>
+               </pic:spPr>
+             </pic:pic>
+           </a:graphicData>
+         </a:graphic>
+       </wp:inline>
+      </w:drawing>
+    </w:r>
   </xsl:template>
   
   <xsl:function name="x:scale-to-max-box" as="xs:integer+">
