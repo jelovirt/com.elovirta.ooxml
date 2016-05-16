@@ -6,7 +6,7 @@ A DITA-OT plug-in to generate [Office Open XML (OOXML)](https://en.wikipedia.org
 Installation
 ------------
 
-Standard DITA-OT plug-in installation, see [DITA-OT documentation](http://www.dita-ot.org/2.1/user-guide/plugins-installing.html).
+Standard DITA-OT plug-in installation, see [DITA-OT documentation](http://www.dita-ot.org/2.1/user-guide/plugins-installing.html). Only latests stable version of DITA-OT is supported.
 
 ```shell
 $ dita -install https://github.com/jelovirt/com.elovirta.ooxml/archive/master.zip
