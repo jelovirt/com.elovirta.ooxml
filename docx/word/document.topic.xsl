@@ -75,6 +75,10 @@
     <xsl:apply-templates select="*"/>
   </xsl:template>
 
+  <xsl:template match="*[contains(@class, ' topic/bodydiv ')]" name="bodydiv">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
+  
   <xsl:template match="*[contains(@class, ' topic/abstract ')]" name="abstract">
     <xsl:apply-templates select="*"/>
   </xsl:template>

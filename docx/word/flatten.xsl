@@ -33,6 +33,7 @@
   
   <xsl:variable name="x:is-block-classes" as="xs:string*" select="(
     ' topic/body ',
+    ' topic/bodydiv ',
     ' topic/shortdesc ',
     ' topic/abstract ',
     ' topic/title ',
