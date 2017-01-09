@@ -57,7 +57,11 @@
 
   <!-- block -->
 
-  <xsl:template match="node()" mode="block-style" priority="-10"/>
+  <xsl:template match="node()" mode="block-style" priority="-10">
+    <xsl:apply-templates select="." mode="block-style.default"/>
+  </xsl:template>
+  
+  <xsl:template match="node()" mode="block-style.default"/>
 
   <xsl:template match="*[contains(@class, ' topic/topic ')]" name="topic">
     <xsl:comment>Topic <xsl:value-of select="@id"/></xsl:comment>
