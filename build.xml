@@ -51,7 +51,8 @@
     
     <property name="image.dir" location="${user.input.dir}/.."/>
     <property name="clean.input.file" location="${dita.temp.dir.fullpath}/${dita.map.filename.root}_CLEANED.xml"/>
-    <xslt style="${docx.dir}/word/document.flat.xsl"
+    <property name="document.flat.xsl" location="${docx.dir}/word/document.flat.xsl"/>
+    <xslt style="${document.flat.xsl}"
           in="${dita.temp.dir.fullpath}/${dita.map.filename.root}_MERGED.xml"
           out="${clean.input.file}"
           force="true">
@@ -77,7 +78,8 @@
       <param name="input.dir.url" expression="${user.input.dir.url}"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
-    <xslt style="${docx.dir}/word/comments.xsl"
+    <property name="comments.xsl" location="${docx.dir}/word/comments.xsl"/>
+    <xslt style="${comments.xsl}"
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/word/comments.xml"
           force="true">
@@ -91,7 +93,8 @@
       <param name="template.dir" expression="${dotx.dir.uri}"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
-    <xslt style="${docx.dir}/word/footnotes.xsl"
+    <property name="footnotes.xsl" location="${docx.dir}/word/footnotes.xsl"/>
+    <xslt style="${footnotes.xsl}"
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/word/footnotes.xml"
           force="true">
