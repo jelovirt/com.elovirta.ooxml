@@ -611,7 +611,10 @@
         <xsl:text>:</xsl:text>
       </w:t>
       <!--w:tab/-->
-      <w:t> </w:t>
+      <w:t>
+        <xsl:attribute name="xml:space">preserve</xsl:attribute>
+        <xsl:text> </xsl:text>
+      </w:t>
     </w:r>
   </xsl:template>
   
