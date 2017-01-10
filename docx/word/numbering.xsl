@@ -50,8 +50,17 @@
       
     </w:numbering>
   </xsl:template>
-
+  
   <xsl:template name="ol">
+    <xsl:param name="number" as="xs:string"/>
+    <xsl:param name="indent-start" as="xs:integer"/>
+    <xsl:apply-templates select="." mode="ol">
+      <xsl:with-param name="number" select="$number"/>
+      <xsl:with-param name="indent-start" select="$indent-start"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template match="@* | node()" mode="ol">
     <xsl:param name="number"/>
     <xsl:param name="indent-start" as="xs:integer"/>
     <!-- Ordered list -->
@@ -153,6 +162,15 @@
   </xsl:template>
   
   <xsl:template name="ul">
+    <xsl:param name="number" as="xs:string"/>
+    <xsl:param name="indent-start" as="xs:integer"/>
+    <xsl:apply-templates select="." mode="ul">
+      <xsl:with-param name="number" select="$number"/>
+      <xsl:with-param name="indent-start" select="$indent-start"/>
+    </xsl:apply-templates>
+  </xsl:template>
+  
+  <xsl:template match="@* | node()" mode="ul">
     <xsl:param name="number"/>
     <xsl:param name="indent-start" as="xs:integer"/>
     <w:abstractNum w:abstractNumId="{$number}">
