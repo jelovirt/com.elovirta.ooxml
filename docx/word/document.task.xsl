@@ -26,6 +26,9 @@
             <w:t>Prerequisites</w:t>
           </w:r>
         </xsl:with-param>
+        <xsl:with-param name="style">
+          <xsl:call-template name="block-style-section.title"/>
+        </xsl:with-param>
       </xsl:call-template>
     </xsl:if>
     <xsl:apply-templates select="*"/>
@@ -38,6 +41,9 @@
           <w:r>
             <w:t>Post-requisites</w:t>
           </w:r>
+        </xsl:with-param>
+        <xsl:with-param name="style">
+          <xsl:call-template name="block-style-section.title"/>
         </xsl:with-param>
       </xsl:call-template>
     </xsl:if>
@@ -53,6 +59,9 @@
             <w:t>Procedure</w:t>
           </w:r>
         </xsl:with-param>
+        <xsl:with-param name="style">
+          <xsl:call-template name="block-style-section.title"/>
+        </xsl:with-param>
       </xsl:call-template>
     </xsl:if>
     <xsl:apply-templates select="*"/>
@@ -65,6 +74,9 @@
           <w:r>
             <w:t>Result</w:t>
           </w:r>
+        </xsl:with-param>
+        <xsl:with-param name="style">
+          <xsl:call-template name="block-style-section.title"/>
         </xsl:with-param>
       </xsl:call-template>
     </xsl:if>
