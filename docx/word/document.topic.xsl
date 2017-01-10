@@ -366,6 +366,7 @@
           <xsl:copy-of select="$styles"/>
         </w:pPr>
       </xsl:if>
+      <xsl:call-template name="generate-block-style"/>
       <xsl:apply-templates/>
     </w:p>
   </xsl:template>
