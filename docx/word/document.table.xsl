@@ -143,10 +143,13 @@
     <xsl:apply-templates select="*[contains(@class, ' topic/row ')]"/>
   </xsl:template>
   
+  <xsl:variable name="pgwide.default" select="'0'"/>
+  <xsl:variable name="expanse.default" select="'column'"/>
+  
   <xsl:template match="*[contains(@class, ' topic/tgroup ')]" mode="block-style">
     <w:tblStyle w:val="TableGrid"/>
     <xsl:choose>
-      <xsl:when test="../@expanse = 'page' or ../@pgwide = '1'">
+      <xsl:when test="(../@expanse, $expanse.default)[1] = 'page' or (../@pgwide, $pgwide.default)[1] = '1'">
         <w:tblW w:w="5000" w:type="pct"/>
         <w:tblInd w:w="0" w:type="dxa"/>
       </xsl:when>
