@@ -118,7 +118,7 @@
     <xsl:variable name="capitalize" as="xs:boolean">
       <xsl:choose>
         <!-- capitalize when at the start of a sentence -->
-        <xsl:when test="ends-with(translate($context,'!?','.'),'.')">
+        <xsl:when test="ends-with(translate($context,'!?','.'),'.') or string-length($context) eq 0">
           <xsl:sequence select="true()"/>
         </xsl:when>
         <!-- capitalize when this is the first element in an enumeration, note, or table -->
