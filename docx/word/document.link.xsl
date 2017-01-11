@@ -229,7 +229,28 @@
         <w:r>
           <w:fldChar w:fldCharType="separate"/>
         </w:r>
-        <xsl:copy-of select="$contents"/>
+        <xsl:choose>
+          <xsl:when test="$target/*[contains(@class, ' topic/title ')]">
+            <w:r>
+              <w:t>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'Figure'"/>
+                </xsl:call-template>
+              </w:t>
+            </w:r>
+            <w:r>
+              <w:t>
+                <xsl:attribute name="xml:space">preserve</xsl:attribute>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'figure-number-separator'"/>
+                </xsl:call-template>
+              </w:t>
+            </w:r>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:copy-of select="$contents"/>    
+          </xsl:otherwise>
+        </xsl:choose>
         <w:r>
           <w:fldChar w:fldCharType="end"/>
         </w:r>
@@ -252,7 +273,28 @@
         <w:r>
           <w:fldChar w:fldCharType="separate"/>
         </w:r>
-        <xsl:copy-of select="$contents"/>
+        <xsl:choose>
+          <xsl:when test="$target/*[contains(@class, ' topic/title ')]">
+            <w:r>
+              <w:t>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'Table'"/>
+                </xsl:call-template>
+              </w:t>
+            </w:r>
+            <w:r>
+              <w:t>
+                <xsl:attribute name="xml:space">preserve</xsl:attribute>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'figure-number-separator'"/>
+                </xsl:call-template>
+              </w:t>
+            </w:r>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:copy-of select="$contents"/>    
+          </xsl:otherwise>
+        </xsl:choose>
         <w:r>
           <w:fldChar w:fldCharType="end"/>
         </w:r>

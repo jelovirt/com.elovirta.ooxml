@@ -30,7 +30,19 @@
         <xsl:with-param name="node" select=".."/>
       </xsl:call-template>
       <w:r>
-        <w:t xml:space="preserve">Table&#xA0;</w:t>
+        <w:t>
+         <xsl:call-template name="getVariable">
+           <xsl:with-param name="id" select="'Table'"/>
+         </xsl:call-template>
+       </w:t>
+      </w:r>
+      <w:r>
+        <w:t>
+          <xsl:attribute name="xml:space">preserve</xsl:attribute>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'figure-number-separator'"/>
+          </xsl:call-template>
+        </w:t>
       </w:r>
       <xsl:call-template name="start-bookmark-number">
         <xsl:with-param name="node" select=".."/>
