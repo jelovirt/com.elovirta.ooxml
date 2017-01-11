@@ -88,17 +88,6 @@
     <xsl:apply-templates select="." mode="body"/>
   </xsl:template>
   
-  <xsl:variable name="body-section" as="node()*">
-    <xsl:for-each select="$template/w:document/w:body/w:sectPr[position() = last()]">
-      <xsl:copy-of select="."/>
-      <!--w:sectPr>
-        <w:headerReference w:type="default" r:id="rIdHeader2"/>
-        <w:footerReference w:type="default" r:id="rIdFooter2"/>
-        <xsl:copy-of select="* except (w:headerReference | w:footerReference)"/>
-      </w:sectPr-->
-    </xsl:for-each>
-  </xsl:variable>
-  
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="body">
     <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
   </xsl:template>

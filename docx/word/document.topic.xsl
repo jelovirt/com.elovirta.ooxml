@@ -44,17 +44,23 @@
     <w:ind w:left="0"/>
   </xsl:template-->
 
-  <xsl:variable name="body-section" as="node()*">
-    <xsl:for-each select="$template/w:document/w:body/w:sectPr[position() = last()]">
-      <xsl:copy-of select="."/>
-      <!--w:sectPr>
-        <w:headerReference w:type="default" r:id="rIdHeader2"/>
-        <w:footerReference w:type="default" r:id="rIdFooter2"/>
-        <xsl:copy-of select="* except (w:headerReference | w:footerReference)"/>
-      </w:sectPr-->
-    </xsl:for-each>
-  </xsl:variable>
-
+  <xsl:variable name="template.body-section" select="$template/w:document/w:body/w:sectPr[position() = last()]" as="element()*"/>
+  <xsl:template match="w:pgNumType" mode="body-section">
+    <xsl:param name="overrides" as="attribute()*" tunnel="yes"/>
+    <xsl:copy>
+      <xsl:apply-templates select="@* except @w:start" mode="#current"/>
+      <xsl:if test="exists($overrides)">
+        <xsl:copy-of select="$overrides"/>
+      </xsl:if>
+      <xsl:apply-templates select="node()" mode="#current"/>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="node() | @*" mode="body-section" priority="-10">
+    <xsl:copy>
+      <xsl:apply-templates select="node() | @*" mode="#current"/>
+    </xsl:copy>
+  </xsl:template>
+  
   <!-- block -->
 
   <xsl:template match="node()" mode="block-style" priority="-10">
@@ -62,6 +68,14 @@
   </xsl:template>
   
   <xsl:template match="node()" mode="block-style.default"/>
+
+  <xsl:variable name="body-section" as="element()*">
+    <xsl:for-each select="$template.body-section">
+      <xsl:apply-templates select="." mode="body-section">
+        <xsl:with-param name="overrides" as="attribute()*" select="()" tunnel="yes"/>
+      </xsl:apply-templates>
+    </xsl:for-each>
+  </xsl:variable>
 
   <xsl:template match="*[contains(@class, ' topic/topic ')]" name="topic">
     <xsl:comment>Topic <xsl:value-of select="@id"/></xsl:comment>
