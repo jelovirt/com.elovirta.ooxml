@@ -39,28 +39,9 @@
           </xsl:call-template>
         </w:t>
       </w:r>
+      <xsl:apply-templates select="." mode="toc-field"/>
     </w:p>
-    <xsl:for-each select="*[contains(@class, ' map/map ')]/*[contains(@class, ' topic/topic ')]">
-     <xsl:apply-templates select="." mode="x:toc">
-       <xsl:with-param name="prefix" as="node()*">
-         <!-- Insert TOC field to first item -->
-         <xsl:if test="position() eq 1">
-           <w:r>
-             <w:fldChar w:fldCharType="begin"/>
-           </w:r>
-           <w:r>
-             <w:instrText>
-               <xsl:attribute name="xml:space">preserve</xsl:attribute>
-               <xsl:apply-templates select="." mode="toc-prefix"/> 
-             </w:instrText>
-           </w:r>
-           <w:r>
-             <w:fldChar w:fldCharType="separate"/>
-           </w:r>
-         </xsl:if>
-       </xsl:with-param>
-     </xsl:apply-templates>
-    </xsl:for-each>
+    <xsl:apply-templates select="*[contains(@class, ' map/map ')]/*[contains(@class, ' topic/topic ')]" mode="x:toc"/>
     <!-- End TOC field -->
     <w:p>
       <w:r>
@@ -70,6 +51,21 @@
         <w:br w:type="page"/>
       </w:r-->
     </w:p>
+  </xsl:template>
+  
+  <xsl:template match="/" mode="toc-field">
+    <w:r>
+      <w:fldChar w:fldCharType="begin"/>
+    </w:r>
+    <w:r>
+      <w:instrText>
+        <xsl:attribute name="xml:space">preserve</xsl:attribute>
+        <xsl:apply-templates select="." mode="toc-prefix"/> 
+      </w:instrText>
+    </w:r>
+    <w:r>
+      <w:fldChar w:fldCharType="separate"/>
+    </w:r>
   </xsl:template>
   
   <xsl:template match="*" mode="toc-prefix">
