@@ -233,9 +233,13 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fig ')]" name="fig">
+    <xsl:if test="empty(*[contains(@class, ' topic/title ')])">
       <xsl:call-template name="start-bookmark"/>
+    </xsl:if>
     <xsl:apply-templates select="*"/>
+    <xsl:if test="empty(*[contains(@class, ' topic/title ')])">
       <xsl:call-template name="end-bookmark"/>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]"
