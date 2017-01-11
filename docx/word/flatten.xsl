@@ -10,6 +10,7 @@
     ' topic/abstract ',
     ' topic/note ',
     ' topic/fig ',
+    ' topic/figgroup ',
     ' topic/li ',
     ' topic/sli ',
     (:' topic/dt ',:)
@@ -42,6 +43,7 @@
     ' topic/pre ',
     ' topic/note ',
     ' topic/fig ',
+    ' topic/figgroup ',
     ' topic/dl ',
     ' topic/sl ',
     ' topic/ol ',
