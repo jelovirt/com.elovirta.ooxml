@@ -268,7 +268,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat('_Ref', generate-id($target))"/>
+            <xsl:value-of select="concat($bookmark-prefix.ref, generate-id($target))"/>
             <xsl:text> \n \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -295,7 +295,7 @@
               <xsl:when test="false()">PAGEREF </xsl:when>
               <xsl:otherwise>REF </xsl:otherwise>
             </xsl:choose>
-            <xsl:value-of select="concat('_Ref', generate-id($target))"/>
+            <xsl:value-of select="concat($bookmark-prefix.ref, generate-id($target))"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>

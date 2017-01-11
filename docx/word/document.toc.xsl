@@ -75,7 +75,7 @@
   <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="x:toc">
     <xsl:param name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])" as="xs:integer"/>
     <xsl:param name="prefix" as="node()*"/>
-    <xsl:variable name="target" select="concat('_Toc', generate-id())"/>
+    <xsl:variable name="target" select="concat($bookmark-prefix.toc, generate-id())"/>
     <w:p>
       <w:pPr>
         <w:pStyle w:val="TOC{$depth}"/>

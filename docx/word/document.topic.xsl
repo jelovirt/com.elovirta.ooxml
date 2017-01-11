@@ -101,12 +101,17 @@
     <xsl:apply-templates select="*"/>
   </xsl:template>
   
+  <xsl:variable name="bookmark-prefix.ref" select="'_Ref'" as="xs:string"/>
+  <xsl:variable name="bookmark-prefix.toc" select="'_Toc'" as="xs:string"/>
+  <xsl:variable name="bookmark-prefix.num" select="'_Num'" as="xs:string"/>
+  <xsl:variable name="bookmark-prefix.note" select="'_Note'" as="xs:string"/>
+  
   <xsl:template name="start-bookmark">
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="_Ref{$type}{generate-id($node)}"/>
-      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="_Toc{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.ref}{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.toc}{$type}{generate-id($node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -123,7 +128,7 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="_Num{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.num}{$type}{generate-id($node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -228,9 +233,9 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fig ')]" name="fig">
-    <xsl:call-template name="start-bookmark"/>
+      <xsl:call-template name="start-bookmark"/>
     <xsl:apply-templates select="*"/>
-    <xsl:call-template name="end-bookmark"/>
+      <xsl:call-template name="end-bookmark"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]"
