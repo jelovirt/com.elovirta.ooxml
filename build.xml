@@ -2,6 +2,7 @@
 <project>
   
   <target name="docx.init">
+    <property name="force-unique" value="true"/>
     <property name="docx.dir" location="${dita.plugin.com.elovirta.ooxml.dir}/docx"/>
     <property name="dotx.file" location="${dita.plugin.com.elovirta.ooxml.dir}/resources/Normal.dotm"/>
     <property name="args.rellinks" value="nofamily"/>

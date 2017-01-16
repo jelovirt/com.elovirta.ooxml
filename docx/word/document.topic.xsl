@@ -185,6 +185,10 @@
     </xsl:if>
   </xsl:template>
   
+  <xsl:template match="*[contains(@class, ' topic/sectiondiv ')]" name="sectiondiv">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
+
   <xsl:template match="*[contains(@class, ' topic/section ')]" name="section">
     <xsl:apply-templates select="*"/>
   </xsl:template>
@@ -232,6 +236,10 @@
     <xsl:apply-templates select="*"/>
   </xsl:template>
   
+  <xsl:template match="*[contains(@class, ' topic/figgroup ')]" name="figgroup">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
+    
   <xsl:template match="*[contains(@class, ' topic/fig ')]" name="fig">
     <xsl:if test="empty(*[contains(@class, ' topic/title ')])">
       <xsl:call-template name="start-bookmark"/>

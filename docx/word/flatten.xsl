@@ -10,7 +10,7 @@
     ' topic/abstract ',
     ' topic/note ',
     ' topic/fig ',
-    ' topic/figgroup ',
+    (:' topic/figgroup ',:)
     ' topic/li ',
     ' topic/sli ',
     (:' topic/dt ',:)
@@ -43,7 +43,7 @@
     ' topic/pre ',
     ' topic/note ',
     ' topic/fig ',
-    ' topic/figgroup ',
+    (:' topic/figgroup ',:) ' pr-d/fragment ', ' pr-d/fragref ', (:' pr-d/groupchoice ', ' pr-d/groupcomp ', ' pr-d/groupseq ',:) ' pr-d/synblk ', ' pr-d/synnote ', ' pr-d/synnoteref ',
     ' topic/dl ',
     ' topic/sl ',
     ' topic/ol ',

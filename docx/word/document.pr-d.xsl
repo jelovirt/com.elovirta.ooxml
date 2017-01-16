@@ -75,23 +75,12 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class,' pr-d/syntaxdiagram ')]">
-    <xsl:call-template name="p"/>
+    <xsl:apply-templates select="*"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class,' pr-d/fragment ')]">
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <xsl:apply-templates select="*[contains(@class,' topic/title ')]"/>
-    <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
-      <xsl:call-template name="generate-block-style"/>
-      <xsl:apply-templates select="node() except *[contains(@class,' topic/title ')]"/>
-    </w:p>
+    <xsl:apply-templates select="node() except *[contains(@class,' topic/title ')]"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class,' pr-d/syntaxdiagram ')]/*[contains(@class,' topic/title ')]">
@@ -155,27 +144,18 @@
     <xsl:call-template name="p"/>
   </xsl:template>
   
-  <xsl:template match="*[contains(@class,' pr-d/fragment ')]/*[contains(@class,' pr-d/groupcomp ')]|*[contains(@class,' pr-d/fragment ')]/*[contains(@class,' pr-d/groupchoice ')]|*[contains(@class,' pr-d/fragment ')]/*[contains(@class,' pr-d/groupseq ')]">
-    <xsl:call-template name="p"/>
+  <xsl:template match="*[contains(@class,' pr-d/fragment ')]/*[contains(@class,' pr-d/groupcomp ')] |
+    *[contains(@class,' pr-d/fragment ')]/*[contains(@class,' pr-d/groupchoice ')] |
+    *[contains(@class,' pr-d/fragment ')]/*[contains(@class,' pr-d/groupseq ')]">
+    <xsl:apply-templates select="*"/>
   </xsl:template>
   
   <xsl:template match="
     *[contains(@class,' pr-d/syntaxdiagram ')]/*[contains(@class,' pr-d/groupcomp ')] |
     *[contains(@class,' pr-d/syntaxdiagram ')]/*[contains(@class,' pr-d/groupseq ')] |
     *[contains(@class,' pr-d/syntaxdiagram ')]/*[contains(@class,' pr-d/groupchoice ')]">
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <xsl:apply-templates select="*[contains(@class,' topic/title ')]"/>
-    <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
-      <xsl:call-template name="generate-block-style"/>
-      <xsl:call-template name="makeGroup"/>
-    </w:p>
+    <xsl:apply-templates select="* except *[contains(@class,' topic/title ')]"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class,' pr-d/groupcomp ')]/*[contains(@class,' pr-d/groupcomp ')]">
@@ -215,27 +195,36 @@
   </xsl:template>
   
   <xsl:template name="makeGroup">
-    <w:r>
-      <w:t>
-        <xsl:attribute name="xml:space">preserve</xsl:attribute>
-        <xsl:if test="parent::*[contains(@class,' pr-d/groupchoice ')]">
-          <xsl:if test="count(preceding-sibling::*)!=0"> | </xsl:if>
-        </xsl:if>
-        <xsl:if test="@importance='optional'">[</xsl:if>
-        <xsl:if test="name()='groupchoice'">{</xsl:if>
-        <xsl:text> </xsl:text>
-      </w:t>
-    </w:r>
-    <xsl:apply-templates/>
-    <w:r>
-      <w:t>
-        <xsl:attribute name="xml:space">preserve</xsl:attribute>
-        <xsl:text> </xsl:text>
-        <!-- repid processed here before -->
-        <xsl:if test="name()='groupchoice'">}</xsl:if>
-        <xsl:if test="@importance='optional'">]</xsl:if>
-      </w:t>
-    </w:r>
+    <xsl:variable name="before" as="xs:string*">
+      <xsl:if test="parent::*[contains(@class,' pr-d/groupchoice ')]">
+        <xsl:if test="count(preceding-sibling::*)!=0"> | </xsl:if>
+      </xsl:if>
+      <xsl:if test="@importance = 'optional'">[</xsl:if>
+      <xsl:if test="self::groupchoice">{</xsl:if>
+    </xsl:variable>
+    <xsl:if test="exists($before)">
+      <w:r>
+        <w:t>
+          <xsl:attribute name="xml:space">preserve</xsl:attribute>
+          <xsl:copy-of select="$before"/>
+          <xsl:text> </xsl:text>
+        </w:t>
+      </w:r>
+    </xsl:if>
+    <xsl:apply-templates select="*"/>
+    <xsl:variable name="after" as="xs:string*">
+      <xsl:if test="self::groupchoice">}</xsl:if>
+      <xsl:if test="@importance = 'optional'">]</xsl:if>
+    </xsl:variable>
+    <xsl:if test="exists($after)">
+      <w:r>
+        <w:t>
+          <xsl:attribute name="xml:space">preserve</xsl:attribute>
+          <xsl:text> </xsl:text>
+          <xsl:copy-of select="$after"/>
+        </w:t>
+      </w:r>
+    </xsl:if>
   </xsl:template>
   
 
