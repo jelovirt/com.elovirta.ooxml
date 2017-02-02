@@ -59,16 +59,25 @@
           force="true">
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
+    
+    <makeurl property="dotx.dir.uri" file="${dita.temp.dir}/dotx"/>
+    <makeurl property="user.input.dir.url" file="${user.input.dir}"/>    
 
-    <xslt style="${docx.dir}/docProps/core.xsl"
+    <property name="core.xsl" location="${docx.dir}/docProps/core.xsl"/>
+    <xslt style="${core.xsl}"
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/docProps/core.xml"
           force="true">
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
+    <property name="custom.xsl" location="${docx.dir}/docProps/custom.xsl"/>
+    <xslt style="${custom.xsl}"
+          in="${clean.input.file}"
+          out="${dita.temp.dir}/docx/docProps/custom.xml"
+          force="true">
+      <xmlcatalog refid="dita.catalog"/>
+    </xslt>
 
-    <makeurl property="dotx.dir.uri" file="${dita.temp.dir}/dotx"/>
-    <makeurl property="user.input.dir.url" file="${user.input.dir}"/>    
     <property name="document.xsl" location="${docx.dir}/word/document.xsl"/>
     <xslt style="${document.xsl}"
           in="${clean.input.file}"
