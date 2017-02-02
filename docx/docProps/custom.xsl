@@ -9,10 +9,8 @@
                 version="2.0"
                 exclude-result-prefixes="x xs opentopic">
 
-  <xsl:template match="node() | @*">
-    <xsl:copy>
-      <xsl:apply-templates select="node() | @*"/>
-    </xsl:copy>
+  <xsl:template match="/">
+    <Properties/>
   </xsl:template>
 
 </xsl:stylesheet>
