@@ -40,8 +40,19 @@
       <xsl:comment>images and links</xsl:comment>
       <xsl:for-each select="//@x:image-number">
         <Relationship Id="rId{.}"
-          Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-          Target="media/{../@href}"/>
+          Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image">
+          <xsl:attribute name="Target">
+            <xsl:text>media/</xsl:text>
+            <xsl:choose>
+              <xsl:when test="ends-with(../@href, '.svg')">
+                <xsl:value-of select="replace(../@href, '\.svg$', '.emf')"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="../@href"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:attribute>
+        </Relationship>
       </xsl:for-each>
       
       <xsl:for-each select="//*[@x:external-link-number]">

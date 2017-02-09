@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
   
+  <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+  
   <target name="docx.init">
     <property name="force-unique" value="true"/>
     <property name="docx.dir" location="${dita.plugin.com.elovirta.ooxml.dir}/docx"/>
@@ -15,6 +17,7 @@
                    build-init,
                    preprocess,
                    docx.image-metadata,
+                   docx.svg2emf,
                    docx.template,
                    docx.convert,
                    docx.package"/>
@@ -25,6 +28,29 @@
         <param name="outputdir" location="${output.dir}"/>
       </module>
     </pipeline>
+  </target>
+  
+  <target name="docx.svg2emf" if="inkscape.exec">
+    <mkdir dir="${dita.temp.dir}/docx/word/media"/>
+    <for param="svg.file">
+      <path>
+        <fileset dir="${user.input.dir}">
+          <include name="**/*.svg"/>
+        </fileset>
+      </path>
+      <sequential>
+        <local name="svg.name"/>
+        <local name="emf.file"/>
+        <basename property="svg.name" file="@{svg.file}" suffix=".svg"/>
+        <property name="emf.file" location="${dita.temp.dir}/docx/word/media/${svg.name}.emf"/>
+        <echo taskname="inkscape">Converting @{svg.file} to ${emf.file}</echo>
+        <exec executable="${inkscape.exec}" taskname="inkscape">
+          <arg value="-z" />
+          <arg value="--export-emf=${emf.file}" />
+          <arg file="@{svg.file}"/>
+        </exec>
+      </sequential>
+    </for>
   </target>
   
   <target name="docx.template">

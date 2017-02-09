@@ -4,4 +4,5 @@
   <feature extension="dita.conductor.transtype.check" value="docx"/>
   <feature extension="dita.transtype.print" value="docx"/>
   <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
+  <feature extension="dita.conductor.lib.import" file="lib/ant-contrib-0.6.jar"/>
 </plugin>

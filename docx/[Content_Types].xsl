@@ -27,6 +27,7 @@
     <Default Extension="rle" ContentType="image/bmp"/>
     <Default Extension="bmz" ContentType="image/bmp"/>
     <Default Extension="wmf" ContentType="windows/metafile"/>
+    <Default Extension="emf" ContentType="image/x-emf"/>
     <Default Extension="eps" ContentType="application/postscript"/>
     <Default Extension="pct" ContentType="image/x-pict"/>
   </xsl:variable>
