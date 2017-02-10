@@ -174,8 +174,11 @@
         <w:tblInd w:w="0" w:type="dxa"/>
       </xsl:when>
       <xsl:otherwise>
+        <xsl:variable name="depth" as="xs:integer">
+          <xsl:apply-templates select="." mode="block-depth"/>
+        </xsl:variable>
         <w:tblW w:w="0" w:type="auto"/>
-        <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
+        <w:tblInd w:w="{x:get-indent($depth)}" w:type="dxa"/>
       </xsl:otherwise>
     </xsl:choose>
     <w:tblLook w:val="04A0"
@@ -435,7 +438,11 @@
       </xsl:attribute>
     </w:tblStyle>
     <w:tblW w:w="0" w:type="auto"/>
-    <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
+    
+    <xsl:variable name="depth" as="xs:integer">
+      <xsl:apply-templates select="." mode="block-depth"/>
+    </xsl:variable>
+    <w:tblInd w:w="{x:get-indent($depth)}" w:type="dxa"/>
     <w:tblLook w:val="04A0"
       w:firstRow="{if (exists(*[contains(@class, ' topic/sthead ')])) then 1 else 0}"
       w:lastRow="0"

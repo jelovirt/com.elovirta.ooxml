@@ -381,13 +381,18 @@
               </w:numPr>
             </xsl:when>
             <xsl:otherwise>
-              <w:ind w:left="{xs:integer($indent-base) + xs:integer($increment-base) * $depth}"/>
+              <w:ind w:left="{x:get-indent($depth)}"/>
             </xsl:otherwise>
           </xsl:choose>
         </w:pPr>        
       </xsl:when>
     </xsl:choose>
   </xsl:template>
+  
+  <xsl:function name="x:get-indent" as="xs:integer">
+    <xsl:param name="depth" as="xs:integer"/>
+    <xsl:sequence select="xs:integer($indent-base) + xs:integer($increment-base) * $depth"/>
+  </xsl:function>
   
   <xsl:template match="*" mode="block-depth" as="xs:integer">
     <xsl:variable name="root" select="(ancestor::*[contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ') or contains(@class, ' topic/fig ')][1], /*)[1]" as="element()?" />
@@ -583,19 +588,31 @@
 
   <xsl:template match="*[contains(@class, ' topic/dl ')]" name="dl">
     <w:tbl>
-      <w:tblPr>
-        <w:tblLayout w:type="autofit"/>
-        <w:tblStyle w:val="TableGrid"/>
-        <w:tblW w:w="0" w:type="auto"/>
-        <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
-        <w:tblLook w:val="04A0"/>
-      </w:tblPr>
+      <xsl:variable name="styles" as="node()*">
+        <xsl:apply-templates select="." mode="block-style"/>
+      </xsl:variable>
+      <xsl:if test="exists($styles)">
+        <w:tblPr>
+          <xsl:copy-of select="$styles"/>
+        </w:tblPr>
+      </xsl:if>
       <w:tblGrid>
         <w:gridCol/>
         <w:gridCol/>
       </w:tblGrid>
       <xsl:apply-templates select="*[contains(@class, ' topic/dlentry ')]"/>
     </w:tbl>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/dl ')]" mode="block-style">
+    <xsl:variable name="depth" as="xs:integer">
+      <xsl:apply-templates select="." mode="block-depth"/>
+    </xsl:variable>
+    <w:tblLayout w:type="autofit"/>
+    <w:tblStyle w:val="TableGrid"/>
+    <w:tblW w:w="0" w:type="auto"/>
+    <w:tblInd w:w="{x:get-indent($depth)}" w:type="dxa"/>
+    <w:tblLook w:val="04A0"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/dlentry ')]">
@@ -745,16 +762,20 @@
   <!-- Glossary -->
     
   <xsl:template match="*[contains(@class, ' glossgroup/glossgroup ')]" name="glossgroup">
+    <xsl:variable name="depth" as="xs:integer">
+      <xsl:apply-templates select="." mode="block-depth"/>
+    </xsl:variable>
     <xsl:call-template name="start-bookmark"/>
     <xsl:apply-templates select="*[contains(@class, ' topic/title ')]"/>
     <w:tbl>
-      <w:tblPr>
-        <w:tblLayout w:type="autofit"/>
-        <w:tblStyle w:val="TableGrid"/>
-        <w:tblW w:w="0" w:type="auto"/>
-        <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
-        <w:tblLook w:val="04A0"/>
-      </w:tblPr>
+      <xsl:variable name="styles" as="node()*">
+        <xsl:apply-templates select="." mode="block-style"/>
+      </xsl:variable>
+      <xsl:if test="exists($styles)">
+        <w:tblPr>
+          <xsl:copy-of select="$styles"/>
+        </w:tblPr>
+      </xsl:if>
       <w:tblGrid>
         <w:gridCol/>
         <w:gridCol/>
@@ -762,6 +783,17 @@
       <xsl:apply-templates select="*[contains(@class, ' glossentry/glossentry ')]"/>
     </w:tbl>
     <xsl:call-template name="end-bookmark"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' glossgroup/glossgroup ')]" mode="block-style">
+    <xsl:variable name="depth" as="xs:integer">
+      <xsl:apply-templates select="." mode="block-depth"/>
+    </xsl:variable>
+    <w:tblLayout w:type="autofit"/>
+    <w:tblStyle w:val="TableGrid"/>
+    <w:tblW w:w="0" w:type="auto"/>
+    <w:tblInd w:w="{x:get-indent($depth)}" w:type="dxa"/>
+    <w:tblLook w:val="04A0"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' glossentry/glossentry ')]" name="glossentry">
@@ -775,13 +807,14 @@
   <!-- Fallback for ungrouped glossary entries -->
   <xsl:template match="*[contains(@class, ' glossentry/glossentry ')][empty(parent::*[contains(@class, ' glossgroup/glossgroup ')])]" priority="10">
     <w:tbl>
-      <w:tblPr>
-        <w:tblLayout w:type="autofit"/>
-        <w:tblStyle w:val="TableGrid"/>
-        <w:tblW w:w="0" w:type="auto"/>
-        <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
-        <w:tblLook w:val="04A0"/>
-      </w:tblPr>
+      <xsl:variable name="styles" as="node()*">
+        <xsl:apply-templates select="." mode="block-style"/>
+      </xsl:variable>
+      <xsl:if test="exists($styles)">
+        <w:tblPr>
+          <xsl:copy-of select="$styles"/>
+        </w:tblPr>
+      </xsl:if>
       <w:tblGrid>
         <w:gridCol/>
         <w:gridCol/>
@@ -789,7 +822,7 @@
       <xsl:call-template name="glossentry"/>      
     </w:tbl>
   </xsl:template>
-
+  
   <xsl:template match="*[contains(@class, ' glossentry/glossterm ')]" priority="10">
     <w:tc>
       <w:tcPr>
