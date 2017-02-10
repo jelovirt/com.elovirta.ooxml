@@ -49,13 +49,7 @@
       </xsl:comment-->
       <w:p>
         <w:pPr>
-          <xsl:if test="position() ne last()">
-            <w:spacing w:after="0"/>
-          </xsl:if>
-          <w:tabs>
-            <w:tab w:val="left" w:pos="373"/>
-            <w:tab w:val="right" w:leader="dot" w:pos="8290"/>
-          </w:tabs>
+          <xsl:apply-templates select="." mode="block-style"/>
         </w:pPr>
         <w:r>
           <w:fldChar w:fldCharType="begin"/>
@@ -78,6 +72,16 @@
         </w:r>
       </w:p>
     </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/link ')]" mode="block-style">
+    <xsl:if test="empty(following-sibling::*[contains(@class, ' topic/link ')])">
+      <w:spacing w:after="0"/>
+    </xsl:if>
+    <w:tabs>
+      <w:tab w:val="left" w:pos="373"/>
+      <w:tab w:val="right" w:leader="dot" w:pos="{$body-width}"/>
+    </w:tabs>
   </xsl:template>
   
   <xsl:function name="x:get-target" as="element()?">
