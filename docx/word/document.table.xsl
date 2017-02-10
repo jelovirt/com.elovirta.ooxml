@@ -20,6 +20,7 @@
                version="2.0">
 
   <xsl:variable name="table-col-total" select="9740"/>
+  <xsl:variable name="table.frame-default" select="'all'"/>
 
   <xsl:template match="*[contains(@class, ' topic/table ')]/*[contains(@class, ' topic/title ')]" name="table.title">
     <w:p>
@@ -159,7 +160,14 @@
   <xsl:variable name="expanse.default" select="'column'"/>
   
   <xsl:template match="*[contains(@class, ' topic/tgroup ')]" mode="block-style">
-    <w:tblStyle w:val="TableGrid"/>
+    <w:tblStyle>
+      <xsl:attribute name="w:val">
+        <xsl:choose>
+          <xsl:when test="(@frame, $table.frame-default)[1] = 'all'">TableGrid</xsl:when>
+          <xsl:otherwise>TableNormal</xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+    </w:tblStyle>
     <xsl:choose>
       <xsl:when test="(../@expanse, $expanse.default)[1] = 'page' or (../@pgwide, $pgwide.default)[1] = '1'">
         <w:tblW w:w="5000" w:type="pct"/>
@@ -380,18 +388,14 @@
   
   <xsl:template match="*[contains(@class, ' topic/simpletable ')]" name="simpletable">
     <w:tbl>
-      <w:tblPr>
-        <w:tblStyle w:val="TableGrid"/>
-        <w:tblW w:w="0" w:type="auto"/>
-        <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
-        <w:tblLook w:val="04A0"
-                   w:firstRow="{if (exists(*[contains(@class, ' topic/sthead ')])) then 1 else 0}"
-                   w:lastRow="0"
-                   w:firstColumn="{if (@keycol = 1) then 1 else 0}"
-                   w:lastColumn="0"
-                   w:noHBand="1"
-                   w:noVBand="1"/>
-      </w:tblPr>
+      <xsl:variable name="styles" as="node()*">
+        <xsl:apply-templates select="." mode="block-style"/>
+      </xsl:variable>
+      <xsl:if test="exists($styles)">
+        <w:tblPr>
+          <xsl:copy-of select="$styles"/>
+        </w:tblPr>
+      </xsl:if>
       <xsl:variable name="widths" as="xs:integer*">
         <xsl:choose>
           <xsl:when test="@relcolwidth">
@@ -419,6 +423,26 @@
         <xsl:with-param name="widths" select="$widths" as="xs:integer*"/>
       </xsl:apply-templates>
     </w:tbl>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/simpletable ')]" mode="block-style">
+    <w:tblStyle>
+      <xsl:attribute name="w:val">
+        <xsl:choose>
+          <xsl:when test="(@frame, $table.frame-default)[1] = 'all'">TableGrid</xsl:when>
+          <xsl:otherwise>TableNormal</xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+    </w:tblStyle>
+    <w:tblW w:w="0" w:type="auto"/>
+    <w:tblInd w:w="{xs:integer($indent-base)}" w:type="dxa"/>
+    <w:tblLook w:val="04A0"
+      w:firstRow="{if (exists(*[contains(@class, ' topic/sthead ')])) then 1 else 0}"
+      w:lastRow="0"
+      w:firstColumn="{if (@keycol = 1) then 1 else 0}"
+      w:lastColumn="0"
+      w:noHBand="1"
+      w:noVBand="1"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/strow ')]">
