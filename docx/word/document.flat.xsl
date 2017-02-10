@@ -9,37 +9,38 @@
   <xsl:import href="document.utils.xsl"/>
   <xsl:import href="flatten.xsl"/>
   
+  <xsl:variable name="content" as="document-node()">
+    <xsl:document>
+      <xsl:apply-templates select="node()" mode="flatten"/>
+    </xsl:document>
+  </xsl:variable>
+  <xsl:variable name="lists" as="xs:string*">
+    <xsl:for-each select="$content//*[contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ') or contains(@class, ' topic/sl ')]">
+      <xsl:value-of select="generate-id(.)"/>
+    </xsl:for-each>
+  </xsl:variable>
+  <xsl:variable name="image-lists" as="xs:string*">
+    <xsl:for-each select="$content//*[contains(@class, ' topic/image ')]">
+      <xsl:value-of select="generate-id(.)"/>
+    </xsl:for-each>
+  </xsl:variable>
+  <xsl:variable name="fn-lists" as="xs:string*">
+    <xsl:for-each select="$content//*[contains(@class, ' topic/fn ')]">
+      <xsl:value-of select="generate-id(.)"/>
+    </xsl:for-each>
+  </xsl:variable>
+  <xsl:variable name="draft-comment-lists" as="xs:string*">
+    <xsl:for-each select="$content//*[contains(@class, ' topic/draft-comment ')]">
+      <xsl:value-of select="generate-id(.)"/>
+    </xsl:for-each>
+  </xsl:variable>
+  <xsl:variable name="external-link-lists" as="xs:string*">
+    <xsl:for-each select="$content//*[contains(@class, ' topic/xref ')][@scope = 'external']">
+      <xsl:value-of select="generate-id(.)"/>
+    </xsl:for-each>
+  </xsl:variable>
+  
   <xsl:template match="/">
-    <xsl:variable name="content" as="document-node()">
-      <xsl:document>
-        <xsl:apply-templates select="node()" mode="flatten"/>
-      </xsl:document>
-    </xsl:variable>
-    <xsl:variable name="lists" as="xs:string*">
-      <xsl:for-each select="$content//*[contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ') or contains(@class, ' topic/sl ')]">
-        <xsl:value-of select="generate-id(.)"/>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:variable name="image-lists" as="xs:string*">
-      <xsl:for-each select="$content//*[contains(@class, ' topic/image ')]">
-        <xsl:value-of select="generate-id(.)"/>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:variable name="fn-lists" as="xs:string*">
-      <xsl:for-each select="$content//*[contains(@class, ' topic/fn ')]">
-        <xsl:value-of select="generate-id(.)"/>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:variable name="draft-comment-lists" as="xs:string*">
-      <xsl:for-each select="$content//*[contains(@class, ' topic/draft-comment ')]">
-        <xsl:value-of select="generate-id(.)"/>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:variable name="external-link-lists" as="xs:string*">
-      <xsl:for-each select="$content//*[contains(@class, ' topic/xref ')][@scope = 'external']">
-        <xsl:value-of select="generate-id(.)"/>
-      </xsl:for-each>
-    </xsl:variable>
     <xsl:apply-templates select="$content" mode="number">
       <xsl:with-param name="lists" select="$lists" tunnel="yes"/>
       <xsl:with-param name="image-lists" select="$image-lists" tunnel="yes"/>
