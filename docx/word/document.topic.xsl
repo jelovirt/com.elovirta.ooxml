@@ -79,7 +79,9 @@
     <xsl:apply-templates select="." mode="block-style.default"/>
   </xsl:template>
   
-  <xsl:template match="node()" mode="block-style.default"/>
+  <xsl:template match="node()" mode="block-style.default">
+    <w:pStyle w:val="BodyText"/>
+  </xsl:template>
 
   <xsl:variable name="body-section" as="element()*">
     <xsl:for-each select="$template.body-section">
@@ -644,6 +646,10 @@
     <xsl:call-template name="start-bookmark"/>
     <xsl:apply-templates select="*"/>
     <xsl:call-template name="end-bookmark"/>
+  </xsl:template>
+    
+  <xsl:template match="*[contains(@class, ' topic/li ')]/*" mode="block-style">
+    <w:pStyle w:val="ListParagraph"/>
   </xsl:template>
     
   <xsl:template match="*[contains(@class, ' topic/itemgroup ')]">
