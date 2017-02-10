@@ -19,6 +19,8 @@
                exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder"
                version="2.0">
 
+  <xsl:param name="template.dir" as="xs:string"/>
+
   <!--xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
   <xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/-->
   
@@ -26,6 +28,16 @@
 
   <!-- Utilities -->
   
+  <xsl:variable name="styles" select="document(concat($template.dir, 'word/styles.xml'))" as="document-node()?"/>
+  
+  <xsl:function name="x:get-style-indent" as="xs:integer?">
+    <xsl:param name="style" as="xs:string"/>
+    <xsl:variable name="left" select="$styles/w:styles/w:style[@w:styleId = $style]/w:pPr/w:ind/@w:left" as="attribute()?"/>
+    <xsl:if test="exists($left)">
+      <xsl:sequence select="xs:integer($left)"/>
+    </xsl:if>
+  </xsl:function>
+    
   <xsl:variable name="default-dpi" select="96" as="xs:double"/>
   
   <xsl:function name="x:px-to-emu" as="xs:integer">

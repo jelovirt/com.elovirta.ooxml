@@ -88,7 +88,7 @@
             <w:tab w:val="left" w:pos="{$tabs[$depth]}"/-->
             <w:tab w:val="left" w:pos="{422 * $depth}"/>
           </xsl:if>
-          <w:tab w:val="right" w:leader="dot" w:pos="8290"/>
+          <w:tab w:val="right" w:leader="dot" w:pos="{$body-width}"/>
         </w:tabs>
         <w:rPr>
           <w:noProof/>

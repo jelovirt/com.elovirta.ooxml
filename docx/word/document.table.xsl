@@ -19,7 +19,7 @@
                exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder"
                version="2.0">
 
-  <xsl:variable name="table-col-total" select="9740"/>
+  <xsl:variable name="table-col-total" select="$body-width"/>
   <xsl:variable name="table.frame-default" select="'all'"/>
 
   <xsl:template match="*[contains(@class, ' topic/table ')]/*[contains(@class, ' topic/title ')]" name="table.title">

@@ -40,12 +40,16 @@
   <xsl:output indent="no"/>
 
   <xsl:param name="input.dir.url"/>
-  <xsl:param name="template.dir"/>
   
   <xsl:variable name="template" select="document(concat($template.dir, '/word/document.xml'))" as="document-node()?"/>
   <xsl:variable name="root" select="/"/>
   <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map"/>
   <xsl:variable name="language" select="string((//@xml:lang)[1])"/>
+
+  <xsl:variable name="body-width" as="xs:integer">
+    <xsl:variable name="sectPr" select="$template/w:document/w:body/w:sectPr[last()]" as="element()"/>
+    <xsl:sequence select="xs:integer($sectPr/w:pgSz/@w:w) - xs:integer($sectPr/w:pgMar/@w:left) - xs:integer($sectPr/w:pgMar/@w:right)"/>
+  </xsl:variable>
 
   <xsl:key name="map-id" match="opentopic:map//*[@id]" use="@id"/>
 

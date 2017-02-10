@@ -23,17 +23,8 @@
 
   <xsl:param name="image.dir"/>
   <!-- FIXME this should be xs:integer -->
-  <xsl:param name="indent-base" as="xs:string?">
-    <xsl:variable name="styles" select="document(concat($template.dir, 'word/styles.xml'))" as="document-node()?"/>
-    <xsl:variable name="body-text" select="$styles/w:styles/w:style[@w:styleId = 'BodyText']" as="element()?"/>
-    <xsl:variable name="left" select="$body-text/w:pPr/w:ind/@w:left" as="attribute()?"/>
-    <xsl:choose>
-      <xsl:when test="exists($left)">
-        <xsl:value-of select="$left"/>
-      </xsl:when>
-      <xsl:otherwise>0</xsl:otherwise>
-    </xsl:choose>
-  </xsl:param>
+  <xsl:param name="indent-base" as="xs:string?" select="string((x:get-style-indent('BodyText'), 0)[1])"/>
+  
   <!-- FIXME this should be xs:integer -->
   <xsl:param name="increment-base" select="'720'"/>
 
