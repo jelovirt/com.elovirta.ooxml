@@ -14,9 +14,6 @@
 
   <xsl:import href="document.xsl"/>
 
-  <xsl:param name="indent-base" select="'0'"/>
-  <xsl:param name="increment-base" select="'720'"/>
-  <xsl:param name="template.dir" as="xs:string"/>
   <xsl:variable name="doc" select="document(concat($template.dir, 'word/numbering.xml'))" as="document-node()?"/>
 
   <xsl:template match="/">
