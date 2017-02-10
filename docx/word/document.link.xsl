@@ -63,8 +63,8 @@
         <w:r>
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
-            <xsl:text> REF _Ref</xsl:text>
-            <xsl:value-of select="generate-id($target)"/>
+            <xsl:text> REF </xsl:text>
+            <xsl:value-of select="concat($bookmark-prefix.ref, generate-id($target))"/>
             <xsl:text> </xsl:text>
             <xsl:text>\h </xsl:text>
           </w:instrText>
@@ -157,7 +157,7 @@
               <xsl:when test="false()">PAGEREF </xsl:when>
               <xsl:otherwise>REF </xsl:otherwise>
             </xsl:choose>
-            <xsl:value-of select="concat('_Num', generate-id($target))"/>
+            <xsl:value-of select="concat($bookmark-prefix.num, generate-id($target))"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -182,8 +182,8 @@
             <w:rStyle w:val="FootnoteReference"/>
           </w:rPr>
           <w:instrText xml:space="preserve">
-            <xsl:text> NOTEREF _Note</xsl:text>
-            <xsl:value-of select="generate-id($target)"/>
+            <xsl:text> NOTEREF </xsl:text>
+            <xsl:value-of select="concat($bookmark-prefix.note, generate-id($target))"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -222,7 +222,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat('_Num', generate-id($target))"/>
+            <xsl:value-of select="concat($bookmark-prefix.num, generate-id($target))"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -266,7 +266,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat('_Num', generate-id($target))"/>
+            <xsl:value-of select="concat($bookmark-prefix.num, generate-id($target))"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
