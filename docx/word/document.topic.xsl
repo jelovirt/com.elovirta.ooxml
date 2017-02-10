@@ -353,7 +353,7 @@
     
   <!-- For any block that can appear as in list item content -->
   <xsl:template name="generate-block-style">
-    <xsl:variable name="root" select="(ancestor::*[contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ')][1], /*)[1]" as="element()?" />
+    <xsl:variable name="root" select="(ancestor::*[contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ') or contains(@class, ' topic/fig ')][1], /*)[1]" as="element()?" />
     <xsl:variable name="ancestor-lis" select="ancestor::*[contains(@class, ' topic/li ')][. >> $root]" as="element()*"/>
     <xsl:variable name="styles" as="node()*">
       <xsl:apply-templates select="." mode="block-style"/>
@@ -369,13 +369,9 @@
             <xsl:variable name="parents-until-li" select="ancestor-or-self::*[. >> $parent-li]" as="element()*"/>
             <xsl:sequence select="every $e in $parents-until-li satisfies empty($e/preceding-sibling::*)"/>
           </xsl:variable>
-          <xsl:variable name="fig" select="ancestor-or-self::*[contains(@class, ' topic/fig ')][. >> $root][1]" as="element()?"/>
-          <xsl:variable name="lists" select="ancestor-or-self::*[contains(@class, ' topic/ul ') or
-                                                                 contains(@class, ' topic/ol ')][. >> $root]" as="element()*"/>
-          <xsl:variable name="depth"
-                        select="if ($fig)
-                                then count($lists[. >> $fig])
-                                else count($lists)" as="xs:integer"/>
+          <xsl:variable name="depth" as="xs:integer">
+            <xsl:apply-templates select="." mode="block-depth"/>
+          </xsl:variable>
           <xsl:comment>depth <xsl:value-of select="$depth"/></xsl:comment>
           <xsl:choose>  
             <xsl:when test="$is-first">
@@ -391,6 +387,19 @@
         </w:pPr>        
       </xsl:when>
     </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="*" mode="block-depth" as="xs:integer">
+    <xsl:variable name="root" select="(ancestor::*[contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ') or contains(@class, ' topic/fig ')][1], /*)[1]" as="element()?" />
+    <xsl:variable name="ancestor-lis" select="ancestor::*[contains(@class, ' topic/li ')][. >> $root]" as="element()*"/>
+    <!--xsl:variable name="fig" select="ancestor-or-self::*[contains(@class, ' topic/fig ')][. >> $root][1]" as="element()?"/-->
+    <xsl:variable name="lists" select="ancestor-or-self::*[contains(@class, ' topic/ul ') or
+      contains(@class, ' topic/ol ')][. >> $root]" as="element()*"/>
+    <!--xsl:variable name="depth"
+      select="if ($fig)
+      then count($lists[. >> $fig])
+      else count($lists)" as="xs:integer"/-->
+    <xsl:sequence select="count($lists)"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/p ')]" name="p">
