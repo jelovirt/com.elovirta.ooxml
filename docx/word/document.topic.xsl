@@ -438,7 +438,6 @@
       <xsl:apply-templates select="." mode="inline-style"/>
     </xsl:param>
     <xsl:variable name="image.url" select="concat($input.dir.url, @href)" as="xs:string"/>
-    <xsl:message select="$image.url, $image.dir, unparsed-text-available($image.url)"></xsl:message>
     <xsl:choose>
       <xsl:when test="unparsed-text-available($image.url)">    
         <!-- Units are English metric units: 1 EMU = 1 div 914400 in = 1 div 360000 cm -->
