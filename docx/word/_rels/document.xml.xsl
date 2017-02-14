@@ -13,7 +13,7 @@
   <xsl:template match="/">
     <Relationships>
       <xsl:comment>copied</xsl:comment>
-      <xsl:variable name="rels" select="$doc/rel:Relationships/rel:Relationship"/>
+      <xsl:variable name="rels" select="$doc/rel:Relationships/rel:Relationship" as="element()*"/>
       <xsl:copy-of select="$rels except *[(:starts-with(@Target, 'header') or starts-with(@Target, 'footer') or:)
                                           @TargetMode = 'External']"/>
       <xsl:comment>hard-coded</xsl:comment>

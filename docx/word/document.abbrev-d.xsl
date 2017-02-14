@@ -17,8 +17,8 @@
            use="@keyref"/>
   
   <xsl:template match="*[contains(@class,' abbrev-d/abbreviated-form ')]" name="topic.abbreviated-form">
-    <xsl:variable name="keys" select="@keyref"/>
-    <xsl:variable name="target" select="key('id', substring(@href, 2))"/>
+    <xsl:variable name="keys" select="@keyref" as="attribute()?"/>
+    <xsl:variable name="target" select="key('id', substring(@href, 2))" as="element()*"/>
     <xsl:choose>
       <xsl:when test="$keys and $target/self::*[contains(@class,' glossentry/glossentry ')]">
         <xsl:call-template name="topic.term">
@@ -75,16 +75,16 @@
   </xsl:template>
   
   <xsl:template match="*" mode="getMatchingSurfaceForm">
-    <xsl:variable name="glossSurfaceForm" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossSurfaceForm ')]"/>
+    <xsl:variable name="glossSurfaceForm" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossSurfaceForm ')]" as="element()*"/>
     <xsl:choose>
       <xsl:when test="$glossSurfaceForm">
         <xsl:apply-templates select="$glossSurfaceForm/node()"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates select="*[contains(@class, ' glossentry/glossterm ')]/node()"/>
-        <xsl:variable name="glossAlt" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]"/>
+        <xsl:variable name="glossAlt" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]" as="element()*"/>
         <xsl:variable name="alt" select="($glossAlt/*[contains(@class, ' glossentry/glossAcronym ')] |
-                                          $glossAlt/*[contains(@class, ' glossentry/glossAbbreviation ')])[1]"/>
+                                          $glossAlt/*[contains(@class, ' glossentry/glossAbbreviation ')])[1]" as="element()*"/>
         <xsl:if test="exists($alt)">
           <xsl:text> (</xsl:text>
           <xsl:apply-templates select="$alt/node()"/>
@@ -95,10 +95,10 @@
   </xsl:template>
   
   <xsl:template match="*" mode="getMatchingAcronym">
-    <xsl:variable name="glossAlt" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]"/>
+    <xsl:variable name="glossAlt" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]" as="element()*"/>
     <xsl:variable name="alt" select="($glossAlt/*[contains(@class, ' glossentry/glossAcronym ')] |
                                       $glossAlt/*[contains(@class, ' glossentry/glossAbbreviation ')] |
-                                      $glossAlt/*[contains(@class, ' glossentry/glossShortForm ')])[1]"/>
+                                      $glossAlt/*[contains(@class, ' glossentry/glossShortForm ')])[1]" as="element()*"/>
     <xsl:choose>
       <xsl:when test="exists($alt)">
         <xsl:apply-templates select="$alt/node()"/>

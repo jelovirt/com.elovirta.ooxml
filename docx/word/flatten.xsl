@@ -28,7 +28,7 @@
   <!-- Test if element can contain only block content -->
   <xsl:function name="x:block-content" as="xs:boolean">
     <xsl:param name="element" as="node()"/>
-    <xsl:variable name="class" select="string($element/@class)"/>
+    <xsl:variable name="class" select="string($element/@class)" as="xs:string"/>
     <xsl:sequence select="some $c in $x:block-content-classes satisfies contains($class, $c)"/>
   </xsl:function>
   
@@ -66,7 +66,7 @@
   <!-- Test is element is block -->
   <xsl:function name="x:is-block" as="xs:boolean">
     <xsl:param name="element" as="node()"/>
-    <xsl:variable name="class" select="string($element/@class)"/>
+    <xsl:variable name="class" select="string($element/@class)" as="xs:string"/>
     <xsl:sequence select="some $c in $x:is-block-classes satisfies contains($class, $c) or
       (contains($class, ' topic/image ') and $element/@placement = 'break')"/>
   </xsl:function>

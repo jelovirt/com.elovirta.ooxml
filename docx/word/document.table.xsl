@@ -19,8 +19,8 @@
                exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder"
                version="2.0">
 
-  <xsl:variable name="table-col-total" select="$body-width"/>
-  <xsl:variable name="table.frame-default" select="'all'"/>
+  <xsl:variable name="table-col-total" select="xs:integer($body-width)" as="xs:integer"/>
+  <xsl:variable name="table.frame-default" select="'all'" as="xs:string"/>
 
   <xsl:template match="*[contains(@class, ' topic/table ')]/*[contains(@class, ' topic/title ')]" name="table.title">
     <w:p>
@@ -48,7 +48,7 @@
       <xsl:call-template name="start-bookmark-number">
         <xsl:with-param name="node" select=".."/>
       </xsl:call-template>
-      <xsl:variable name="number">
+      <xsl:variable name="number" as="xs:string">
         <xsl:number count="*[contains(@class, ' topic/table ')][*[contains(@class, ' topic/title ')]]" level="any"/>
       </xsl:variable>
       <xsl:choose>
@@ -156,8 +156,8 @@
     <xsl:apply-templates select="*[contains(@class, ' topic/row ')]"/>
   </xsl:template>
   
-  <xsl:variable name="pgwide.default" select="'0'"/>
-  <xsl:variable name="expanse.default" select="'column'"/>
+  <xsl:variable name="pgwide.default" select="'0'" as="xs:string"/>
+  <xsl:variable name="expanse.default" select="'column'" as="xs:string"/>
   
   <xsl:template match="*[contains(@class, ' topic/tgroup ')]" mode="block-style">
     <w:tblStyle>

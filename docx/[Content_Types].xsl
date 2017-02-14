@@ -8,10 +8,10 @@
                 version="2.0">
 
   <xsl:param name="input.uri"/>
-  <xsl:variable name="input" select="document($input.uri)"/>
+  <xsl:variable name="input" select="document($input.uri)" as="document-node()"/>
   
-  <xsl:variable name="prefix" select="'application/vnd.openxmlformats-officedocument.wordprocessingml.'"/>
-  <xsl:variable name="suffix" select="'+xml'"/>
+  <xsl:variable name="prefix" select="'application/vnd.openxmlformats-officedocument.wordprocessingml.'" as="xs:string"/>
+  <xsl:variable name="suffix" select="'+xml'" as="xs:string"/>
   <xsl:variable name="images" as="element()*">
     <Default Extension="jpeg" ContentType="image/jpeg"/>
     <Default Extension="jpg" ContentType="image/jpeg"/>
@@ -35,9 +35,9 @@
   <xsl:template match="c:Types">
     <xsl:copy>
       <xsl:apply-templates select="@* | *"/>
-      <xsl:variable name="current" select="."/>
+      <xsl:variable name="current" select="." as="element()"/>
       <xsl:for-each select="$images">
-        <xsl:variable name="ext" select="@Extension"/>
+        <xsl:variable name="ext" select="@Extension" as="attribute()"/>
         <xsl:if test="empty($current/c:Default[@Extension = $ext])">
           <xsl:copy-of select="."/>
         </xsl:if>

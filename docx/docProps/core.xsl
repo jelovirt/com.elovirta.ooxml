@@ -12,8 +12,8 @@
                 exclude-result-prefixes="x xs opentopic">
 
   <xsl:template match="/">
-    <xsl:variable name="map" select="*[contains(@class, ' map/map ')]/opentopic:map"/>
-    <xsl:variable name="bookmeta" select="$map/*[contains(@class, ' map/topicmeta ')]"/>
+    <xsl:variable name="map" select="*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
+    <xsl:variable name="bookmeta" select="$map/*[contains(@class, ' map/topicmeta ')]" as="element()*"/>
     <cp:coreProperties>
       <dc:title>
         <xsl:for-each select="$map">

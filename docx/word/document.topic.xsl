@@ -148,7 +148,7 @@
   <xsl:template match="*[contains(@class, ' topic/topic ')]/
                          *[contains(@class, ' topic/title ')]"
                 name="topic.title">
-    <xsl:variable name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])"/>
+    <xsl:variable name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])" as="xs:integer"/>
     <w:p>
       <w:pPr>
         <xsl:apply-templates select="." mode="block-style"/>
@@ -165,7 +165,7 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]" mode="block-style">
-    <xsl:variable name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])"/>
+    <xsl:variable name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])" as="xs:integer"/>
     <w:pStyle w:val="Heading{$depth}"/>
   </xsl:template>
   
@@ -282,7 +282,7 @@
       <xsl:call-template name="start-bookmark-number">
         <xsl:with-param name="node" select=".."/>
       </xsl:call-template>
-      <xsl:variable name="number">
+      <xsl:variable name="number" as="xs:string">
         <xsl:number count="*[contains(@class, ' topic/fig ')]" level="any"/>
       </xsl:variable>
       <xsl:choose>
@@ -681,7 +681,7 @@
   
   <xsl:template match="*[contains(@class, ' topic/note ')]">
     <xsl:call-template name="start-bookmark"/>
-    <xsl:variable name="prefix">
+    <xsl:variable name="prefix" as="node()*">
       <xsl:apply-templates select="." mode="prefix"/>
     </xsl:variable>
     <xsl:choose>
@@ -983,7 +983,7 @@
   <xsl:template match="*[contains(@class,' topic/term ')]" name="topic.term">
     <xsl:param name="keys" select="@keyref" as="attribute()?"/>
     <xsl:param name="contents" as="node()*">
-      <xsl:variable name="target" select="key('id', substring(@href, 2))"/>
+      <xsl:variable name="target" select="key('id', substring(@href, 2))" as="element()*"/>
       <xsl:choose>
         <xsl:when test="not(normalize-space(.)) and $keys and $target/self::*[contains(@class,' topic/topic ')]">
           <xsl:apply-templates select="$target/*[contains(@class, ' topic/title ')]/node()"/>

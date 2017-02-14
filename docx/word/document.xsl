@@ -42,9 +42,9 @@
   <xsl:param name="input.dir.url"/>
   
   <xsl:variable name="template" select="document(concat($template.dir, '/word/document.xml'))" as="document-node()?"/>
-  <xsl:variable name="root" select="/"/>
-  <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map"/>
-  <xsl:variable name="language" select="string((//@xml:lang)[1])"/>
+  <xsl:variable name="root" select="/" as="document-node()"/>
+  <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
+  <xsl:variable name="language" select="string((//@xml:lang)[1])" as="xs:string"/>
 
   <xsl:variable name="body-width" as="xs:integer">
     <xsl:variable name="sectPr" select="$template/w:document/w:body/w:sectPr[last()]" as="element()"/>
@@ -55,7 +55,7 @@
 
   <xsl:function name="x:get-topicref">
     <xsl:param name="topic" as="element()"/>
-    <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id"/>
+    <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id" as="attribute()"/>
     <xsl:sequence select="key('map-id', $id, $map)"/>
   </xsl:function>
 

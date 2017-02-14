@@ -129,6 +129,7 @@
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/word/comments.xml"
           force="true">
+      <param name="template.dir" expression="${dotx.dir.uri}"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <property name="numbering.xsl" location="${docx.dir}/word/numbering.xsl"/>

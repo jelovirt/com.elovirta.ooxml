@@ -110,7 +110,7 @@
                                                           contains(@class, ' bookmap/backmatter ')] or
                                                   @props = 'nonumbering'])">
           <xsl:attribute name="x:header-number">
-            <xsl:variable name="appendix" select="ancestor-or-self::*[contains(@class, ' bookmap/appendix ')][1]"/>
+            <xsl:variable name="appendix" select="ancestor-or-self::*[contains(@class, ' bookmap/appendix ')][1]" as="element()?"/>
             <xsl:choose>
               <xsl:when test="$appendix">
                 <xsl:for-each select="$appendix">

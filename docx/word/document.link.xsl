@@ -86,8 +86,8 @@
   
   <xsl:function name="x:get-target" as="element()?">
     <xsl:param name="link" as="element()?"/>
-    <xsl:variable name="scope" select="if ($link/@scope) then $link/@scope else 'local'"/>
-    <xsl:variable name="format" select="if ($link/@format) then $link/@format else 'dita'"/>
+    <xsl:variable name="scope" select="if ($link/@scope) then $link/@scope else 'local'" as="xs:string"/>
+    <xsl:variable name="format" select="if ($link/@format) then $link/@format else 'dita'" as="xs:string"/>
     <xsl:choose>
       <xsl:when test="$scope != 'local' or $format != 'dita'"/>
       <xsl:otherwise>
@@ -118,7 +118,7 @@
     <!-- Attempt to determine whether the reference is at the beginning of a sentence. -->
     <xsl:variable name="context" select="normalize-space(string-join(preceding-sibling::text(),' '))" as="xs:string"/>
     <!-- pick the containing element, disregarding p -->
-    <xsl:variable name="container" select="ancestor::*[not(contains(@class, ' topic/p '))][1]"/>
+    <xsl:variable name="container" select="ancestor::*[not(contains(@class, ' topic/p '))][1]" as="element()?"/>
     <xsl:variable name="capitalize" as="xs:boolean">
       <xsl:choose>
         <!-- capitalize when at the start of a sentence -->
