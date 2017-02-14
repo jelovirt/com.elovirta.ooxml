@@ -10,6 +10,16 @@
     <property name="args.rellinks" value="nofamily"/>
     <property name="preprocess.copy-image.skip" value="true"/>
     <property name="preprocess.copy-html.skip" value="true"/>
+    <property environment="env"/>
+    <condition property="inkscape.exec" value="/Applications/Inkscape.app/Contents/Resources/bin/inkscape">
+      <available file="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"/>
+    </condition>
+    <condition property="inkscape.exec" value="${env.ProgramFiles(x86)}\Inkscape\Inkscape.exe">
+      <available file="${env.ProgramFiles(x86)}\Inkscape\Inkscape.exe"/>
+    </condition>
+    <condition property="inkscape.exec" value="${env.PROGRAMFILES}\Inkscape\Inkscape.exe">
+      <available file="${env.PROGRAMFILES}\Inkscape\Inkscape.exe"/>
+    </condition>
   </target>
   
   <target name="dita2docx"
@@ -30,7 +40,7 @@
     </pipeline>
   </target>
   
-  <target name="docx.svg2emf" if="inkscape.exec">
+  <target name="docx.svg2emf" if="inkscape.exec" unless="docx.inkscape.skip">
     <mkdir dir="${dita.temp.dir}/docx/word/media"/>
     <for param="svg.file">
       <path>
