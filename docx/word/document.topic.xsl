@@ -349,12 +349,12 @@
     <xsl:variable name="styles" as="node()*">
       <xsl:apply-templates select="." mode="block-style"/>
     </xsl:variable>
-    <xsl:choose>
-      <xsl:when test="exists($ancestor-lis)">
-        <w:pPr>
-          <xsl:if test="exists($styles)">
-            <xsl:copy-of select="$styles"/>
-          </xsl:if>
+    <w:pPr>
+      <xsl:if test="exists($styles)">
+        <xsl:copy-of select="$styles"/>
+      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="exists($ancestor-lis)">
           <xsl:variable name="is-first" as="xs:boolean">
             <xsl:variable name="parent-li" select="$ancestor-lis[position() eq last()]/*[1]" as="element()?"/>
             <xsl:variable name="parents-until-li" select="ancestor-or-self::*[. >> $parent-li]" as="element()*"/>
@@ -375,9 +375,9 @@
               <w:ind w:left="{x:get-indent($depth)}"/>
             </xsl:otherwise>
           </xsl:choose>
-        </w:pPr>        
-      </xsl:when>
-    </xsl:choose>
+        </xsl:when>
+      </xsl:choose>
+    </w:pPr>
   </xsl:template>
   
   <xsl:function name="x:get-indent" as="xs:integer">
