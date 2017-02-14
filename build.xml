@@ -35,6 +35,8 @@
   <target name="docx.image-metadata" description="Read image metadata">
     <pipeline message="Read image metadata." taskname="image-metadata" tempdir="${dita.temp.dir}">
       <module class="org.dita.dost.module.ImageMetadataModule">
+        <ditaFileset format="dita" processingRole="normal"/>
+        <ditaFileset format="ditamap" processingRole="normal"/>
         <param name="outputdir" location="${output.dir}"/>
       </module>
     </pipeline>
