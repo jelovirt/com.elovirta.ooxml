@@ -47,7 +47,7 @@
     <w:ind w:left="0"/>
   </xsl:template-->
 
-  <xsl:variable name="template.body-section" select="$template/w:document/w:body/w:sectPr[position() = last()]" as="element()*"/>
+  <xsl:variable name="template.body-section" select="$template/w:document/w:body/w:sectPr[last()]" as="element()*"/>
   <xsl:template match="w:pgNumType" mode="body-section">
     <xsl:param name="overrides" as="attribute()*" tunnel="yes"/>
     <xsl:copy>
@@ -459,7 +459,7 @@
     </xsl:param>
     <xsl:variable name="image.url" select="concat($input.dir.url, @href)" as="xs:string"/>
     <xsl:choose>
-      <xsl:when test="unparsed-text-available($image.url)">    
+      <xsl:when test="exists(@dita-ot:image-height) or unparsed-text-available($image.url)">    
         <!-- Units are English metric units: 1 EMU = 1 div 914400 in = 1 div 360000 cm -->
         <xsl:variable name="width" as="xs:integer?">
           <xsl:if test="@dita-ot:image-width">
