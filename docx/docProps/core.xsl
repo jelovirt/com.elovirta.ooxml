@@ -42,28 +42,48 @@
       <cp:revision>1</cp:revision>
       <xsl:variable name="critdates" as="element()?"
         select="($bookmeta/*[contains(@class, ' topic/critdates ')])[1]"/>
-      <dcterms:created xsi:type="dcterms:W3CDTF">
-        <xsl:variable name="created" as="attribute()?"
-          select="$critdates/*[contains(@class, ' topic/created ')]/@date"/>
-        <xsl:choose>
-          <xsl:when test="exists($created)">
-            <xsl:value-of select="$created"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of
-              select="format-dateTime(current-dateTime(), '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01][Z]')"
-            />
-          </xsl:otherwise>
-        </xsl:choose>
-      </dcterms:created>
+      <xsl:variable name="created" as="attribute()?"
+        select="$critdates/*[contains(@class, ' topic/created ')]/@date"/>
+      <xsl:variable name="createdDateTime" as="xs:dateTime"
+        select="
+          ((if (exists($created)) then
+            x:parse-dateTime($created/string())
+          else
+            ()), current-dateTime())[1]
+          "/>
+      <xsl:if test="exists($createdDateTime)">
+        <dcterms:created xsi:type="dcterms:W3CDTF">
+          <xsl:value-of
+            select="format-dateTime($createdDateTime, '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01][Z]')"/>
+        </dcterms:created>
+      </xsl:if>
       <xsl:variable name="revised" as="attribute()*"
         select="$critdates/*[contains(@class, ' topic/revised ')]/@modified"/>
-      <xsl:if test="exists($revised)">
+      <xsl:variable name="revisedDateTime" as="xs:dateTime?"
+        select="
+          if (exists($revised)) then
+            x:parse-dateTime($revised[last()]/string())
+          else
+            ()"/>
+      <xsl:if test="exists($revisedDateTime)">
         <dcterms:modified xsi:type="dcterms:W3CDTF">
-          <xsl:value-of select="$revised[last()]"/>
+          <xsl:value-of
+            select="format-dateTime($revisedDateTime, '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01][Z]')"/>
         </dcterms:modified>
       </xsl:if>
     </cp:coreProperties>
   </xsl:template>
+
+  <xsl:function name="x:parse-dateTime" as="xs:dateTime?">
+    <xsl:param name="input" as="xs:string"/>
+    <xsl:sequence
+      select="
+        if (contains($input, 'T'))
+        then
+          xs:dateTime($input)
+        else
+          dateTime(xs:date($input), xs:time('00:00:00'))"
+    />
+  </xsl:function>
 
 </xsl:stylesheet>
