@@ -35,7 +35,7 @@
     </xsl:for-each>
   </xsl:variable>
   <xsl:variable name="external-link-lists" as="xs:string*">
-    <xsl:for-each select="$content//*[contains(@class, ' topic/xref ')][@scope = 'external']">
+    <xsl:for-each select="$content//*[contains(@class, ' topic/xref ') or contains(@class, ' topic/link ')][@scope = 'external']">
       <xsl:value-of select="generate-id(.)"/>
     </xsl:for-each>
   </xsl:variable>
@@ -86,7 +86,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="*[contains(@class, ' topic/xref ')][@scope = 'external']" mode="number">
+  <xsl:template match="*[contains(@class, ' topic/xref ') or contains(@class, ' topic/link ')][@scope = 'external']" mode="number">
     <xsl:param name="external-link-lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
       <xsl:attribute name="x:external-link-number" select="index-of($external-link-lists, generate-id(.)) + 100"/>
