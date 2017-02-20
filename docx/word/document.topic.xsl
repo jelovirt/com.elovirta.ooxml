@@ -47,7 +47,6 @@
     <w:ind w:left="0"/>
   </xsl:template-->
 
-  <xsl:variable name="template.body-section" select="$template/w:document/w:body/w:sectPr[last()]" as="element()*"/>
   <xsl:template match="w:pgNumType" mode="body-section">
     <xsl:param name="overrides" as="attribute()*" tunnel="yes"/>
     <xsl:copy>
@@ -75,11 +74,15 @@
   </xsl:template>
 
   <xsl:variable name="body-section" as="element()*">
-    <xsl:for-each select="$template.body-section">
-      <xsl:apply-templates select="." mode="body-section">
-        <xsl:with-param name="overrides" as="attribute()*" select="()" tunnel="yes"/>
-      </xsl:apply-templates>
-    </xsl:for-each>
+    <w:p>
+      <w:pPr>
+        <xsl:for-each select="$sectPr">
+          <xsl:apply-templates select="." mode="body-section">
+            <xsl:with-param name="overrides" as="attribute()*" select="()" tunnel="yes"/>
+          </xsl:apply-templates>
+        </xsl:for-each>
+      </w:pPr>
+    </w:p>
   </xsl:variable>
 
   <xsl:template match="*[contains(@class, ' topic/topic ')]" name="topic">

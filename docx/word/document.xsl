@@ -46,8 +46,8 @@
   <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
   <xsl:variable name="language" select="string((//@xml:lang)[1])" as="xs:string"/>
 
+  <xsl:variable name="sectPr" select="$template/w:document/w:body/w:sectPr[last()]" as="element()"/>
   <xsl:variable name="body-width" as="xs:integer">
-    <xsl:variable name="sectPr" select="$template/w:document/w:body/w:sectPr[last()]" as="element()"/>
     <xsl:sequence select="xs:integer($sectPr/w:pgSz/@w:w) - xs:integer($sectPr/w:pgMar/@w:left) - xs:integer($sectPr/w:pgMar/@w:right)"/>
   </xsl:variable>
 
