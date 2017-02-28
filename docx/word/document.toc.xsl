@@ -72,6 +72,8 @@
     <xsl:value-of>TOC \o "1-<xsl:value-of select="$tocMaximumLevel"/>" \w \* MERGEFORMAT</xsl:value-of> 
   </xsl:template>
   
+  <xsl:variable name="toc.increment-base" select="422" as="xs:integer"/>
+  
   <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="x:toc">
     <xsl:param name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])" as="xs:integer"/>
     <xsl:param name="prefix" as="node()*"/>
@@ -86,7 +88,7 @@
           <xsl:if test="@x:header-number">
             <!--xsl:variable name="tabs" as="xs:integer+" select="(373, 795, 1217, 1639, 1772, 2061, 2483, 2906, 3328)"/>
             <w:tab w:val="left" w:pos="{$tabs[$depth]}"/-->
-            <w:tab w:val="left" w:pos="{422 * $depth}"/>
+            <w:tab w:val="left" w:pos="{$toc.increment-base * $depth}"/>
           </xsl:if>
           <w:tab w:val="right" w:leader="dot" w:pos="{$body-width}"/>
         </w:tabs>
