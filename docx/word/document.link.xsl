@@ -168,7 +168,7 @@
 
   <xsl:template match="*[contains(@class, ' topic/xref ')]" name="topic.xref">
     <xsl:param name="contents" as="node()*">
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="node() except *[contains(@class, ' topic/desc ')]"/>
     </xsl:param>
     <xsl:variable name="target" as="element()?" select="x:get-target(.)"/>
 
@@ -416,7 +416,7 @@
 
   <xsl:template match="*[contains(@class, ' topic/xref ')][@scope = 'external']" priority="10">
     <xsl:param name="contents" as="node()*">
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="node() except *[contains(@class, ' topic/desc ')]"/>
     </xsl:param>
 
     <w:hyperlink r:id="rIdHyperlink{@x:external-link-number}">
@@ -475,8 +475,6 @@
 
   <xsl:template match="*[contains(@class, ' topic/xref ')][@scope = 'external']" mode="inline-style"
     priority="10">
-    <!--w:color w:val="0000FF" w:themeColor="hyperlink"/>
-    <w:u w:val="single"/-->
     <w:rStyle w:val="Hyperlink"/>
   </xsl:template>
 
