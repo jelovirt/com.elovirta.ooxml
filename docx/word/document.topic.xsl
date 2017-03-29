@@ -1040,4 +1040,10 @@
     </xsl:choose-->
   </xsl:template>
   
+  <xsl:template match="processing-instruction('br')">
+    <w:r>
+      <w:br/>
+    </w:r>
+  </xsl:template>
+  
 </xsl:stylesheet>
