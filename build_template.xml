@@ -197,7 +197,7 @@
       <dita-fileset format="image"/>
     </copy>
     <delete>
-      <fileset dir="${dita.temp.dir}/docx/word/media">
+      <fileset dir="${dita.temp.dir}/docx/word/media" erroronmissingdir="false">
         <include name="**/*.mml"/>
         <include name="**/*.svg"/>
       </fileset>
