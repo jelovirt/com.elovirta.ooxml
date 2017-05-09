@@ -171,18 +171,20 @@
 			or mo whose immediately preceding sibling either doesn't exist or is something other than a "normal" mi, mn, mo, 
 			ms, or mtext tag-->
 
-    
+
     <xsl:variable name="fShouldCollect" as="xs:boolean">
       <!-- If this mi/mo/mn/ms . . . is part the numerator or denominator of a linear fraction, then don't collect. -->
       <xsl:variable name="fLinearFracParent" as="xs:boolean" select="x:FLinearFrac(parent::*)"/>
       <!-- If this mi/mo/mn/ms . . . is part of the name of a function, then don't collect. -->
-      <xsl:variable name="fFunctionName" as="xs:boolean" select="x:FIsFunc(parent::*)"/>  
-      <xsl:sequence select="
-        (not($fLinearFracParent) and not($fFunctionName)) and
-        (parent::mml:mrow or parent::mml:mstyle or
-        parent::mml:msqrt or parent::mml:menclose or
-        parent::mml:math or parent::mml:mphantom or
-        parent::mml:mtd or parent::mml:maction)"/>
+      <xsl:variable name="fFunctionName" as="xs:boolean" select="x:FIsFunc(parent::*)"/>
+      <xsl:sequence
+        select="
+          (not($fLinearFracParent) and not($fFunctionName)) and
+          (parent::mml:mrow or parent::mml:mstyle or
+          parent::mml:msqrt or parent::mml:menclose or
+          parent::mml:math or parent::mml:mphantom or
+          parent::mml:mtd or parent::mml:maction)"
+      />
     </xsl:variable>
 
     <!--In MathML, the meaning of the different parts that make up mathematical structures, such as a fraction 
@@ -302,7 +304,8 @@
          mml:mtext, then if any of its following siblings are to be grouped, they must also be mml:text elements.  
          The inverse is also true, suppose the $ndTokenFirst isn't an mml:mtext, then if any of its following siblings 
          are to be grouped with $ndTokenFirst, they can't be mml:mtext elements-->
-    <xsl:variable name="fNdTokenFirstIsMText" as="xs:boolean" select="exists($ndTokenFirst/self::mml:mtext)"/>
+    <xsl:variable name="fNdTokenFirstIsMText" as="xs:boolean"
+      select="exists($ndTokenFirst/self::mml:mtext)"/>
 
     <!--In order to determine the length of the run, we will find the number of nodes before the inital node in the run and
 			the number of nodes before the first node that DOES NOT belong to the current run.  The number of nodes that will
@@ -980,14 +983,22 @@
                   </xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
-              <xsl:variable name="fTop" as="xs:boolean" select="contains($sLowerCaseNotation, 'top')"/>
-              <xsl:variable name="fBot" as="xs:boolean" select="contains($sLowerCaseNotation, 'bottom')"/>
-              <xsl:variable name="fLeft" as="xs:boolean" select="contains($sLowerCaseNotation, 'left')"/>
-              <xsl:variable name="fRight" as="xs:boolean" select="contains($sLowerCaseNotation, 'right')"/>
-              <xsl:variable name="fStrikeH" as="xs:boolean" select="contains($sLowerCaseNotation, 'horizontalstrike')"/>
-              <xsl:variable name="fStrikeV" as="xs:boolean" select="contains($sLowerCaseNotation, 'verticalstrike')"/>
-              <xsl:variable name="fStrikeBLTR" as="xs:boolean" select="contains($sLowerCaseNotation, 'updiagonalstrike')"/>
-              <xsl:variable name="fStrikeTLBR" as="xs:boolean" select="contains($sLowerCaseNotation, 'downdiagonalstrike')"/>
+              <xsl:variable name="fTop" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'top')"/>
+              <xsl:variable name="fBot" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'bottom')"/>
+              <xsl:variable name="fLeft" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'left')"/>
+              <xsl:variable name="fRight" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'right')"/>
+              <xsl:variable name="fStrikeH" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'horizontalstrike')"/>
+              <xsl:variable name="fStrikeV" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'verticalstrike')"/>
+              <xsl:variable name="fStrikeBLTR" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'updiagonalstrike')"/>
+              <xsl:variable name="fStrikeTLBR" as="xs:boolean"
+                select="contains($sLowerCaseNotation, 'downdiagonalstrike')"/>
 
               <!-- Should we create borderBoxPr? 
                    We should if the enclosure isn't Word's default, which is
@@ -1047,8 +1058,7 @@
   <!-- %%Template: CreateArgProp
 	-->
   <xsl:template name="CreateArgProp" as="element()?">
-    <xsl:if
-      test="not(count(ancestor-or-self::mml:mstyle[@scriptlevel = '0' or @scriptlevel = '1' or @scriptlevel = '2']) = 0)">
+    <xsl:if test="not(count(ancestor-or-self::mml:mstyle[@scriptlevel = ('0', '1', '2')]) = 0)">
       <m:argPr>
         <m:scrLvl>
           <xsl:attribute name="m:val"
@@ -1301,7 +1311,7 @@
       <!-- The script is accented and the second child is an mo -->
       <xsl:when test="
           $fAccent
-          and $ndCur/*[2] = mml:mo">
+          and $ndCur/*[2][self::mml:mo]">
         <xsl:variable name="sOperator" as="xs:string">
           <xsl:value-of select="$ndCur/*[2]"/>
         </xsl:variable>
@@ -2227,24 +2237,20 @@
 	
 			 Given strToRepeat, create a string that has strToRepeat repeated iRepitions times. 
 	-->
-  <xsl:template name="ConcatStringRepeat">
-    <xsl:param name="strToRepeat" select="''" as="xs:string"/>
-    <xsl:param name="iRepetitions" select="0" as="xs:integer"/>
-    <xsl:param name="strBuilding" select="''" as="xs:string"/>
+  <xsl:function name="x:ConcatStringRepeat" as="xs:string">
+    <xsl:param name="strToRepeat" as="xs:string"/>
+    <xsl:param name="iRepetitions" as="xs:integer"/>
+    <xsl:param name="strBuilding" as="xs:string"/>
 
     <xsl:choose>
-      <xsl:when test="$iRepetitions &lt;= 0">
+      <xsl:when test="$iRepetitions le 0">
         <xsl:value-of select="$strBuilding"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:call-template name="ConcatStringRepeat">
-          <xsl:with-param name="strToRepeat" select="$strToRepeat"/>
-          <xsl:with-param name="iRepetitions" select="$iRepetitions - 1"/>
-          <xsl:with-param name="strBuilding" select="concat($strBuilding, $strToRepeat)"/>
-        </xsl:call-template>
+        <xsl:sequence select="x:ConcatStringRepeat($strToRepeat, $iRepetitions - 1, concat($strBuilding, $strToRepeat))"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
   <!-- This template determines if ndCur is a special collection.
 			 By special collection, I mean is ndCur the outer element of some special grouping 
@@ -2282,7 +2288,8 @@
         <xsl:when test="self::mml:maligngroup or self::mml:malignmark">
           <!-- Omml has an implied spacing alignment at the beginning of each equation.
 					     Therefore, if this is the first ampersand to be output, don't actually output. -->
-          <xsl:variable name="fFirstAlignAlreadyFound" as="xs:boolean" select="x:FFirstAlignAlreadyFound(.)"/>
+          <xsl:variable name="fFirstAlignAlreadyFound" as="xs:boolean"
+            select="x:FFirstAlignAlreadyFound(.)"/>
           <!-- Don't output unless it is an malignmark or we have already previously found an alignment point. -->
           <xsl:if test="self::mml:malignmark or $fFirstAlignAlreadyFound">
             <m:r>
@@ -2302,17 +2309,13 @@
         <!-- If this mathml structure has alignment groups or marks as children, then extract those since
 				     omml can't handle that. -->
         <xsl:when test="descendant::mml:maligngroup or descendant::mml:malignmark">
-          <xsl:variable name="cMalignGroups" as="xs:integer" select="count(descendant::mml:maligngroup)"/>
-          <xsl:variable name="cMalignMarks" as="xs:integer" select="count(descendant::mml:malignmark)"/>
+          <xsl:variable name="cMalignGroups" as="xs:integer"
+            select="count(descendant::mml:maligngroup)"/>
+          <xsl:variable name="cMalignMarks" as="xs:integer"
+            select="count(descendant::mml:malignmark)"/>
           <!-- Output all maligngroups and malignmarks as '&' -->
           <xsl:if test="$cMalignGroups + $cMalignMarks gt 0">
-            <xsl:variable name="str" as="xs:string">
-              <xsl:call-template name="ConcatStringRepeat">
-                <xsl:with-param name="strToRepeat" select="'&amp;'"/>
-                <xsl:with-param name="iRepetitions" select="$cMalignGroups + $cMalignMarks"/>
-                <xsl:with-param name="strBuilding" select="''"/>
-              </xsl:call-template>
-            </xsl:variable>
+            <xsl:variable name="str" as="xs:string" select="x:ConcatStringRepeat('&amp;', $cMalignGroups + $cMalignMarks, '')"/>
             <m:r>
               <m:t>
                 <xsl:call-template name="OutputText">
@@ -2828,10 +2831,9 @@
   <xsl:function name="x:isNary" as="xs:boolean">
     <!-- ndCur is the element around the nAry operator -->
     <xsl:param name="ndCur" as="element()?"/>
+    
     <xsl:variable name="sNdCur" as="xs:string" select="normalize-space($ndCur)"/>
-
     <xsl:variable name="fNaryOper" as="xs:boolean" select="x:isNaryOper($sNdCur)"/>
-
     <!-- Narys shouldn't be MathML accents.  -->
     <xsl:variable name="fUnder" as="xs:boolean" select="exists($ndCur/parent::*[self::mml:munder])"/>
 
@@ -2861,7 +2863,7 @@
         not($fAccent) and
         $ndCur/descendant-or-self::*[last()]/self::mml:mo and
         empty($ndCur/descendant-or-self::*[empty(self::mml:mo | self::mml:mstyle | self::mml:mrow)])"
-    > </xsl:sequence>
+    />
   </xsl:function>
 
   <xsl:template name="CreateNaryProp">
@@ -2922,4 +2924,5 @@
       </m:supHide>
     </m:naryPr>
   </xsl:template>
+
 </xsl:stylesheet>
