@@ -93,7 +93,7 @@
 			 or 
 			 the directory preceding element is not a non-glyph token.
 	-->
-  <xsl:function name="x:FStartOfRun" as="xs:boolean">
+  <xsl:function name="x:isStartOfRun" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
     <xsl:variable name="fPrecSibNonGlyphToken" as="xs:boolean"
       select="x:FNonGlyphToken($ndCur/preceding-sibling::*[1])"/>
@@ -149,6 +149,7 @@
       </xsl:choose>
     </xsl:if>
   </xsl:template>
+
   <xsl:template
     match="
       mml:mi[not(mml:mglyph)] |
@@ -161,7 +162,7 @@
 			 in a different manner than "normal" token elements.  
 			 Where normal token elements are token elements that
 			 contain only text -->
-    <xsl:variable name="fStartOfRun" as="xs:boolean" select="x:FStartOfRun(.)"/>
+    <xsl:variable name="fStartOfRun" as="xs:boolean" select="x:isStartOfRun(.)"/>
 
     <!--In MathML, successive characters that are all part of one string are sometimes listed as separate 
 			tags based on their type (identifier (mi), name (mn), operator (mo), quoted (ms), literal text (mtext)), 
@@ -170,16 +171,19 @@
 			or mo whose immediately preceding sibling either doesn't exist or is something other than a "normal" mi, mn, mo, 
 			ms, or mtext tag-->
 
-    <!-- If this mi/mo/mn/ms . . . is part the numerator or denominator of a linear fraction, then don't collect. -->
-    <xsl:variable name="fLinearFracParent" as="xs:boolean" select="x:FLinearFrac(parent::*)"/>
-    <!-- If this mi/mo/mn/ms . . . is part of the name of a function, then don't collect. -->
-    <xsl:variable name="fFunctionName" as="xs:boolean" select="x:FIsFunc(parent::*)"/>
-    <xsl:variable name="fShouldCollect" as="xs:boolean"
-      select="
-        (not($fLinearFracParent) and not($fFunctionName)) and (parent::mml:mrow or parent::mml:mstyle or
+    
+    <xsl:variable name="fShouldCollect" as="xs:boolean">
+      <!-- If this mi/mo/mn/ms . . . is part the numerator or denominator of a linear fraction, then don't collect. -->
+      <xsl:variable name="fLinearFracParent" as="xs:boolean" select="x:FLinearFrac(parent::*)"/>
+      <!-- If this mi/mo/mn/ms . . . is part of the name of a function, then don't collect. -->
+      <xsl:variable name="fFunctionName" as="xs:boolean" select="x:FIsFunc(parent::*)"/>  
+      <xsl:sequence select="
+        (not($fLinearFracParent) and not($fFunctionName)) and
+        (parent::mml:mrow or parent::mml:mstyle or
         parent::mml:msqrt or parent::mml:menclose or
         parent::mml:math or parent::mml:mphantom or
         parent::mml:mtd or parent::mml:maction)"/>
+    </xsl:variable>
 
     <!--In MathML, the meaning of the different parts that make up mathematical structures, such as a fraction 
 			having a numerator and a denominator, is determined by the relative order of those different parts.  
@@ -298,9 +302,7 @@
          mml:mtext, then if any of its following siblings are to be grouped, they must also be mml:text elements.  
          The inverse is also true, suppose the $ndTokenFirst isn't an mml:mtext, then if any of its following siblings 
          are to be grouped with $ndTokenFirst, they can't be mml:mtext elements-->
-    <xsl:variable name="fNdTokenFirstIsMText" as="xs:boolean">
-      <xsl:sequence select="exists($ndTokenFirst/self::mml:mtext)"/>
-    </xsl:variable>
+    <xsl:variable name="fNdTokenFirstIsMText" as="xs:boolean" select="exists($ndTokenFirst/self::mml:mtext)"/>
 
     <!--In order to determine the length of the run, we will find the number of nodes before the inital node in the run and
 			the number of nodes before the first node that DOES NOT belong to the current run.  The number of nodes that will
@@ -382,7 +384,7 @@
         or (empty(@mathvariant)
         and (
         ((@fontstyle = 'normal') and (not(@fontweight = 'bold')))
-        or (self::mml:mi and string-length(normalize-space(.)) &gt; 1)
+        or (self::mml:mi and string-length(normalize-space(.)) gt 1)
         or (self::mml:mn and string(number(self::mml:mn/text())) = 'NaN')
         )
         )
@@ -461,7 +463,7 @@
         and empty(@mathvariant)
         and empty(@fontstyle)
         and empty(@fontweight)
-        and (string-length(normalize-space(.)) &gt; 1)
+        and (string-length(normalize-space(.)) gt 1)
         )
         or ((self::mml:ms or self::mml:mtext)
         and empty(@mathvariant)
@@ -564,8 +566,7 @@
             <xsl:call-template name="OutputText">
               <xsl:with-param name="sInput">
                 <xsl:choose>
-                  <xsl:when
-                    test="$ndTokenFirst/self::mml:ms">
+                  <xsl:when test="$ndTokenFirst/self::mml:ms">
                     <xsl:call-template name="OutputMs">
                       <xsl:with-param name="msCur" select="$ndTokenFirst"/>
                     </xsl:call-template>
@@ -979,30 +980,14 @@
                   </xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
-              <xsl:variable name="fTop" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'top')"/>
-              </xsl:variable>
-              <xsl:variable name="fBot" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'bottom')"/>
-              </xsl:variable>
-              <xsl:variable name="fLeft" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'left')"/>
-              </xsl:variable>
-              <xsl:variable name="fRight" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'right')"/>
-              </xsl:variable>
-              <xsl:variable name="fStrikeH" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'horizontalstrike')"/>
-              </xsl:variable>
-              <xsl:variable name="fStrikeV" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'verticalstrike')"/>
-              </xsl:variable>
-              <xsl:variable name="fStrikeBLTR" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'updiagonalstrike')"/>
-              </xsl:variable>
-              <xsl:variable name="fStrikeTLBR" as="xs:boolean">
-                <xsl:sequence select="contains($sLowerCaseNotation, 'downdiagonalstrike')"/>
-              </xsl:variable>
+              <xsl:variable name="fTop" as="xs:boolean" select="contains($sLowerCaseNotation, 'top')"/>
+              <xsl:variable name="fBot" as="xs:boolean" select="contains($sLowerCaseNotation, 'bottom')"/>
+              <xsl:variable name="fLeft" as="xs:boolean" select="contains($sLowerCaseNotation, 'left')"/>
+              <xsl:variable name="fRight" as="xs:boolean" select="contains($sLowerCaseNotation, 'right')"/>
+              <xsl:variable name="fStrikeH" as="xs:boolean" select="contains($sLowerCaseNotation, 'horizontalstrike')"/>
+              <xsl:variable name="fStrikeV" as="xs:boolean" select="contains($sLowerCaseNotation, 'verticalstrike')"/>
+              <xsl:variable name="fStrikeBLTR" as="xs:boolean" select="contains($sLowerCaseNotation, 'updiagonalstrike')"/>
+              <xsl:variable name="fStrikeTLBR" as="xs:boolean" select="contains($sLowerCaseNotation, 'downdiagonalstrike')"/>
 
               <!-- Should we create borderBoxPr? 
                    We should if the enclosure isn't Word's default, which is
@@ -1308,8 +1293,8 @@
           1)  its accent attribute is true
           2)  its second child is an mml:mo
           3)  there is only zero or one character in the mml:mo -->
-  <xsl:template name="FIsAcc" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
+  <xsl:function name="x:FIsAcc" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
 
     <xsl:variable name="fAccent" as="xs:boolean" select="lower-case($ndCur/@accent) = 'true'"/>
     <xsl:choose>
@@ -1338,7 +1323,7 @@
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
 
   <!-- Is ndCur a groupChr? 
@@ -1353,11 +1338,9 @@
 			 
 			 If all of the above are true, then return 1, else return 0.
 	-->
-  <xsl:template name="FIsGroupChr" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
-    <xsl:variable name="fUnder" as="xs:boolean">
-      <xsl:sequence select="$ndCur[self::mml:munder]"/>
-    </xsl:variable>
+  <xsl:function name="x:FIsGroupChr" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
+    <xsl:variable name="fUnder" as="xs:boolean" select="exists($ndCur/self::mml:munder)"/>
     <xsl:variable name="sLowerCaseAccent" as="xs:string">
       <xsl:choose>
         <xsl:when test="$fUnder">
@@ -1369,9 +1352,7 @@
       </xsl:choose>
     </xsl:variable>
 
-    <xsl:variable name="fAccentFalse" as="xs:boolean">
-      <xsl:sequence select="$sLowerCaseAccent = 'false'"/>
-    </xsl:variable>
+    <xsl:variable name="fAccentFalse" as="xs:boolean" select="$sLowerCaseAccent = 'false'"/>
 
     <xsl:choose>
       <xsl:when
@@ -1391,7 +1372,7 @@
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
 
   <!-- %%Template: match munder
@@ -1439,11 +1420,7 @@
           </xsl:when>
           <xsl:otherwise>
             <!-- It isn't an integral or underbar, is this a groupChr? -->
-            <xsl:variable name="fGroupChr" as="xs:boolean">
-              <xsl:call-template name="FIsGroupChr">
-                <xsl:with-param name="ndCur" select="."/>
-              </xsl:call-template>
-            </xsl:variable>
+            <xsl:variable name="fGroupChr" as="xs:boolean" select="x:FIsGroupChr(.)"/>
             <xsl:choose>
               <xsl:when test="$fGroupChr">
                 <m:groupChr>
@@ -1546,11 +1523,7 @@
           </xsl:when>
           <xsl:otherwise>
             <!-- Not an m:bar, should it be an m:acc? -->
-            <xsl:variable name="fIsAcc" as="xs:boolean">
-              <xsl:call-template name="FIsAcc">
-                <xsl:with-param name="ndCur" select="."/>
-              </xsl:call-template>
-            </xsl:variable>
+            <xsl:variable name="fIsAcc" as="xs:boolean" select="x:FIsAcc(.)"/>
             <xsl:choose>
               <xsl:when test="$fIsAcc">
                 <m:acc>
@@ -1566,11 +1539,7 @@
               <xsl:otherwise>
                 <!-- This isn't an integral, overbar or accent, 
 								     could it be a groupChr? -->
-                <xsl:variable name="fGroupChr" as="xs:boolean">
-                  <xsl:call-template name="FIsGroupChr">
-                    <xsl:with-param name="ndCur" select="."/>
-                  </xsl:call-template>
-                </xsl:variable>
+                <xsl:variable name="fGroupChr" as="xs:boolean" select="x:FIsGroupChr(.)"/>
                 <xsl:choose>
                   <xsl:when test="$fGroupChr">
                     <m:groupChr>
@@ -2053,7 +2022,7 @@
 					  branch. -->
         <xsl:choose>
           <!-- We have both sub and super scripts-->
-          <xsl:when test="$cndSuperScript &gt; 0 and $cndSubScript &gt; 0">
+          <xsl:when test="$cndSuperScript gt 0 and $cndSubScript gt 0">
             <m:sSubSup>
               <m:e>
                 <xsl:call-template name="CreateArgProp"/>
@@ -2062,12 +2031,12 @@
 
               <!-- Every child except the first is a script.  Do the split -->
               <xsl:call-template name="SplitScripts">
-                <xsl:with-param name="ndScripts" select="*[position() &gt; 1]"/>
+                <xsl:with-param name="ndScripts" select="*[position() gt 1]"/>
               </xsl:call-template>
             </m:sSubSup>
           </xsl:when>
           <!-- Just a sub script -->
-          <xsl:when test="$cndSubScript &gt; 0">
+          <xsl:when test="$cndSubScript gt 0">
             <m:sSub>
               <m:e>
                 <xsl:call-template name="CreateArgProp"/>
@@ -2076,7 +2045,7 @@
 
               <!-- No prescripts and no super scripts, therefore, it's a sub. -->
               <m:sub>
-                <xsl:apply-templates select="*[position() &gt; 1]"/>
+                <xsl:apply-templates select="*[position() gt 1]"/>
               </m:sub>
             </m:sSub>
           </xsl:when>
@@ -2090,7 +2059,7 @@
 
               <!-- No prescripts and no sub scripts, therefore, it's a sup. -->
               <m:sup>
-                <xsl:apply-templates select="*[position() &gt; 1]"/>
+                <xsl:apply-templates select="*[position() gt 1]"/>
               </m:sup>
             </m:sSup>
           </xsl:otherwise>
@@ -2126,7 +2095,7 @@
           <m:e>
             <xsl:choose>
               <!-- We have both sub and super scripts-->
-              <xsl:when test="$cndSuperScript &gt; 0 and $cndSubScript &gt; 0">
+              <xsl:when test="$cndSuperScript gt 0 and $cndSubScript gt 0">
                 <m:sSubSup>
                   <m:e>
                     <xsl:call-template name="CreateArgProp"/>
@@ -2137,12 +2106,12 @@
 								 positions will be 2, 3, ... ($nndScript + 1) -->
                   <xsl:call-template name="SplitScripts">
                     <xsl:with-param name="ndScripts"
-                      select="*[(position() &gt; 1) and (position() &lt;= ($cndScript + 1))]"/>
+                      select="*[(position() gt 1) and (position() &lt;= ($cndScript + 1))]"/>
                   </xsl:call-template>
                 </m:sSubSup>
               </xsl:when>
               <!-- Just a sub script -->
-              <xsl:when test="$cndSubScript &gt; 0">
+              <xsl:when test="$cndSubScript gt 0">
                 <m:sSub>
                   <m:e>
                     <xsl:call-template name="CreateArgProp"/>
@@ -2153,7 +2122,7 @@
 									and apply templates to all tokens counted by cndScript. -->
                   <m:sub>
                     <xsl:apply-templates
-                      select="*[position() &gt; 1 and (position() &lt;= ($cndScript + 1))]"/>
+                      select="*[position() gt 1 and (position() &lt;= ($cndScript + 1))]"/>
                   </m:sub>
                 </m:sSub>
               </xsl:when>
@@ -2169,7 +2138,7 @@
 									and apply templates to all tokens counted by cndScript. -->
                   <m:sup>
                     <xsl:apply-templates
-                      select="*[position() &gt; 1 and (position() &lt;= ($cndScript + 1))]"/>
+                      select="*[position() gt 1 and (position() &lt;= ($cndScript + 1))]"/>
                   </m:sup>
                 </m:sSup>
               </xsl:otherwise>
@@ -2198,8 +2167,8 @@
 			 6.  There are no labeled rows.
 			 
 	-->
-  <xsl:template name="FIsEqArray" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
+  <xsl:function name="x:FIsEqArray" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
 
     <!-- There should be no frame, columnlines, or rowlines -->
     <xsl:sequence
@@ -2207,11 +2176,11 @@
         (not($ndCur/@frame) or $ndCur/@frame = '' or $ndCur/@frame = 'none')
         and (not($ndCur/@columnlines) or $ndCur/@columnlines = '' or $ndCur/@columnlines = 'none')
         and (not($ndCur/@rowlines) or $ndCur/@rowlines = '' or $ndCur/@rowlines = 'none')
-        and not($ndCur/mml:mtr[count(mml:mtd) &gt; 1])
-        and not($ndCur/mml:mtr[count(mml:mtd) &lt; 1])
+        and not($ndCur/mml:mtr[count(mml:mtd) gt 1])
+        and not($ndCur/mml:mtr[count(mml:mtd) lt 1])
         and not($ndCur/mml:mlabeledtr)"
     />
-  </xsl:template>
+  </xsl:function>
 
   <!-- Template used to determine if we should ignore a collection when iterating through 
 	     a mathml equation array row.
@@ -2235,26 +2204,24 @@
 			 if they have a descendant that is an maligngroup or malignmark.  We look for the malignmark 
 			 to find the implicit maligngroup.
 	-->
-  <xsl:template name="FFirstAlignAlreadyFound" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
+  <xsl:function name="x:FFirstAlignAlreadyFound" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
 
     <xsl:choose>
       <xsl:when
         test="
           count($ndCur/preceding-sibling::*[descendant-or-self::mml:maligngroup
-          or descendant-or-self::mml:malignmark]) &gt; 0">
+          or descendant-or-self::mml:malignmark]) gt 0">
         <xsl:sequence select="true()"/>
       </xsl:when>
       <xsl:when test="not($ndCur/parent::mml:mtd)">
-        <xsl:call-template name="FFirstAlignAlreadyFound">
-          <xsl:with-param name="ndCur" select="$ndCur/parent::*"/>
-        </xsl:call-template>
+        <xsl:sequence select="x:FFirstAlignAlreadyFound($ndCur/parent::*)"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
   <!-- This template builds a string that is result of concatenating a given string several times. 
 	
@@ -2285,8 +2252,8 @@
 			 
 			 For instance, is ndCur a linear fraction, or an omml function.
 	-->
-  <xsl:template name="FSpecialCollection" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
+  <xsl:function name="x:FSpecialCollection" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
     <xsl:choose>
       <xsl:when test="$ndCur/self::mml:mrow">
         <xsl:variable name="fLinearFraction" as="xs:boolean" select="x:FLinearFrac($ndCur)"/>
@@ -2297,7 +2264,7 @@
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
   <!-- This template iterates through the children of an equation array row (mtr) and outputs
 	     the equation.
@@ -2308,22 +2275,14 @@
     <xsl:param name="ndCur" select="." as="element()?"/>
 
     <xsl:for-each select="$ndCur/*">
-      <xsl:variable name="fSpecialCollection" as="xs:boolean">
-        <xsl:call-template name="FSpecialCollection">
-          <xsl:with-param name="ndCur" select="."/>
-        </xsl:call-template>
-      </xsl:variable>
+      <xsl:variable name="fSpecialCollection" as="xs:boolean" select="x:FSpecialCollection(.)"/>
       <xsl:variable name="fIgnoreCollection" as="xs:boolean" select="x:FIgnoreCollection(.)"/>
       <xsl:choose>
         <!-- If we have an alignment element output the ampersand. -->
         <xsl:when test="self::mml:maligngroup or self::mml:malignmark">
           <!-- Omml has an implied spacing alignment at the beginning of each equation.
 					     Therefore, if this is the first ampersand to be output, don't actually output. -->
-          <xsl:variable name="fFirstAlignAlreadyFound" as="xs:boolean">
-            <xsl:call-template name="FFirstAlignAlreadyFound">
-              <xsl:with-param name="ndCur" select="."/>
-            </xsl:call-template>
-          </xsl:variable>
+          <xsl:variable name="fFirstAlignAlreadyFound" as="xs:boolean" select="x:FFirstAlignAlreadyFound(.)"/>
           <!-- Don't output unless it is an malignmark or we have already previously found an alignment point. -->
           <xsl:if test="self::mml:malignmark or $fFirstAlignAlreadyFound">
             <m:r>
@@ -2343,14 +2302,10 @@
         <!-- If this mathml structure has alignment groups or marks as children, then extract those since
 				     omml can't handle that. -->
         <xsl:when test="descendant::mml:maligngroup or descendant::mml:malignmark">
-          <xsl:variable name="cMalignGroups" as="xs:integer">
-            <xsl:value-of select="count(descendant::mml:maligngroup)"/>
-          </xsl:variable>
-          <xsl:variable name="cMalignMarks" as="xs:integer">
-            <xsl:value-of select="count(descendant::mml:malignmark)"/>
-          </xsl:variable>
+          <xsl:variable name="cMalignGroups" as="xs:integer" select="count(descendant::mml:maligngroup)"/>
+          <xsl:variable name="cMalignMarks" as="xs:integer" select="count(descendant::mml:malignmark)"/>
           <!-- Output all maligngroups and malignmarks as '&' -->
-          <xsl:if test="$cMalignGroups + $cMalignMarks &gt; 0">
+          <xsl:if test="$cMalignGroups + $cMalignMarks gt 0">
             <xsl:variable name="str" as="xs:string">
               <xsl:call-template name="ConcatStringRepeat">
                 <xsl:with-param name="strToRepeat" select="'&amp;'"/>
@@ -2399,11 +2354,7 @@
 	
 	-->
   <xsl:template match="mml:mtable">
-    <xsl:variable name="fEqArray" as="xs:boolean">
-      <xsl:call-template name="FIsEqArray">
-        <xsl:with-param name="ndCur" select="."/>
-      </xsl:call-template>
-    </xsl:variable>
+    <xsl:variable name="fEqArray" as="xs:boolean" select="x:FIsEqArray(.)"/>
     <xsl:choose>
       <xsl:when test="$fEqArray">
         <m:eqArr>
@@ -2447,7 +2398,7 @@
                       </xsl:call-template>
                     </xsl:when>
                     <xsl:otherwise>
-                      <xsl:for-each select="*[position() &gt; 1]">
+                      <xsl:for-each select="*[position() gt 1]">
                         <m:e>
                           <xsl:apply-templates select="."/>
                         </m:e>
@@ -2475,11 +2426,11 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="m:mtd">
     <xsl:apply-templates select="*"/>
   </xsl:template>
-  
+
   <xsl:template name="CreateEmptyElmt" as="element()*">
     <xsl:param name="cEmptyMtd" as="xs:integer"/>
     <xsl:if test="$cEmptyMtd gt 0">
@@ -2489,7 +2440,7 @@
       </xsl:call-template>
     </xsl:if>
   </xsl:template>
-  
+
   <xsl:function name="x:CountMaxElmtsInRow" as="xs:integer">
     <xsl:param name="ndCur" as="element()?"/>
     <xsl:param name="cMaxElmtsInRow" as="xs:integer"/>
@@ -2532,7 +2483,8 @@
             </xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
-        <xsl:sequence select="x:CountMaxElmtsInRow($ndCur/following-sibling::*[1], $maxElmtsInRow)"/>
+        <xsl:sequence select="x:CountMaxElmtsInRow($ndCur/following-sibling::*[1], $maxElmtsInRow)"
+        />
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
@@ -2603,9 +2555,7 @@
       </m:r>
     </xsl:if>
     <xsl:for-each select="mml:mglyph | text()">
-      <xsl:variable name="fForceNor" as="xs:boolean">
-        <xsl:sequence select="self::mml:mglyph"/>
-      </xsl:variable>
+      <xsl:variable name="fForceNor" as="xs:boolean" select="self::mml:mglyph"/>
       <xsl:variable name="str" as="xs:string">
         <xsl:choose>
           <xsl:when test="self::mml:mglyph">
@@ -2618,7 +2568,7 @@
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      <xsl:if test="string-length($str) &gt; 0">
+      <xsl:if test="string-length($str) gt 0">
         <m:r>
           <xsl:call-template name="CreateRunProp">
             <xsl:with-param name="mathvariant" select="$mathvariant"/>
