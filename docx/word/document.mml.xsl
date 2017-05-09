@@ -128,11 +128,7 @@
   <xsl:template match="mml:mrow | mml:mstyle">
     <xsl:variable name="fNaryArgument" as="xs:boolean" select="x:FIsNaryArgument(.)"/>
     <xsl:if test="not($fNaryArgument)">
-      <xsl:variable name="fLinearFrac" as="xs:boolean">
-        <xsl:call-template name="FLinearFrac">
-          <xsl:with-param name="ndCur" select="."/>
-        </xsl:call-template>
-      </xsl:variable>
+      <xsl:variable name="fLinearFrac" as="xs:boolean" select="x:FLinearFrac(.)"/>
       <xsl:choose>
         <xsl:when test="$fLinearFrac">
           <xsl:call-template name="MakeLinearFraction">
@@ -140,16 +136,10 @@
           </xsl:call-template>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:variable name="fFunc" as="xs:boolean">
-            <xsl:call-template name="FIsFunc">
-              <xsl:with-param name="ndCur" select="."/>
-            </xsl:call-template>
-          </xsl:variable>
+          <xsl:variable name="fFunc" as="xs:boolean" select="x:FIsFunc(.)"/>
           <xsl:choose>
             <xsl:when test="$fFunc">
-              <xsl:call-template name="WriteFunc">
-                <xsl:with-param name="ndCur" select="."/>
-              </xsl:call-template>
+              <xsl:call-template name="WriteFunc"/>
             </xsl:when>
             <xsl:otherwise>
               <xsl:apply-templates select="*"/>
@@ -181,17 +171,9 @@
 			ms, or mtext tag-->
 
     <!-- If this mi/mo/mn/ms . . . is part the numerator or denominator of a linear fraction, then don't collect. -->
-    <xsl:variable name="fLinearFracParent" as="xs:boolean">
-      <xsl:call-template name="FLinearFrac">
-        <xsl:with-param name="ndCur" select="parent::*"/>
-      </xsl:call-template>
-    </xsl:variable>
+    <xsl:variable name="fLinearFracParent" as="xs:boolean" select="x:FLinearFrac(parent::*)"/>
     <!-- If this mi/mo/mn/ms . . . is part of the name of a function, then don't collect. -->
-    <xsl:variable name="fFunctionName" as="xs:boolean">
-      <xsl:call-template name="FIsFunc">
-        <xsl:with-param name="ndCur" select="parent::*"/>
-      </xsl:call-template>
-    </xsl:variable>
+    <xsl:variable name="fFunctionName" as="xs:boolean" select="x:FIsFunc(parent::*)"/>
     <xsl:variable name="fShouldCollect" as="xs:boolean"
       select="
         (not($fLinearFracParent) and not($fFunctionName)) and (parent::mml:mrow or parent::mml:mstyle or
@@ -239,11 +221,7 @@
             <xsl:with-param name="color" select="@color"/>
             <xsl:with-param name="fontsize" select="@fontsize"/>
             <xsl:with-param name="ndCur" select="."/>
-            <xsl:with-param name="fNor">
-              <xsl:call-template name="FNor">
-                <xsl:with-param name="ndCur" select="."/>
-              </xsl:call-template>
-            </xsl:with-param>
+            <xsl:with-param name="fNor" select="x:FNor(.)"/>
           </xsl:call-template>
           <m:t>
             <xsl:call-template name="OutputText">
@@ -527,18 +505,13 @@
             <xsl:with-param name="color" select="$color"/>
             <xsl:with-param name="fontsize" select="$fontsize"/>
             <xsl:with-param name="ndCur" select="$ndTokenFirst"/>
-            <xsl:with-param name="fNor">
-              <xsl:call-template name="FNor">
-                <xsl:with-param name="ndCur" select="$ndTokenFirst"/>
-              </xsl:call-template>
-            </xsl:with-param>
+            <xsl:with-param name="fNor" select="x:FNor($ndTokenFirst)"/>
           </xsl:call-template>
           <m:t>
             <xsl:call-template name="OutputText">
               <xsl:with-param name="sInput">
                 <xsl:choose>
-                  <xsl:when
-                    test="namespace-uri($ndTokenFirst) = 'http://www.w3.org/1998/Math/MathML' and local-name($ndTokenFirst) = 'ms'">
+                  <xsl:when test="$ndTokenFirst/self::mml:ms">
                     <xsl:call-template name="OutputMs">
                       <xsl:with-param name="msCur" select="$ndTokenFirst"/>
                     </xsl:call-template>
@@ -547,12 +520,9 @@
                     <xsl:value-of select="normalize-space($ndTokenFirst)"/>
                   </xsl:otherwise>
                 </xsl:choose>
-                <xsl:for-each select="$ndTokenFirst/following-sibling::*[position() &lt; $cndRun]">
+                <xsl:for-each select="$ndTokenFirst/following-sibling::*[position() lt $cndRun]">
                   <xsl:choose>
-                    <xsl:when
-                      test="
-                        namespace-uri(.) = 'http://www.w3.org/1998/Math/MathML' and
-                        local-name(.) = 'ms'">
+                    <xsl:when test="self::mml:ms">
                       <xsl:call-template name="OutputMs">
                         <xsl:with-param name="msCur" select="."/>
                       </xsl:call-template>
@@ -583,11 +553,7 @@
             <xsl:with-param name="color" select="$color"/>
             <xsl:with-param name="fontsize" select="$fontsize"/>
             <xsl:with-param name="ndCur" select="$ndTokenFirst"/>
-            <xsl:with-param name="fNor">
-              <xsl:call-template name="FNor">
-                <xsl:with-param name="ndCur" select="$ndTokenFirst"/>
-              </xsl:call-template>
-            </xsl:with-param>
+            <xsl:with-param name="fNor" select="x:FNor($ndTokenFirst)"/>
           </xsl:call-template>
           <m:t>
 
@@ -599,9 +565,7 @@
               <xsl:with-param name="sInput">
                 <xsl:choose>
                   <xsl:when
-                    test="
-                      namespace-uri($ndTokenFirst) = 'http://www.w3.org/1998/Math/MathML' and
-                      local-name($ndTokenFirst) = 'ms'">
+                    test="$ndTokenFirst/self::mml:ms">
                     <xsl:call-template name="OutputMs">
                       <xsl:with-param name="msCur" select="$ndTokenFirst"/>
                     </xsl:call-template>
@@ -613,10 +577,7 @@
                 <xsl:for-each
                   select="$ndTokenFirst/following-sibling::*[self::mml:mi or self::mml:mn or self::mml:mo or self::mml:ms or self::mml:mtext]">
                   <xsl:choose>
-                    <xsl:when
-                      test="
-                        namespace-uri(.) = 'http://www.w3.org/1998/Math/MathML' and
-                        local-name(.) = 'ms'">
+                    <xsl:when test="self::mml:ms">
                       <xsl:call-template name="OutputMs">
                         <xsl:with-param name="msCur" select="."/>
                       </xsl:call-template>
@@ -670,8 +631,8 @@
   <!-- %%Template: FNor
 				 Given the context of ndCur, determine if ndCur should be omml's normal style.
 	-->
-  <xsl:template name="FNor" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
+  <xsl:function name="x:FNor" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()"/>
     <!-- Is the current node an mml:mtext, or if this is an mglyph whose parent is 
            an mml:mtext. -->
     <!-- Override mi formatting to disable Word auto-formatting -->
@@ -681,7 +642,7 @@
         ($ndCur/self::mml:mglyph/parent::mml:mtext) or
         $ndCur/self::mml:mi"
     />
-  </xsl:template>
+  </xsl:function>
 
 
   <!-- %%Template: CreateRunProp
@@ -967,14 +928,14 @@
     </m:f>
   </xsl:template>
 
-  <!-- %%Template: match menclose msqrt
-	-->
   <xsl:template match="mml:menclose | mml:msqrt">
-    <xsl:variable name="sLowerCaseNotation" as="xs:string?">
-      <xsl:if test="@notation">
-        <xsl:value-of select="lower-case(@notation)"/>
-      </xsl:if>
-    </xsl:variable>
+    <xsl:variable name="sLowerCaseNotation" as="xs:string?"
+      select="
+        if (@notation) then
+          lower-case(@notation)
+        else
+          ()"/>
+
     <xsl:choose>
       <!-- Take care of default -->
       <xsl:when
@@ -1100,7 +1061,7 @@
 
   <!-- %%Template: CreateArgProp
 	-->
-  <xsl:template name="CreateArgProp">
+  <xsl:template name="CreateArgProp" as="element()?">
     <xsl:if
       test="not(count(ancestor-or-self::mml:mstyle[@scriptlevel = '0' or @scriptlevel = '1' or @scriptlevel = '2']) = 0)">
       <m:argPr>
@@ -1112,8 +1073,6 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- %%Template: match mroot
-	-->
   <xsl:template match="mml:mroot">
     <m:rad>
       <m:radPr>
@@ -1150,11 +1109,9 @@
           4.  The second child's text is '/'
        
        -->
-  <xsl:template name="FLinearFrac" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
-    <xsl:variable name="sNdText" as="xs:string">
-      <xsl:value-of select="normalize-space($ndCur/*[2])"/>
-    </xsl:variable>
+  <xsl:function name="x:FLinearFrac" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
+    <xsl:variable name="sNdText" as="xs:string" select="normalize-space($ndCur/*[2])"/>
 
     <xsl:choose>
       <!-- I spy a linear fraction -->
@@ -1170,7 +1127,7 @@
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
 
   <!-- Though presentation mathml can certainly typeset any generic function with the
@@ -1197,11 +1154,9 @@
 					5.  The third child is an <mml:mrow>
 					6.  The second child's text is '&#x02061;'
        -->
-  <xsl:template name="FIsFunc" as="xs:boolean">
-    <xsl:param name="ndCur" select="." as="element()?"/>
-    <xsl:variable name="sNdText" as="xs:string">
-      <xsl:value-of select="normalize-space($ndCur/*[2])"/>
-    </xsl:variable>
+  <xsl:function name="x:FIsFunc" as="xs:boolean">
+    <xsl:param name="ndCur" as="element()?"/>
+    <xsl:variable name="sNdText" as="xs:string" select="normalize-space($ndCur/*[2])"/>
 
     <xsl:choose>
       <!-- Is this an omml function -->
@@ -1217,7 +1172,7 @@
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
 
   <!-- Given the node of the linear fraction's parent mrow, 
@@ -1243,14 +1198,12 @@
   <!-- Given the node of the function's parent mrow, 
        make an omml function -->
   <xsl:template name="WriteFunc">
-    <xsl:param name="ndCur" select="." as="element()?"/>
-
     <m:func>
       <m:fName>
-        <xsl:apply-templates select="$ndCur/*[1]"/>
+        <xsl:apply-templates select="*[1]"/>
       </m:fName>
       <m:e>
-        <xsl:apply-templates select="$ndCur/*[3]"/>
+        <xsl:apply-templates select="*[3]"/>
       </m:e>
     </m:func>
   </xsl:template>
@@ -1280,11 +1233,7 @@
     <xsl:choose>
       <xsl:when test="$ndCur[self::mml:mrow]">
         <!-- Check for linear fraction -->
-        <xsl:variable name="fLinearFrac" as="xs:boolean">
-          <xsl:call-template name="FLinearFrac">
-            <xsl:with-param name="ndCur" select="$ndCur"/>
-          </xsl:call-template>
-        </xsl:variable>
+        <xsl:variable name="fLinearFrac" as="xs:boolean" select="x:FLinearFrac($ndCur)"/>
         <xsl:choose>
           <xsl:when test="$fLinearFrac">
             <xsl:call-template name="MakeLinearFraction">
@@ -1292,16 +1241,10 @@
             </xsl:call-template>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:variable name="fFunc" as="xs:boolean">
-              <xsl:call-template name="FIsFunc">
-                <xsl:with-param name="ndCur" select="."/>
-              </xsl:call-template>
-            </xsl:variable>
+            <xsl:variable name="fFunc" as="xs:boolean" select="x:FIsFunc(.)"/>
             <xsl:choose>
               <xsl:when test="$fFunc">
-                <xsl:call-template name="WriteFunc">
-                  <xsl:with-param name="ndCur" select="."/>
-                </xsl:call-template>
+                <xsl:call-template name="WriteFunc"/>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:apply-templates select="$ndCur/*"/>
@@ -1328,14 +1271,11 @@
           1)  its respective accent attribute is not true
           2)  its second child is an mml:mo
           3)  the character of the mml:mo is the correct under/over bar. -->
-  <xsl:template name="FIsBar" as="xs:boolean">
+  <xsl:function name="x:FIsBar" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
-    <xsl:variable name="fUnder" as="xs:boolean">
-      <xsl:sequence select="$ndCur[self::mml:munder]"/>
-    </xsl:variable>
-    <xsl:variable name="fAccent" as="xs:boolean">
-      <xsl:sequence select="lower-case(($ndCur/@accentunder, $ndCur/@accent)[1]) = 'true'"/>
-    </xsl:variable>
+    <xsl:variable name="fUnder" as="xs:boolean" select="$ndCur[self::mml:munder]"/>
+    <xsl:variable name="fAccent" as="xs:boolean"
+      select="lower-case(($ndCur/@accentunder, $ndCur/@accent)[1]) = 'true'"/>
 
     <xsl:choose>
       <!-- The script is unaccented and the second child is an mo -->
@@ -1360,7 +1300,7 @@
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
   <!-- Note:  ndCur should only be an mover MathML element.
   
@@ -1484,11 +1424,7 @@
       </xsl:when>
       <xsl:otherwise>
         <!-- Should this munder be interpreted as an OMML m:bar? -->
-        <xsl:variable name="fIsBar" as="xs:boolean">
-          <xsl:call-template name="FIsBar">
-            <xsl:with-param name="ndCur" select="."/>
-          </xsl:call-template>
-        </xsl:variable>
+        <xsl:variable name="fIsBar" as="xs:boolean" select="x:FIsBar(.)"/>
         <xsl:choose>
           <xsl:when test="$fIsBar">
             <m:bar>
@@ -1595,11 +1531,7 @@
         <!-- Should this munder be interpreted as an OMML m:bar or m:acc? -->
 
         <!-- Check to see if this is an m:bar -->
-        <xsl:variable name="fIsBar" as="xs:boolean">
-          <xsl:call-template name="FIsBar">
-            <xsl:with-param name="ndCur" select="."/>
-          </xsl:call-template>
-        </xsl:variable>
+        <xsl:variable name="fIsBar" as="xs:boolean" select="x:FIsBar(.)"/>
         <xsl:choose>
           <xsl:when test="$fIsBar">
             <m:bar>
@@ -2357,16 +2289,8 @@
     <xsl:param name="ndCur" select="." as="element()?"/>
     <xsl:choose>
       <xsl:when test="$ndCur/self::mml:mrow">
-        <xsl:variable name="fLinearFraction" as="xs:boolean">
-          <xsl:call-template name="FLinearFrac">
-            <xsl:with-param name="ndCur" select="$ndCur"/>
-          </xsl:call-template>
-        </xsl:variable>
-        <xsl:variable name="fFunc" as="xs:boolean">
-          <xsl:call-template name="FIsFunc">
-            <xsl:with-param name="ndCur" select="$ndCur"/>
-          </xsl:call-template>
-        </xsl:variable>
+        <xsl:variable name="fLinearFraction" as="xs:boolean" select="x:FLinearFrac($ndCur)"/>
+        <xsl:variable name="fFunc" as="xs:boolean" select="x:FIsFunc($ndCur)"/>
         <xsl:sequence select="$fLinearFraction or $fFunc"/>
       </xsl:when>
       <xsl:otherwise>
@@ -2493,12 +2417,7 @@
         </m:eqArr>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:variable name="cMaxElmtsInRow" as="xs:integer">
-          <xsl:call-template name="CountMaxElmtsInRow">
-            <xsl:with-param name="ndCur" select="*[1]"/>
-            <xsl:with-param name="cMaxElmtsInRow" select="0"/>
-          </xsl:call-template>
-        </xsl:variable>
+        <xsl:variable name="cMaxElmtsInRow" as="xs:integer" select="x:CountMaxElmtsInRow(*[1], 0)"/>
         <m:m>
           <m:mPr>
             <m:baseJc m:val="center"/>
@@ -2556,72 +2475,67 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
   <xsl:template match="m:mtd">
     <xsl:apply-templates select="*"/>
   </xsl:template>
-  <xsl:template name="CreateEmptyElmt">
+  
+  <xsl:template name="CreateEmptyElmt" as="element()*">
     <xsl:param name="cEmptyMtd" as="xs:integer"/>
-    <xsl:if test="$cEmptyMtd &gt; 0">
+    <xsl:if test="$cEmptyMtd gt 0">
       <m:e/>
       <xsl:call-template name="CreateEmptyElmt">
         <xsl:with-param name="cEmptyMtd" select="$cEmptyMtd - 1"/>
       </xsl:call-template>
     </xsl:if>
   </xsl:template>
-  <xsl:template name="CountMaxElmtsInRow" as="xs:integer">
+  
+  <xsl:function name="x:CountMaxElmtsInRow" as="xs:integer">
     <xsl:param name="ndCur" as="element()?"/>
-    <xsl:param name="cMaxElmtsInRow" select="0" as="xs:integer"/>
+    <xsl:param name="cMaxElmtsInRow" as="xs:integer"/>
     <xsl:choose>
       <xsl:when test="not($ndCur)">
         <xsl:value-of select="$cMaxElmtsInRow"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:call-template name="CountMaxElmtsInRow">
-          <xsl:with-param name="ndCur" select="$ndCur/following-sibling::*[1]"/>
-          <xsl:with-param name="cMaxElmtsInRow">
-            <xsl:choose>
-              <xsl:when
-                test="
-                  local-name($ndCur) = 'mlabeledtr' and
-                  namespace-uri($ndCur) = 'http://www.w3.org/1998/Math/MathML'">
-                <xsl:choose>
-                  <xsl:when test="(count($ndCur/*) - 1) &gt; $cMaxElmtsInRow">
-                    <xsl:value-of select="count($ndCur/*) - 1"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="$cMaxElmtsInRow"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:when>
-              <xsl:when
-                test="
-                  local-name($ndCur) = 'mtr' and
-                  namespace-uri($ndCur) = 'http://www.w3.org/1998/Math/MathML'">
-                <xsl:choose>
-                  <xsl:when test="count($ndCur/*) &gt; $cMaxElmtsInRow">
-                    <xsl:value-of select="count($ndCur/*)"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="$cMaxElmtsInRow"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:choose>
-                  <xsl:when test="1 &gt; $cMaxElmtsInRow">
-                    <xsl:value-of select="1"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="$cMaxElmtsInRow"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:with-param>
-        </xsl:call-template>
+        <xsl:variable name="maxElmtsInRow" as="xs:integer">
+          <xsl:choose>
+            <xsl:when test="$ndCur/self::mml:mlabeledtr">
+              <xsl:choose>
+                <xsl:when test="(count($ndCur/*) - 1) gt $cMaxElmtsInRow">
+                  <xsl:sequence select="count($ndCur/*) - 1"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:sequence select="$cMaxElmtsInRow"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$ndCur/self::mml:mtr">
+              <xsl:choose>
+                <xsl:when test="count($ndCur/*) gt $cMaxElmtsInRow">
+                  <xsl:sequence select="count($ndCur/*)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:sequence select="$cMaxElmtsInRow"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:choose>
+                <xsl:when test="1 gt $cMaxElmtsInRow">
+                  <xsl:sequence select="1"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:sequence select="$cMaxElmtsInRow"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:sequence select="x:CountMaxElmtsInRow($ndCur/following-sibling::*[1], $maxElmtsInRow)"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
   <xsl:template name="GetMglyphAltText">
     <xsl:param name="ndCur" select="." as="element()?"/>
@@ -2660,11 +2574,7 @@
     <xsl:variable name="mathsize" as="xs:string" select="@mathsize"/>
     <xsl:variable name="color" as="xs:string" select="@color"/>
     <xsl:variable name="fontsize" as="xs:string" select="@fontsize"/>
-    <xsl:variable name="fNor" as="xs:boolean">
-      <xsl:call-template name="FNor">
-        <xsl:with-param name="ndCur" select="."/>
-      </xsl:call-template>
-    </xsl:variable>
+    <xsl:variable name="fNor" as="xs:boolean" select="x:FNor(.)"/>
 
     <!-- Output MS Left Quote (if need be) -->
     <xsl:if test="self::mml:ms">
@@ -2827,7 +2737,6 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
-
 
   <!-- Just outputs phant properties, doesn't do any fancy 
        thinking of its own, just obeys the defaults of 
