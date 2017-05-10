@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description xmlns:x="http://www.jenitennison.com/xslt/xspec"
+               xmlns:ooxml="com.elovirta.ooxml"
+               stylesheet="document.utils.xsl">
+  
+  <x:scenario label="emu unit conversion">
+    <x:scenario label="mm">
+      <x:call function="ooxml:to-emu">
+        <x:param select="'1mm'"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="36000"/>
+    </x:scenario>
+    <x:scenario label="cm">
+      <x:call function="ooxml:to-emu">
+        <x:param select="'1cm'"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="360000"/>
+    </x:scenario>
+    <x:scenario label="in">
+      <x:call function="ooxml:to-emu">
+        <x:param select="'1in'"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="914400"/>
+    </x:scenario>
+    <x:scenario label="px">
+      <x:call function="ooxml:to-emu">
+        <x:param select="'1px'"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="9525"/>
+    </x:scenario>
+    <x:scenario label="pt">
+      <x:call function="ooxml:to-emu">
+        <x:param select="'1pt'"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="12700"/>
+    </x:scenario>
+    <x:scenario label="negative value">
+      <x:call function="ooxml:to-emu">
+        <x:param select="'-1pt'"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="-12700"/>
+    </x:scenario>
+    <x:scenario label="with spaces">
+      <x:call function="ooxml:to-emu">
+        <x:param select="' 1 pt '"/>
+        <x:param select="()"/>
+      </x:call>
+      <x:expect label="" select="12700"/>
+    </x:scenario>
+  </x:scenario>
+
+</x:description>

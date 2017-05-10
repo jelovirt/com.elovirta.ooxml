@@ -55,7 +55,7 @@
     <xsl:param name="dpi" as="xs:double?"/>
     <xsl:variable name="d" select="if (exists($dpi)) then $dpi else $default-dpi" as="xs:double"/>
     <xsl:variable name="value" select="number(translate($length, 'abcdefghijklmnopqrstuvwxyz', ''))"/>
-    <xsl:variable name="unit" select="translate($length, '+-0123456789.', '')"/>
+    <xsl:variable name="unit" select="normalize-space(translate($length, '+-0123456789.', ''))"/>
     <xsl:choose>
       <xsl:when test="$unit = 'px' or $unit = ''">
         <xsl:sequence select="xs:integer(round(($value div $d) * 914400))"/>
@@ -68,6 +68,9 @@
       </xsl:when>
       <xsl:when test="$unit = 'in'">
         <xsl:sequence select="xs:integer(round($value * 914400))"/>
+      </xsl:when>
+      <xsl:when test="$unit = 'pt'">
+        <xsl:sequence select="xs:integer(round($value * 12700))"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:message terminate="yes">ERROR: Unsupported unit "<xsl:value-of select="$unit"/>"</xsl:message>
