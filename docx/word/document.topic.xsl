@@ -1046,4 +1046,20 @@
     </w:r>
   </xsl:template>
   
+  <xsl:template match="*[contains(@class, ' topic/tm ')]" name="topic.tm">
+    <xsl:apply-templates/>
+    <w:r>
+      <w:rPr>
+        <xsl:apply-templates select="ancestor-or-self::*" mode="inline-style"/>
+      </w:rPr>
+      <w:t>
+        <xsl:choose>
+          <xsl:when test="@tmtype = 'tm'">&#x2122;</xsl:when>
+          <xsl:when test="@tmtype = 'reg'">&#xAE;</xsl:when>
+          <xsl:when test="@tmtype = 'service'">&#x2120;</xsl:when>
+        </xsl:choose>
+      </w:t>
+    </w:r>
+  </xsl:template>
+  
 </xsl:stylesheet>
