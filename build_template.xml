@@ -29,6 +29,7 @@
                    docx.image-metadata,
                    docx.svg2emf,
                    docx.template,
+                   docx.merge,
                    docx.convert,
                    docx.package"/>
   
@@ -75,7 +76,7 @@
     </copy>
   </target>
   
-  <target name="docx.convert">
+  <target name="docx.merge">
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}/dummy.file"/>
     <pipeline message="topicmerge"
               inputmap="${dita.temp.dir.fullpath}/${user.input.file}"
@@ -85,7 +86,9 @@
         <param name="style" location="${dita.plugin.org.dita.pdf2.dir}/xsl/common/topicmerge.xsl"/>
       </module>
     </pipeline>
-    
+  </target>
+  
+  <target name="docx.convert">  
     <property name="image.dir" location="${user.input.dir}/.."/>
     <property name="clean.input.file" location="${dita.temp.dir.fullpath}/${dita.map.filename.root}_CLEANED.xml"/>
     <property name="document.flat.xsl" location="${docx.dir}/word/document.flat.xsl"/>
