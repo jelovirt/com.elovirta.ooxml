@@ -25,11 +25,7 @@
                 version="2.0"
                 exclude-result-prefixes="x xs">
 
-  <xsl:import href="document.xsl"/>
-  <!--xsl:import href="document.utils.xsl"/>
-  <xsl:import href="document.topic.xsl"/>
-  <xsl:import href="document.table.xsl"/>
-  <xsl:import href="document.link.xsl"/-->  
+  <xsl:import href="document.xsl"/> 
 
   <xsl:template match="/">
     <w:comments mc:Ignorable="w14 wp14">

@@ -19,12 +19,9 @@
                exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder"
                version="2.0">
 
-  <xsl:param name="template.dir" as="xs:string"/>
-
-  <!--xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
-  <xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/-->
-  
   <xsl:variable name="msgprefix" select="'DOTX'"/>
+
+  <xsl:param name="template.dir"/>
 
   <!-- Utilities -->
   
@@ -55,7 +52,7 @@
     <xsl:param name="dpi" as="xs:double?"/>
     <xsl:variable name="d" select="if (exists($dpi)) then $dpi else $default-dpi" as="xs:double"/>
     <xsl:variable name="value" select="number(translate($length, 'abcdefghijklmnopqrstuvwxyz', ''))"/>
-    <xsl:variable name="unit" select="translate($length, '+-0123456789.', '')"/>
+    <xsl:variable name="unit" select="normalize-space(translate($length, '+-0123456789.', ''))"/>
     <xsl:choose>
       <xsl:when test="$unit = 'px' or $unit = ''">
         <xsl:sequence select="xs:integer(round(($value div $d) * 914400))"/>
@@ -189,7 +186,7 @@
       <xsl:apply-templates select="@*" mode="fixup"/>
       <xsl:apply-templates select="w:pPr" mode="fixup"/>
       <xsl:apply-templates select="preceding-sibling::*[1]" mode="fixup.before"/>
-      <xsl:apply-templates select="* except w:pPr" mode="fixup"/>
+      <xsl:apply-templates select="(* | processing-instruction()) except w:pPr" mode="fixup"/>
       <xsl:apply-templates select="following-sibling::*[1]" mode="fixup.after"/>
     </xsl:copy>
   </xsl:template>
@@ -248,6 +245,17 @@
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" mode="whitespace"/>
     </xsl:copy>
+  </xsl:template>
+
+  <!-- PI -->
+  
+  <xsl:template match="processing-instruction()" mode="x:parse-pi" as="attribute()*">
+    <xsl:variable name="regex" as="xs:string">([^\s"]+)="(.+?)"</xsl:variable>
+    <xsl:analyze-string select="." regex="{$regex}" flags="ms">
+      <xsl:matching-substring>
+        <xsl:attribute name="{regex-group(1)}" select="regex-group(2)"/>
+      </xsl:matching-substring>
+    </xsl:analyze-string>
   </xsl:template>
   
 </xsl:stylesheet>

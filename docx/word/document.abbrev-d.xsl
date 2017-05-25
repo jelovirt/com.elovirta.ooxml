@@ -5,8 +5,10 @@
                 xmlns:opentopic="http://www.idiominc.com/opentopic"
                 xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
                 xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
+                xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+                xmlns:x="com.elovirta.ooxml"
                 version="2.0"
-                exclude-result-prefixes="xs opentopic dita-ot ditamsg">
+                exclude-result-prefixes="xs opentopic dita-ot ditamsg x">
   
   <xsl:param name="first-use-scope" select="'document'"/>
   
@@ -17,10 +19,10 @@
            use="@keyref"/>
   
   <xsl:template match="*[contains(@class,' abbrev-d/abbreviated-form ')]" name="topic.abbreviated-form">
-    <xsl:variable name="keys" select="@keyref" as="attribute()?"/>
-    <xsl:variable name="target" select="key('id', substring(@href, 2))" as="element()*"/>
+    <xsl:variable name="keys" select="@keyref/string()" as="xs:string?"/>
+    <xsl:variable name="target" select="key('id', substring(@href, 2), $root)[contains(@class,' glossentry/glossentry ')][1]" as="element()?"/>
     <xsl:choose>
-      <xsl:when test="$keys and $target/self::*[contains(@class,' glossentry/glossentry ')]">
+      <xsl:when test="$keys and $target">
         <xsl:call-template name="topic.term">
           <xsl:with-param name="contents">
             <xsl:variable name="use-abbreviated-form" as="xs:boolean">
@@ -69,7 +71,7 @@
         <xsl:sequence select="ancestor::*[contains(@class, ' topic/topic ')][position() = last()]"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:sequence select="/*"/>
+        <xsl:sequence select="$root/*"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -81,14 +83,19 @@
         <xsl:apply-templates select="$glossSurfaceForm/node()"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:apply-templates select="*[contains(@class, ' glossentry/glossterm ')]/node()"/>
+        <xsl:variable name="glossterm" select="*[contains(@class, ' glossentry/glossterm ')]"/>
+        <xsl:apply-templates select="$glossterm/node()"/>
         <xsl:variable name="glossAlt" select="*[contains(@class, ' glossentry/glossBody ')]/*[contains(@class, ' glossentry/glossAlt ')]" as="element()*"/>
         <xsl:variable name="alt" select="($glossAlt/*[contains(@class, ' glossentry/glossAcronym ')] |
                                           $glossAlt/*[contains(@class, ' glossentry/glossAbbreviation ')])[1]" as="element()*"/>
-        <xsl:if test="exists($alt)">
-          <xsl:text> (</xsl:text>
+        <xsl:if test="exists($alt) and not(normalize-space($glossterm) = normalize-space($alt))">
+          <w:r>
+            <w:t xml:space="preserve"> (</w:t>
+          </w:r>
           <xsl:apply-templates select="$alt/node()"/>
-          <xsl:text>)</xsl:text>
+          <w:r>
+            <w:t xml:space="preserve">)</w:t>
+          </w:r>
         </xsl:if>
       </xsl:otherwise>
     </xsl:choose>

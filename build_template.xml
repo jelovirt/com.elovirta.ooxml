@@ -78,12 +78,13 @@
   
   <target name="docx.merge">
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}/dummy.file"/>
+    <property name="topicmerge.xsl" location="${dita.plugin.org.dita.pdf2.dir}/xsl/common/topicmerge.xsl"/>
     <pipeline message="topicmerge"
               inputmap="${dita.temp.dir.fullpath}/${user.input.file}"
               tempdir="${dita.temp.dir.fullpath}">
       <module class="org.dita.dost.module.TopicMergeModule">
         <param name="output" location="${dita.temp.dir.fullpath}/${dita.map.filename.root}_MERGED.xml"/>
-        <param name="style" location="${dita.plugin.org.dita.pdf2.dir}/xsl/common/topicmerge.xsl"/>
+        <param name="style" location="${topicmerge.xsl}"/>
       </module>
     </pipeline>
   </target>

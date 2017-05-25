@@ -6,14 +6,14 @@
   <xsl:template match="*[contains(@class, ' markup-d/markupname ')]">
     <w:r>
       <w:rPr>
-        <w:rStyle w:val="HTMLCode"/>
+        <xsl:apply-templates select="ancestor-or-self::*" mode="inline-style"/>
       </w:rPr>
       <w:t>&lt;</w:t>
     </w:r>
     <xsl:apply-templates/>
     <w:r>
       <w:rPr>
-        <w:rStyle w:val="HTMLCode"/>
+        <xsl:apply-templates select="ancestor-or-self::*" mode="inline-style"/>
       </w:rPr>
       <w:t>&gt;</w:t>
     </w:r>

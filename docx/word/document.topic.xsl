@@ -114,12 +114,23 @@
   <xsl:variable name="bookmark-prefix.num" select="'_Num'" as="xs:string"/>
   <xsl:variable name="bookmark-prefix.note" select="'_Note'" as="xs:string"/>
   
+  <xsl:function name="x:bookmark-name" as="xs:string">
+    <xsl:param name="prefix" as="xs:string"/>
+    <xsl:param name="node" as="element()"/>
+    
+    <xsl:variable name="name" select="concat($prefix, generate-id($node))"/>
+    <xsl:if test="string-length($name) gt 40">
+      <xsl:message terminate="yes">FATAL: Bookmark <xsl:value-of select="$name"/> longer than 40 characters</xsl:message>
+    </xsl:if>
+    <xsl:value-of select="$name"/>
+  </xsl:function>
+  
   <xsl:template name="start-bookmark">
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.ref}{$type}{generate-id($node)}"/>
-      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.toc}{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.ref, $type), $node)}"/>
+      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.toc, $type), $node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -136,7 +147,7 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.num}{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.num, $type), $node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -353,9 +364,7 @@
       <xsl:apply-templates select="." mode="block-style"/>
     </xsl:variable>
     <w:pPr>
-      <xsl:if test="exists($styles)">
-        <xsl:copy-of select="$styles"/>
-      </xsl:if>
+      <xsl:copy-of select="$styles"/>
       <xsl:choose>
         <xsl:when test="exists($ancestor-lis)">
           <xsl:variable name="is-first" as="xs:boolean">
@@ -986,7 +995,7 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="x:get-footnote-reference">
-    <w:bookmarkStart w:id="note_{generate-id()}" w:name="_Note{generate-id()}"/>
+    <w:bookmarkStart w:id="note_{generate-id(.)}" w:name="{x:bookmark-name($bookmark-prefix.note, .)}"/>
     <w:footnoteReference w:id="{@x:fn-number}"/>
     <w:bookmarkEnd w:id="note_{generate-id()}"/>
   </xsl:template>
@@ -1016,7 +1025,7 @@
   <xsl:template match="*[contains(@class,' topic/term ')]" name="topic.term">
     <xsl:param name="keys" select="@keyref" as="attribute()?"/>
     <xsl:param name="contents" as="node()*">
-      <xsl:variable name="target" select="key('id', substring(@href, 2))" as="element()*"/>
+      <xsl:variable name="target" select="key('id', substring(@href, 2), $root)" as="element()*"/>
       <xsl:choose>
         <xsl:when test="not(normalize-space(.)) and $keys and $target/self::*[contains(@class,' topic/topic ')]">
           <xsl:apply-templates select="$target/*[contains(@class, ' topic/title ')]/node()"/>

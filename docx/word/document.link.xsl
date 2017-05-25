@@ -41,6 +41,26 @@
       </w:p>
       <xsl:apply-templates select="$links"/>
     </xsl:if>
+    <xsl:apply-templates select="*[contains(@class, ' topic/linklist ')]"/>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' topic/linklist ')]">
+    <xsl:apply-templates select="*[contains(@class, ' topic/title ')]"/>
+    <xsl:apply-templates select="*[contains(@class, ' topic/link ')]"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/linklist ')]/*[contains(@class, ' topic/title ')]">
+    <w:p>
+      <w:pPr>
+        <xsl:apply-templates select="." mode="block-style"/>
+      </w:pPr>
+      <xsl:apply-templates/>
+    </w:p>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/linklist ')]/*[contains(@class, ' topic/title ')]" mode="block-style">
+    <w:b w:val="true"/>
+    <w:i/>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/link ')]">
@@ -57,7 +77,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat($bookmark-prefix.ref, generate-id($target))"/>
+            <xsl:value-of select="x:bookmark-name($bookmark-prefix.ref, $target)"/>
             <xsl:text> </xsl:text>
             <xsl:text>\h </xsl:text>
           </w:instrText>
@@ -219,7 +239,7 @@
               <xsl:when test="false()">PAGEREF </xsl:when>
               <xsl:otherwise>REF </xsl:otherwise>
             </xsl:choose>
-            <xsl:value-of select="concat($bookmark-prefix.num, generate-id($target))"/>
+            <xsl:value-of select="x:bookmark-name($bookmark-prefix.num, $target)"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -284,7 +304,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat($bookmark-prefix.num, generate-id($target))"/>
+            <xsl:value-of select="x:bookmark-name($bookmark-prefix.num, $target)"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -328,7 +348,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat($bookmark-prefix.num, generate-id($target))"/>
+            <xsl:value-of select="x:bookmark-name($bookmark-prefix.num, $target)"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -372,7 +392,7 @@
           <w:instrText>
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
             <xsl:text> REF </xsl:text>
-            <xsl:value-of select="concat($bookmark-prefix.ref, generate-id($target))"/>
+            <xsl:value-of select="x:bookmark-name($bookmark-prefix.ref, $target)"/>
             <xsl:text> \n \h </xsl:text>
           </w:instrText>
         </w:r>
@@ -399,7 +419,7 @@
               <xsl:when test="false()">PAGEREF </xsl:when>
               <xsl:otherwise>REF </xsl:otherwise>
             </xsl:choose>
-            <xsl:value-of select="concat($bookmark-prefix.ref, generate-id($target))"/>
+            <xsl:value-of select="x:bookmark-name($bookmark-prefix.ref, $target)"/>
             <xsl:text> \h </xsl:text>
           </w:instrText>
         </w:r>
