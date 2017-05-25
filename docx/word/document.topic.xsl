@@ -412,15 +412,7 @@
   
   <xsl:template match="*[contains(@class, ' topic/p ')]" name="p">
     <xsl:param name="prefix" as="node()*" select="()"/>
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
       <!--xsl:call-template name="check-table-entry"/-->
       <xsl:call-template name="generate-block-style"/>
       <xsl:if test="exists($prefix)">
@@ -432,15 +424,7 @@
   
   <xsl:template match="*[contains(@class, ' topic/pre ')]" name="pre">
     <xsl:param name="prefix" as="node()*" select="()"/>
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
       <xsl:call-template name="generate-block-style"/>
       <xsl:apply-templates/>
     </w:p>
@@ -451,15 +435,7 @@
   </xsl:template>
    
   <xsl:template match="*[contains(@class, ' topic/lines ')]" name="lines">
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
       <xsl:call-template name="generate-block-style"/>
       <xsl:apply-templates/>
     </w:p>
