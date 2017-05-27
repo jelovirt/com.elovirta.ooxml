@@ -22,8 +22,17 @@
   <xsl:variable name="msgprefix" select="'DOTX'"/>
 
   <xsl:param name="template.dir"/>
+  <xsl:param name="generate-header-number" select="false()" as="xs:boolean"/>
+
+  <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
 
   <!-- Utilities -->
+  
+  <xsl:function name="x:get-topicref">
+    <xsl:param name="topic" as="element()"/>
+    <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id" as="attribute()"/>
+    <xsl:sequence select="key('map-id', $id, $map)"/>
+  </xsl:function>
   
   <xsl:variable name="styles" select="document(concat($template.dir, 'word/styles.xml'))" as="document-node()?"/>
   
