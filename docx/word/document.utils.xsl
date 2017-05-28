@@ -226,15 +226,17 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" mode="whitespace"/>
       <xsl:variable name="only-whitespace" select="matches($t, '^\s+$')" as="xs:boolean"/>
+      <xsl:variable name="has-preceding" as="xs:boolean" select="exists(parent::w:r/preceding-sibling::w:r)"/>
+      <xsl:variable name="has-following" as="xs:boolean" select="exists(parent::w:r/following-sibling::w:r)"/>
       <xsl:choose>
-        <xsl:when test="$only-whitespace and exists(parent::w:r) and empty(parent::w:r/preceding-sibling::w:r)"/>
+        <xsl:when test="$only-whitespace and (not($has-preceding) or not($has-following))"/>
         <xsl:when test="$only-whitespace">
           <xsl:attribute name="xml:space">preserve</xsl:attribute>
           <xsl:text> </xsl:text>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:variable name="starts" select="matches($t, '^\s')" as="xs:boolean"/>
-          <xsl:variable name="ends" select="matches($t, '\s$')" as="xs:boolean"/>
+          <xsl:variable name="starts" select="matches($t, '^\s') and $has-preceding" as="xs:boolean"/>
+          <xsl:variable name="ends" select="matches($t, '\s$') and $has-following" as="xs:boolean"/>
           <xsl:if test="$starts or $ends">
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
           </xsl:if>
