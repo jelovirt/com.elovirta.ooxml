@@ -186,7 +186,7 @@
   <xsl:template match="*[contains(@class, ' topic/topic ')]/
                         *[contains(@class, ' topic/title ')]"
                 mode="numbering">
-    <xsl:if test="../@x:header-number">
+    <xsl:if test="$generate-header-number and exists(../@x:header-number)">
       <xsl:call-template name="start-bookmark-number">
         <xsl:with-param name="node" select=".."/>
       </xsl:call-template>
