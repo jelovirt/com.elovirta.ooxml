@@ -9,7 +9,7 @@ Installation
 Standard DITA-OT plug-in installation, see [DITA-OT documentation](http://www.dita-ot.org/2.4/dev_ref/plugins-installing.html). Only latests stable version of DITA-OT is supported.
 
 ```shell
-$ dita -install https://github.com/jelovirt/com.elovirta.ooxml/archive/master.zip
+$ dita -install https://github.com/jelovirt/com.elovirta.ooxml/archive/1.2.0.zip
 ```
 
 Running
