@@ -114,12 +114,23 @@
   <xsl:variable name="bookmark-prefix.num" select="'_Num'" as="xs:string"/>
   <xsl:variable name="bookmark-prefix.note" select="'_Note'" as="xs:string"/>
   
+  <xsl:function name="x:bookmark-name" as="xs:string">
+    <xsl:param name="prefix" as="xs:string"/>
+    <xsl:param name="node" as="element()"/>
+    
+    <xsl:variable name="name" select="concat($prefix, generate-id($node))"/>
+    <xsl:if test="string-length($name) gt 40">
+      <xsl:message terminate="yes">FATAL: Bookmark <xsl:value-of select="$name"/> longer than 40 characters</xsl:message>
+    </xsl:if>
+    <xsl:value-of select="$name"/>
+  </xsl:function>
+  
   <xsl:template name="start-bookmark">
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.ref}{$type}{generate-id($node)}"/>
-      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.toc}{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.ref, $type), $node)}"/>
+      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.toc, $type), $node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -136,7 +147,7 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="{$bookmark-prefix.num}{$type}{generate-id($node)}"/>
+      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.num, $type), $node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -175,7 +186,7 @@
   <xsl:template match="*[contains(@class, ' topic/topic ')]/
                         *[contains(@class, ' topic/title ')]"
                 mode="numbering">
-    <xsl:if test="../@x:header-number">
+    <xsl:if test="$generate-header-number and exists(../@x:header-number)">
       <xsl:call-template name="start-bookmark-number">
         <xsl:with-param name="node" select=".."/>
       </xsl:call-template>
@@ -353,9 +364,7 @@
       <xsl:apply-templates select="." mode="block-style"/>
     </xsl:variable>
     <w:pPr>
-      <xsl:if test="exists($styles)">
-        <xsl:copy-of select="$styles"/>
-      </xsl:if>
+      <xsl:copy-of select="$styles"/>
       <xsl:choose>
         <xsl:when test="exists($ancestor-lis)">
           <xsl:variable name="is-first" as="xs:boolean">
@@ -403,15 +412,7 @@
   
   <xsl:template match="*[contains(@class, ' topic/p ')]" name="p">
     <xsl:param name="prefix" as="node()*" select="()"/>
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
       <!--xsl:call-template name="check-table-entry"/-->
       <xsl:call-template name="generate-block-style"/>
       <xsl:if test="exists($prefix)">
@@ -423,15 +424,7 @@
   
   <xsl:template match="*[contains(@class, ' topic/pre ')]" name="pre">
     <xsl:param name="prefix" as="node()*" select="()"/>
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
       <xsl:call-template name="generate-block-style"/>
       <xsl:apply-templates/>
     </w:p>
@@ -442,15 +435,7 @@
   </xsl:template>
    
   <xsl:template match="*[contains(@class, ' topic/lines ')]" name="lines">
-    <xsl:variable name="styles" as="node()*">
-      <xsl:apply-templates select="." mode="block-style"/>
-    </xsl:variable>
     <w:p>
-      <xsl:if test="exists($styles)">
-        <w:pPr>
-          <xsl:copy-of select="$styles"/>
-        </w:pPr>
-      </xsl:if>
       <xsl:call-template name="generate-block-style"/>
       <xsl:apply-templates/>
     </w:p>
@@ -662,14 +647,44 @@
     <xsl:call-template name="end-bookmark"/>
   </xsl:template>
   
+  <xsl:template match="*[contains(@class, ' topic/li ')]/*" mode="block-style">
+    <w:pStyle w:val="ListParagraph"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/ul ')]/*[contains(@class, ' topic/li ')]/*[1]" priority="10" mode="block-style">
+    <xsl:variable name="break" as="element()"
+      select="ancestor::*[contains(@class, ' topic/topic ') or contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ')][1]"/>
+    <xsl:variable name="depth" as="xs:integer"
+      select="count(ancestor::*[contains(@class, ' topic/ul ') or contains(@class, ' topic/ol ')][. >> $break])"/>
+    <w:pStyle w:val="ListParagraph">
+      <xsl:attribute name="w:val">
+        <xsl:text>ListBullet</xsl:text>
+        <xsl:if test="$depth gt 1">
+          <xsl:value-of select="$depth"/>
+        </xsl:if>
+      </xsl:attribute>
+    </w:pStyle>
+  </xsl:template>
+  
   <xsl:template match="*[contains(@class, ' topic/ol ')]/*[contains(@class, ' topic/li ')]">
     <xsl:call-template name="start-bookmark"/>
     <xsl:apply-templates select="*"/>
     <xsl:call-template name="end-bookmark"/>
   </xsl:template>
     
-  <xsl:template match="*[contains(@class, ' topic/li ')]/*" mode="block-style">
-    <w:pStyle w:val="ListParagraph"/>
+  <xsl:template match="*[contains(@class, ' topic/ol ')]/*[contains(@class, ' topic/li ')]/*[1]" mode="block-style" priority="10">
+    <xsl:variable name="break" as="element()"
+      select="ancestor::*[contains(@class, ' topic/topic ') or contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ')][1]"/>
+    <xsl:variable name="depth" as="xs:integer"
+      select="count(ancestor::*[contains(@class, ' topic/ul ') or contains(@class, ' topic/ol ')][. >> $break])"/>
+    <w:pStyle w:val="ListParagraph">
+      <xsl:attribute name="w:val">
+        <xsl:text>ListNumber</xsl:text>
+        <xsl:if test="$depth gt 1">
+          <xsl:value-of select="$depth"/>
+        </xsl:if>
+      </xsl:attribute>
+    </w:pStyle>
   </xsl:template>
     
   <xsl:template match="*[contains(@class, ' topic/itemgroup ')]">
@@ -956,7 +971,7 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="x:get-footnote-reference">
-    <w:bookmarkStart w:id="note_{generate-id()}" w:name="_Note{generate-id()}"/>
+    <w:bookmarkStart w:id="note_{generate-id(.)}" w:name="{x:bookmark-name($bookmark-prefix.note, .)}"/>
     <w:footnoteReference w:id="{@x:fn-number}"/>
     <w:bookmarkEnd w:id="note_{generate-id()}"/>
   </xsl:template>
@@ -986,7 +1001,7 @@
   <xsl:template match="*[contains(@class,' topic/term ')]" name="topic.term">
     <xsl:param name="keys" select="@keyref" as="attribute()?"/>
     <xsl:param name="contents" as="node()*">
-      <xsl:variable name="target" select="key('id', substring(@href, 2))" as="element()*"/>
+      <xsl:variable name="target" select="key('id', substring(@href, 2), $root)" as="element()*"/>
       <xsl:choose>
         <xsl:when test="not(normalize-space(.)) and $keys and $target/self::*[contains(@class,' topic/topic ')]">
           <xsl:apply-templates select="$target/*[contains(@class, ' topic/title ')]/node()"/>
@@ -1008,6 +1023,28 @@
         <xsl:copy-of select="$contents"/>
       <!--/xsl:otherwise>
     </xsl:choose-->
+  </xsl:template>
+  
+  <xsl:template match="processing-instruction('br')">
+    <w:r>
+      <w:br/>
+    </w:r>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/tm ')]" name="topic.tm">
+    <xsl:apply-templates/>
+    <w:r>
+      <w:rPr>
+        <xsl:apply-templates select="ancestor-or-self::*" mode="inline-style"/>
+      </w:rPr>
+      <w:t>
+        <xsl:choose>
+          <xsl:when test="@tmtype = 'tm'">&#x2122;</xsl:when>
+          <xsl:when test="@tmtype = 'reg'">&#xAE;</xsl:when>
+          <xsl:when test="@tmtype = 'service'">&#x2120;</xsl:when>
+        </xsl:choose>
+      </w:t>
+    </w:r>
   </xsl:template>
   
 </xsl:stylesheet>

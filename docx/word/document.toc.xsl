@@ -72,10 +72,14 @@
     <xsl:value-of>TOC \o "1-<xsl:value-of select="$tocMaximumLevel"/>" \w \* MERGEFORMAT</xsl:value-of> 
   </xsl:template>
   
+  <xsl:variable name="toc.increment-base" select="422" as="xs:integer"/>
+  
   <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="x:toc">
     <xsl:param name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])" as="xs:integer"/>
     <xsl:param name="prefix" as="node()*"/>
     <xsl:variable name="target" select="concat($bookmark-prefix.toc, generate-id())" as="xs:string"/>
+    <xsl:variable name="style-numbered" as="xs:boolean"
+      select="exists($styles/w:styles/w:style[@w:styleId = concat('Heading', $depth)]/w:pPr/w:numPr)"/>
     <w:p>
       <w:pPr>
         <w:pStyle w:val="TOC{$depth}"/>
@@ -83,28 +87,41 @@
           <w:keepNext/>
         </xsl:if>
         <w:tabs>
-          <xsl:if test="@x:header-number">
-            <!--xsl:variable name="tabs" as="xs:integer+" select="(373, 795, 1217, 1639, 1772, 2061, 2483, 2906, 3328)"/>
-            <w:tab w:val="left" w:pos="{$tabs[$depth]}"/-->
-            <w:tab w:val="left" w:pos="{422 * $depth}"/>
-          </xsl:if>
-          <w:tab w:val="right" w:leader="dot" w:pos="{$body-width}"/>
+          <xsl:choose>
+            <xsl:when test="($generate-header-number and exists(@x:header-number)) or $style-numbered">
+              <w:tab w:val="left" w:pos="{$toc.increment-base * $depth}"/>
+              <w:tab w:val="right" w:leader="dot" w:pos="{$body-width}"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <!--w:tab w:val="left" w:pos="{$toc.increment-base * ($depth - 1)}"/-->
+              <w:tab w:val="right" w:leader="dot" w:pos="{$body-width}"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </w:tabs>
         <w:rPr>
           <w:noProof/>
         </w:rPr>
       </w:pPr>
       <xsl:copy-of select="$prefix"/>
-      <xsl:if test="@x:header-number">
-        <w:r>
-          <w:t>
-            <xsl:value-of select="@x:header-number"/>
-          </w:t>
-        </w:r>
-        <w:r>
-          <w:tab/>
-        </w:r>
-      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="($generate-header-number and exists(@x:header-number)) or $style-numbered">
+          <w:r>
+            <w:t>
+              <xsl:value-of select="@x:header-number"/>
+            </w:t>
+          </w:r>
+          <w:r>
+            <w:tab/>
+          </w:r>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:if test="$depth gt 1">
+            <!--w:r>
+              <w:tab/>
+            </w:r-->
+          </xsl:if>
+        </xsl:otherwise>
+      </xsl:choose>
       <w:r>
         <w:t>
           <xsl:apply-templates select="*[contains(@class, ' topic/title ')]/node()"/>

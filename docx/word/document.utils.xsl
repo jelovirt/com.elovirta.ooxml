@@ -19,14 +19,20 @@
                exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder"
                version="2.0">
 
-  <xsl:param name="template.dir" as="xs:string"/>
-
-  <!--xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
-  <xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/-->
-  
   <xsl:variable name="msgprefix" select="'DOTX'"/>
 
+  <xsl:param name="template.dir"/>
+  <xsl:param name="generate-header-number" select="false()" as="xs:boolean"/>
+
+  <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
+
   <!-- Utilities -->
+  
+  <xsl:function name="x:get-topicref">
+    <xsl:param name="topic" as="element()"/>
+    <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id" as="attribute()"/>
+    <xsl:sequence select="key('map-id', $id, $map)"/>
+  </xsl:function>
   
   <xsl:variable name="styles" select="document(concat($template.dir, 'word/styles.xml'))" as="document-node()?"/>
   
@@ -192,7 +198,7 @@
       <xsl:apply-templates select="@*" mode="fixup"/>
       <xsl:apply-templates select="w:pPr" mode="fixup"/>
       <xsl:apply-templates select="preceding-sibling::*[1]" mode="fixup.before"/>
-      <xsl:apply-templates select="* except w:pPr" mode="fixup"/>
+      <xsl:apply-templates select="(* | processing-instruction()) except w:pPr" mode="fixup"/>
       <xsl:apply-templates select="following-sibling::*[1]" mode="fixup.after"/>
     </xsl:copy>
   </xsl:template>
@@ -223,15 +229,17 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" mode="whitespace"/>
       <xsl:variable name="only-whitespace" select="matches($t, '^\s+$')" as="xs:boolean"/>
+      <xsl:variable name="has-preceding" as="xs:boolean" select="exists(parent::w:r/preceding-sibling::w:r)"/>
+      <xsl:variable name="has-following" as="xs:boolean" select="exists(parent::w:r/following-sibling::w:r)"/>
       <xsl:choose>
-        <xsl:when test="$only-whitespace and exists(parent::w:r) and empty(parent::w:r/preceding-sibling::w:r)"/>
+        <xsl:when test="$only-whitespace and (not($has-preceding) or not($has-following))"/>
         <xsl:when test="$only-whitespace">
           <xsl:attribute name="xml:space">preserve</xsl:attribute>
           <xsl:text> </xsl:text>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:variable name="starts" select="matches($t, '^\s')" as="xs:boolean"/>
-          <xsl:variable name="ends" select="matches($t, '\s$')" as="xs:boolean"/>
+          <xsl:variable name="starts" select="matches($t, '^\s') and $has-preceding" as="xs:boolean"/>
+          <xsl:variable name="ends" select="matches($t, '\s$') and $has-following" as="xs:boolean"/>
           <xsl:if test="$starts or $ends">
             <xsl:attribute name="xml:space">preserve</xsl:attribute>
           </xsl:if>
@@ -251,6 +259,17 @@
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" mode="whitespace"/>
     </xsl:copy>
+  </xsl:template>
+
+  <!-- PI -->
+  
+  <xsl:template match="processing-instruction()" mode="x:parse-pi" as="attribute()*">
+    <xsl:variable name="regex" as="xs:string">([^\s"]+)="(.+?)"</xsl:variable>
+    <xsl:analyze-string select="." regex="{$regex}" flags="ms">
+      <xsl:matching-substring>
+        <xsl:attribute name="{regex-group(1)}" select="regex-group(2)"/>
+      </xsl:matching-substring>
+    </xsl:analyze-string>
   </xsl:template>
   
 </xsl:stylesheet>

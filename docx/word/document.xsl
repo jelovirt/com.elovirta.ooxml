@@ -36,6 +36,7 @@
   <xsl:import href="document.table.xsl"/>
   <xsl:import href="document.task.xsl"/>
   <xsl:import href="document.link.xsl"/>
+  <xsl:import href="document.root.xsl"/>
 
   <xsl:output indent="no"/>
 
@@ -43,7 +44,6 @@
   
   <xsl:variable name="template" select="document(concat($template.dir, '/word/document.xml'))" as="document-node()?"/>
   <xsl:variable name="root" select="/" as="document-node()"/>
-  <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
   <xsl:variable name="language" select="string((//@xml:lang)[1])" as="xs:string"/>
 
   <xsl:variable name="sectPr" select="$template/w:document/w:body/w:sectPr[last()]" as="element()"/>
@@ -52,111 +52,5 @@
   </xsl:variable>
 
   <xsl:key name="map-id" match="opentopic:map//*[@id]" use="@id"/>
-
-  <xsl:function name="x:get-topicref">
-    <xsl:param name="topic" as="element()"/>
-    <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id" as="attribute()"/>
-    <xsl:sequence select="key('map-id', $id, $map)"/>
-  </xsl:function>
-
-  <xsl:template match="/">
-    <xsl:variable name="content" as="node()*">
-      <w:document>
-        <w:body>
-          <xsl:apply-templates select="*" mode="root"/>
-        </w:body>
-      </w:document>
-    </xsl:variable>
-    <xsl:variable name="fixup" as="node()*">
-      <xsl:apply-templates select="$content" mode="fixup">
-        <xsl:with-param name="bookmarks" as="xs:string*" tunnel="yes">
-          <xsl:for-each-group select="$content//w:bookmarkStart" group-by="@w:id">
-            <xsl:value-of select="current-grouping-key()"/>
-          </xsl:for-each-group>
-        </xsl:with-param>
-      </xsl:apply-templates>
-    </xsl:variable>
-    <xsl:apply-templates select="$fixup" mode="whitespace"/>
-  </xsl:template>
-  
-  <xsl:template match="*[contains(@class, ' map/map ')]" mode="root">
-    <xsl:apply-templates select="/" mode="cover"/>
-    <xsl:apply-templates select="/" mode="legal"/>
-    <xsl:apply-templates select="/" mode="toc"/>
-    <xsl:apply-templates select="." mode="body"/>
-  </xsl:template>
-  
-  <xsl:template match="*[contains(@class, ' bookmap/bookmap ')]" mode="root" priority="10">
-    <xsl:apply-templates select="/" mode="cover"/>
-    <xsl:apply-templates select="/" mode="legal"/>
-    <xsl:apply-templates select="." mode="body"/>
-  </xsl:template>
-  
-  <xsl:template match="*[contains(@class, ' map/map ')]" mode="body">
-    <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
-  </xsl:template>
-  
-  <xsl:template match="*[contains(@class, ' bookmap/bookmap ')]" mode="body" priority="10">
-    <xsl:apply-templates select="ot-placeholder:toc | *[contains(@class, ' topic/topic ')]"/>
-  </xsl:template>
-
-  <xsl:template match="/" mode="cover">
-    <w:p>
-      <w:pPr>
-        <w:pStyle w:val="Title"/>
-        <w:spacing w:before="720"/>
-        <w:rPr>
-          <w:lang w:val="{$language}"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r>
-        <w:fldChar w:fldCharType="begin"/>
-      </w:r>
-      <w:r>
-        <w:rPr>
-          <w:lang w:val="{$language}"/>
-        </w:rPr>
-        <w:instrText xml:space="preserve">TITLE \* MERGEFORMAT</w:instrText>
-      </w:r>
-      <w:r>
-        <w:fldChar w:fldCharType="separate"/>
-      </w:r>
-      <w:r>
-        <w:rPr>
-          <w:lang w:val="{$language}"/>
-        </w:rPr>
-        <w:t>
-          <xsl:call-template name="get-title"/>
-        </w:t>
-      </w:r>
-      <w:r>
-        <w:fldChar w:fldCharType="end"/>
-      </w:r>
-    </w:p>
-  </xsl:template>
-
-  <xsl:template match="/" mode="legal"/>
-
-  <xsl:template name="get-title">
-    <xsl:for-each select="/*[contains(@class, ' map/map ')]">
-      <xsl:choose>
-        <xsl:when test="@title">
-          <xsl:value-of select="@title"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:for-each select="opentopic:map">
-            <xsl:choose>
-              <xsl:when test="*[contains(@class, ' bookmap/booktitle ')]/*[contains(@class, ' bookmap/mainbooktitle ')]">
-                <xsl:apply-templates select="*[contains(@class, ' bookmap/booktitle ')]/*[contains(@class, ' bookmap/mainbooktitle ')]/node()"/>                
-              </xsl:when>
-              <xsl:when test="*[contains(@class, 'topic/title ')]">
-                <xsl:apply-templates select="*[contains(@class, ' topic/title ')]/node()"/>                
-              </xsl:when>
-            </xsl:choose>            
-          </xsl:for-each>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:for-each>
-  </xsl:template>
 
 </xsl:stylesheet>

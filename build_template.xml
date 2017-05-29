@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<project xmlns:dita="http://dita-ot.sourceforge.net">
   
   <taskdef resource="net/sf/antcontrib/antlib.xml"/>
   
@@ -29,14 +29,13 @@
                    docx.image-metadata,
                    docx.svg2emf,
                    docx.template,
+                   docx.merge,
                    docx.convert,
                    docx.package"/>
   
   <target name="docx.image-metadata" description="Read image metadata">
     <pipeline message="Read image metadata." taskname="image-metadata" tempdir="${dita.temp.dir}">
       <module class="org.dita.dost.module.ImageMetadataModule">
-        <ditaFileset format="dita" processingRole="normal"/>
-        <ditaFileset format="ditamap" processingRole="normal"/>
         <param name="outputdir" location="${output.dir}"/>
       </module>
     </pipeline>
@@ -77,17 +76,20 @@
     </copy>
   </target>
   
-  <target name="docx.convert">
+  <target name="docx.merge">
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}/dummy.file"/>
+    <property name="topicmerge.xsl" location="${dita.plugin.org.dita.pdf2.dir}/xsl/common/topicmerge.xsl"/>
     <pipeline message="topicmerge"
               inputmap="${dita.temp.dir.fullpath}/${user.input.file}"
               tempdir="${dita.temp.dir.fullpath}">
       <module class="org.dita.dost.module.TopicMergeModule">
         <param name="output" location="${dita.temp.dir.fullpath}/${dita.map.filename.root}_MERGED.xml"/>
-        <param name="style" location="${dita.plugin.org.dita.pdf2.dir}/xsl/common/topicmerge.xsl"/>
+        <param name="style" location="${topicmerge.xsl}"/>
       </module>
     </pipeline>
-    
+  </target>
+  
+  <target name="docx.convert">  
     <property name="image.dir" location="${user.input.dir}/.."/>
     <property name="clean.input.file" location="${dita.temp.dir.fullpath}/${dita.map.filename.root}_CLEANED.xml"/>
     <property name="document.flat.xsl" location="${docx.dir}/word/document.flat.xsl"/>
@@ -95,6 +97,7 @@
           in="${dita.temp.dir.fullpath}/${dita.map.filename.root}_MERGED.xml"
           out="${clean.input.file}"
           force="true">
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     
@@ -106,6 +109,7 @@
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/docProps/core.xml"
           force="true">
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <property name="custom.xsl" location="${docx.dir}/docProps/custom.xsl"/>
@@ -113,6 +117,7 @@
           in="${clean.input.file}"
           out="${dita.temp.dir}/docx/docProps/custom.xml"
           force="true">
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
 
@@ -124,6 +129,7 @@
       <param name="image.dir" expression="${image.dir}"/>
       <param name="template.dir" expression="${dotx.dir.uri}"/>
       <param name="input.dir.url" expression="${user.input.dir.url}"/>
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <property name="comments.xsl" location="${docx.dir}/word/comments.xsl"/>
@@ -132,6 +138,7 @@
           out="${dita.temp.dir}/docx/word/comments.xml"
           force="true">
       <param name="template.dir" expression="${dotx.dir.uri}"/>
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <property name="numbering.xsl" location="${docx.dir}/word/numbering.xsl"/>
@@ -140,6 +147,7 @@
           out="${dita.temp.dir}/docx/word/numbering.xml"
           force="true">
       <param name="template.dir" expression="${dotx.dir.uri}"/>
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <property name="footnotes.xsl" location="${docx.dir}/word/footnotes.xsl"/>
@@ -148,6 +156,7 @@
           out="${dita.temp.dir}/docx/word/footnotes.xml"
           force="true">
       <param name="template.dir" expression="${dotx.dir.uri}"/>
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <property name="document.xml.xsl" location="${docx.dir}/word/_rels/document.xml.xsl"/>
@@ -156,6 +165,7 @@
           out="${dita.temp.dir}/docx/word/_rels/document.xml.rels"
           force="true">
       <param name="template.dir" expression="${dotx.dir.uri}"/>
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
     <makeurl property="clean.input.file.uri" file="${clean.input.file}"/>
@@ -164,6 +174,7 @@
           out="${dita.temp.dir}/docx/[Content_Types].xml"
           force="true">
       <param name="input.uri" expression="${clean.input.file.uri}"/>
+      <dita:extension id="dita.conductor.docx.param" behavior="org.dita.dost.platform.InsertAction"/>
       <xmlcatalog refid="dita.catalog"/>
     </xslt>
   </target>
@@ -190,7 +201,7 @@
       <dita-fileset format="image"/>
     </copy>
     <delete>
-      <fileset dir="${dita.temp.dir}/docx/word/media">
+      <fileset dir="${dita.temp.dir}/docx/word/media" erroronmissingdir="false">
         <include name="**/*.mml"/>
         <include name="**/*.svg"/>
       </fileset>
