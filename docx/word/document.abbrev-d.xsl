@@ -52,7 +52,7 @@
     <xsl:variable name="first-use-scope-root" as="element()">
       <xsl:call-template name="get-first-use-scope-root"/>
     </xsl:variable>
-    <xsl:sequence select="not(generate-id(.) = generate-id(key('abbreviated-form-keyref', @keyref, $first-use-scope-root)[1]))"/>
+    <xsl:sequence select="not(x:generate-id(.) = x:generate-id(key('abbreviated-form-keyref', @keyref, $first-use-scope-root)[1]))"/>
   </xsl:template>
   <xsl:template match="*[contains(@class,' topic/copyright ')]//*" mode="use-abbreviated-form" as="xs:boolean">
     <xsl:sequence select="false()"/>
@@ -114,6 +114,13 @@
         <xsl:apply-templates select="*[contains(@class, ' glossentry/glossterm ')]/node()"/>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="*" mode="getMatchingDefinition">
+    <xsl:variable name="def" select="*[contains(@class, ' glossentry/glossdef ')]"/>
+    <xsl:if test="exists($def)">
+      <xsl:apply-templates select="$def/node()"/>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match="*" mode="ditamsg:no-glossentry-for-abbreviated-form">

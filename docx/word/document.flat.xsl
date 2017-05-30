@@ -9,38 +9,38 @@
   <xsl:import href="document.utils.xsl"/>
   <xsl:import href="flatten.xsl"/>
   
-  <xsl:variable name="content" as="document-node()">
-    <xsl:document>
-      <xsl:apply-templates select="node()" mode="flatten"/>
-    </xsl:document>
-  </xsl:variable>
-  <xsl:variable name="lists" as="xs:string*">
-    <xsl:for-each select="$content//*[contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ') or contains(@class, ' topic/sl ')]">
-      <xsl:value-of select="generate-id(.)"/>
-    </xsl:for-each>
-  </xsl:variable>
-  <xsl:variable name="image-lists" as="xs:string*">
-    <xsl:for-each select="$content//*[contains(@class, ' topic/image ')]">
-      <xsl:value-of select="generate-id(.)"/>
-    </xsl:for-each>
-  </xsl:variable>
-  <xsl:variable name="fn-lists" as="xs:string*">
-    <xsl:for-each select="$content//*[contains(@class, ' topic/fn ')]">
-      <xsl:value-of select="generate-id(.)"/>
-    </xsl:for-each>
-  </xsl:variable>
-  <xsl:variable name="draft-comment-lists" as="xs:string*">
-    <xsl:for-each select="$content//*[contains(@class, ' topic/draft-comment ')]">
-      <xsl:value-of select="generate-id(.)"/>
-    </xsl:for-each>
-  </xsl:variable>
-  <xsl:variable name="external-link-lists" as="xs:string*">
-    <xsl:for-each select="$content//*[contains(@class, ' topic/xref ') or contains(@class, ' topic/link ')][@scope = 'external']">
-      <xsl:value-of select="generate-id(.)"/>
-    </xsl:for-each>
-  </xsl:variable>
-  
   <xsl:template match="/">
+    <xsl:variable name="content" as="document-node()">
+      <xsl:document>
+        <xsl:apply-templates select="node()" mode="flatten"/>
+      </xsl:document>
+    </xsl:variable>
+    <xsl:variable name="lists" as="xs:string*">
+      <xsl:for-each select="$content//*[contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ') or contains(@class, ' topic/sl ')]">
+        <xsl:value-of select="x:generate-id(.)"/>
+      </xsl:for-each>
+    </xsl:variable>
+    <xsl:variable name="image-lists" as="xs:string*">
+      <xsl:for-each select="$content//*[contains(@class, ' topic/image ')]">
+        <xsl:value-of select="x:generate-id(.)"/>
+      </xsl:for-each>
+    </xsl:variable>
+    <xsl:variable name="fn-lists" as="xs:string*">
+      <xsl:for-each select="$content//*[contains(@class, ' topic/fn ')]">
+        <xsl:value-of select="x:generate-id(.)"/>
+      </xsl:for-each>
+    </xsl:variable>
+    <xsl:variable name="draft-comment-lists" as="xs:string*">
+      <xsl:for-each select="$content//*[contains(@class, ' topic/draft-comment ')] |
+                            $content//processing-instruction('oxy_comment_start')">
+        <xsl:value-of select="x:generate-id(.)"/>
+      </xsl:for-each>
+    </xsl:variable>
+    <xsl:variable name="external-link-lists" as="xs:string*">
+      <xsl:for-each select="$content//*[contains(@class, ' topic/xref ') or contains(@class, ' topic/link ')][@scope = 'external']">
+        <xsl:value-of select="x:generate-id(.)"/>
+      </xsl:for-each>
+    </xsl:variable>
     <xsl:apply-templates select="$content" mode="number">
       <xsl:with-param name="lists" select="$lists" tunnel="yes"/>
       <xsl:with-param name="image-lists" select="$image-lists" tunnel="yes"/>
@@ -50,14 +50,14 @@
     </xsl:apply-templates>
   </xsl:template>
   
-  <xsl:template match="@xtrc | @xtrf | *[contains(@class, '- topic/required-cleanup ')]" mode="number" priority="1000"/>
+  <xsl:template match="(:@xtrc | @xtrf | :)*[contains(@class, '- topic/required-cleanup ')]" mode="number" priority="1000"/>
   
   <!-- number -->
   
   <xsl:template match="*[contains(@class, ' topic/image ')]" mode="number">
     <xsl:param name="image-lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
-      <xsl:attribute name="x:image-number" select="index-of($image-lists, generate-id(.)) + 100"/>
+      <xsl:attribute name="x:image-number" select="index-of($image-lists, x:generate-id(.)) + 100"/>
       <xsl:apply-templates select="@* | node()" mode="number"/>
     </xsl:copy>
   </xsl:template>
@@ -65,7 +65,7 @@
   <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="number">
     <xsl:param name="fn-lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
-      <xsl:attribute name="x:fn-number" select="index-of($fn-lists, generate-id(.)) + 100"/>
+      <xsl:attribute name="x:fn-number" select="index-of($fn-lists, x:generate-id(.)) + 100"/>
       <xsl:apply-templates select="@* | node()" mode="number"/>
     </xsl:copy>
   </xsl:template>  
@@ -73,7 +73,7 @@
   <xsl:template match="*[contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ')  or contains(@class, ' topic/sl ')]" mode="number">
     <xsl:param name="lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
-      <xsl:attribute name="x:list-number" select="index-of($lists, generate-id(.)) + 100"/>
+      <xsl:attribute name="x:list-number" select="index-of($lists, x:generate-id(.)) + 100"/>
       <xsl:apply-templates select="@* | node()" mode="number"/>
     </xsl:copy>
   </xsl:template>
@@ -81,15 +81,24 @@
   <xsl:template match="*[contains(@class, ' topic/draft-comment ')]" mode="number">
     <xsl:param name="draft-comment-lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
-      <xsl:attribute name="x:draft-comment-number" select="index-of($draft-comment-lists, generate-id(.)) + 100"/>
+      <xsl:attribute name="x:draft-comment-number" select="index-of($draft-comment-lists, x:generate-id(.)) + 100"/>
       <xsl:apply-templates select="@* | node()" mode="number"/>
     </xsl:copy>
+  </xsl:template>
+  <xsl:template match="processing-instruction('oxy_comment_start')" mode="number">
+    <xsl:param name="draft-comment-lists" as="xs:string*" tunnel="yes"/>
+    <xsl:processing-instruction name="{name()}">
+      <xsl:text>draft-comment-number="</xsl:text>
+      <xsl:value-of select="index-of($draft-comment-lists, x:generate-id(.)) + 100"/>
+      <xsl:text>" </xsl:text>
+      <xsl:value-of select="."/>
+    </xsl:processing-instruction>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/xref ') or contains(@class, ' topic/link ')][@scope = 'external']" mode="number">
     <xsl:param name="external-link-lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
-      <xsl:attribute name="x:external-link-number" select="index-of($external-link-lists, generate-id(.)) + 100"/>
+      <xsl:attribute name="x:external-link-number" select="index-of($external-link-lists, x:generate-id(.)) + 100"/>
       <xsl:apply-templates select="@* | node()" mode="number"/>
     </xsl:copy>
   </xsl:template>
@@ -104,7 +113,9 @@
   
   <xsl:template match="*[contains(@class, ' topic/topic ')]"
                 mode="number">
+    <xsl:param name="draft-comment-lists" as="xs:string*" tunnel="yes"/>
     <xsl:copy>
+      <xsl:attribute name="x:draft-comment-number" select="index-of($draft-comment-lists, x:generate-id(.)) + 100"/>
       <xsl:for-each select="key('map-id', @id)[1]">
         <xsl:if test="empty(ancestor-or-self::*[self::*[contains(@class, ' bookmap/frontmatter ') or
                                                           contains(@class, ' bookmap/backmatter ')] or

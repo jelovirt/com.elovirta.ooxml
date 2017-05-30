@@ -15,7 +15,7 @@
     <param name="inkscape.exec" desc="Inkscape executable" type="file"/>
   </transtype>
   <extension-point id="dita.conductor.docx.param" name="DOCX XSLT parameters"/>
-  <feature extension="dita.transtype.print" value="docx"> </feature>
+  <feature extension="dita.transtype.print" value="docx"/>
   <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
   <feature extension="dita.conductor.lib.import" file="lib/ant-contrib-0.6.jar"/>
   <template file="build_template.xml"/>

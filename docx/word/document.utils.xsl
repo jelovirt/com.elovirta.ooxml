@@ -95,7 +95,7 @@
                           contains($class, ' topic/fig ') or
                           contains($class, ' topic/li ') or
                           contains($class, ' topic/sli ') or
-                          contains($class, ' topic/dt ') or
+                          (:contains($class, ' topic/dt ') or:)
                           contains($class, ' topic/dd ') or
                           contains($class, ' topic/itemgroup ') or
                           contains($class, ' topic/draft-comment ') or
@@ -260,6 +260,18 @@
       <xsl:apply-templates select="@* | node()" mode="whitespace"/>
     </xsl:copy>
   </xsl:template>
+
+  <xsl:function name="x:generate-id" as="xs:string">
+    <xsl:param name="node" as="node()"/>
+    <!--xsl:choose>
+      <xsl:when test="$node/self::*/@id">
+        <xsl:value-of select="$node/@id"/>
+      </xsl:when>
+      <xsl:otherwise-->
+        <xsl:value-of select="generate-id($node)"/>
+      <!--/xsl:otherwise>
+    </xsl:choose-->
+  </xsl:function>
 
   <!-- PI -->
   

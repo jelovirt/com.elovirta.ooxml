@@ -77,7 +77,7 @@
   <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="x:toc">
     <xsl:param name="depth" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])" as="xs:integer"/>
     <xsl:param name="prefix" as="node()*"/>
-    <xsl:variable name="target" select="concat($bookmark-prefix.toc, generate-id())" as="xs:string"/>
+    <xsl:variable name="target" select="concat($bookmark-prefix.toc, x:generate-id())" as="xs:string"/>
     <xsl:variable name="style-numbered" as="xs:boolean"
       select="exists($styles/w:styles/w:style[@w:styleId = concat('Heading', $depth)]/w:pPr/w:numPr)"/>
     <w:p>
