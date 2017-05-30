@@ -41,6 +41,7 @@
   <xsl:output indent="no"/>
 
   <xsl:param name="input.dir.url"/>
+  <xsl:param name="debug" as="xs:boolean?" select="false()"/>
   
   <xsl:variable name="template" select="document(concat($template.dir, '/word/document.xml'))" as="document-node()?"/>
   <xsl:variable name="root" select="/" as="document-node()"/>
