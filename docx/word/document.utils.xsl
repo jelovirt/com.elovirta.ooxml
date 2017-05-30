@@ -256,9 +256,7 @@
   </xsl:template>
   
   <xsl:template match="w:t[@xml:space = 'preserve']" mode="whitespace" priority="10">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()" mode="whitespace"/>
-    </xsl:copy>
+    <xsl:copy-of select="."/>
   </xsl:template>
 
   <xsl:function name="x:generate-id" as="xs:string">

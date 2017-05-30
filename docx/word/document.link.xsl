@@ -263,7 +263,7 @@
           <w:rPr>
             <w:rStyle w:val="FootnoteReference"/>
           </w:rPr>
-          <w:instrText xml:space="preserve">
+          <w:instrText>
             <xsl:text> NOTEREF </xsl:text>
             <xsl:value-of select="concat($bookmark-prefix.note, x:generate-id($target))"/>
             <xsl:text> \h </xsl:text>
