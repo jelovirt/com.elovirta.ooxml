@@ -80,7 +80,12 @@
   
   <xsl:template match="*[contains(@class,' pr-d/fragment ')]">
     <xsl:apply-templates select="*[contains(@class,' topic/title ')]"/>
-    <xsl:apply-templates select="node() except *[contains(@class,' topic/title ')]"/>
+    <w:p>
+      <w:pPr>
+        <xsl:apply-templates select="." mode="block-style"/>
+      </w:pPr>
+      <xsl:apply-templates select="node() except *[contains(@class,' topic/title ')]"/>
+    </w:p>
   </xsl:template>
   
   <xsl:template match="*[contains(@class,' pr-d/syntaxdiagram ')]/*[contains(@class,' topic/title ')]">
