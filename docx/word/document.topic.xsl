@@ -31,9 +31,6 @@
   <xsl:variable name="auto-number" select="true()" as="xs:boolean"/>
 
   <xsl:key name="id" match="*[@id]" use="@id"/>
-  <xsl:key name="map-id"
-           match="opentopic:map//*[@id][empty(ancestor::*[contains(@class, ' map/reltable ')])]"
-           use="@id"/>
   <xsl:key name="topic-id"
            match="*[@id][contains(@class, ' topic/topic ')] |
            ot-placeholder:*[@id]"
@@ -118,7 +115,7 @@
     <xsl:param name="prefix" as="xs:string"/>
     <xsl:param name="node" as="element()"/>
     
-    <xsl:variable name="name" select="concat($prefix, generate-id($node))"/>
+    <xsl:variable name="name" select="concat($prefix, x:generate-id($node))"/>
     <xsl:if test="string-length($name) gt 40">
       <xsl:message terminate="yes">FATAL: Bookmark <xsl:value-of select="$name"/> longer than 40 characters</xsl:message>
     </xsl:if>
@@ -129,8 +126,8 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="ref_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.ref, $type), $node)}"/>
-      <w:bookmarkStart w:id="toc_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.toc, $type), $node)}"/>
+      <w:bookmarkStart w:id="ref_{$type}{x:generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.ref, $type), $node)}"/>
+      <w:bookmarkStart w:id="toc_{$type}{x:generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.toc, $type), $node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -138,8 +135,8 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkEnd w:id="ref_{$type}{generate-id($node)}"/>
-      <w:bookmarkEnd w:id="toc_{$type}{generate-id($node)}"/>
+      <w:bookmarkEnd w:id="ref_{$type}{x:generate-id($node)}"/>
+      <w:bookmarkEnd w:id="toc_{$type}{x:generate-id($node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -147,7 +144,7 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkStart w:id="num_{$type}{generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.num, $type), $node)}"/>
+      <w:bookmarkStart w:id="num_{$type}{x:generate-id($node)}" w:name="{x:bookmark-name(concat($bookmark-prefix.num, $type), $node)}"/>
     </xsl:if>
   </xsl:template>
   
@@ -155,7 +152,7 @@
     <xsl:param name="node" select=".[@id]" as="element()?"/>
     <xsl:param name="type" as="xs:string?" select="()"/>
     <xsl:if test="exists($node)">
-      <w:bookmarkEnd w:id="num_{$type}{generate-id($node)}"/>
+      <w:bookmarkEnd w:id="num_{$type}{x:generate-id($node)}"/>
     </xsl:if>
   </xsl:template>
 
@@ -971,9 +968,9 @@
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="x:get-footnote-reference">
-    <w:bookmarkStart w:id="note_{generate-id(.)}" w:name="{x:bookmark-name($bookmark-prefix.note, .)}"/>
+    <w:bookmarkStart w:id="note_{x:generate-id(.)}" w:name="{x:bookmark-name($bookmark-prefix.note, .)}"/>
     <w:footnoteReference w:id="{@x:fn-number}"/>
-    <w:bookmarkEnd w:id="note_{generate-id()}"/>
+    <w:bookmarkEnd w:id="note_{x:generate-id(.)}"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/draft-comment ')]">
@@ -996,6 +993,48 @@
     <w:pStyle w:val="CommentText"/>
   </xsl:template> 
   
+  <xsl:template match="processing-instruction('oxy_comment_start')">
+    <xsl:if test="$debug">
+      <xsl:variable name="attributes" as="element()">
+        <res>
+          <xsl:apply-templates select="." mode="x:parse-pi"/>
+        </res>
+      </xsl:variable>
+      <w:commentRangeStart w:id="{$attributes/@draft-comment-number}"/>
+      <xsl:choose>
+        <xsl:when test="x:block-content(..)">
+          <w:commentReference w:id="{$attributes/@draft-comment-number}"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <w:r>
+            <w:rPr>
+              <w:rStyle w:val="CommentReference"/>
+            </w:rPr>
+            <w:commentReference w:id="{$attributes/@draft-comment-number}"/>
+          </w:r>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match="processing-instruction('oxy_comment_end')">
+    <xsl:if test="$debug">
+      <xsl:variable name="start" select="preceding::processing-instruction('oxy_comment_start')[1]" as="processing-instruction()"/>
+      <xsl:variable name="attributes" as="element()">
+        <res>
+          <xsl:apply-templates select="$start" mode="x:parse-pi"/>
+        </res>
+      </xsl:variable>
+      <w:commentRangeEnd w:id="{$attributes/@draft-comment-number}"/>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/draft-comment ')] |
+                       processing-instruction('oxy_comment_start')"
+                mode="block-style">
+    <w:pStyle w:val="CommentText"/>
+  </xsl:template>
+
   <xsl:template match="*[contains(@class, ' topic/indexterm ')]"/>
   
   <xsl:template match="*[contains(@class,' topic/term ')]" name="topic.term">

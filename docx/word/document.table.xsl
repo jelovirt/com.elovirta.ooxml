@@ -98,8 +98,12 @@
     <w:tbl>
       <xsl:apply-templates select="*[contains(@class, ' topic/tgroup ')]"/>
     </w:tbl>
+    <xsl:apply-templates select="."  mode="table-fn"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/table ')]" mode="table-fn">
     <xsl:variable name="fn-style" as="element()*">
-      <xsl:if test="@expanse = 'page' or @pgwide = '1'">
+      <xsl:if test="(@expanse, $expanse.default)[1] = 'page' or (@pgwide, $pgwide.default)[1] = '1'">
         <w:ind w:left="0"/>
       </xsl:if>
     </xsl:variable>

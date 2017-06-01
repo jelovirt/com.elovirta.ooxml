@@ -53,6 +53,16 @@
     <xsl:apply-templates select="." mode="body"/>
   </xsl:template>
   
+  <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="root">
+    <xsl:apply-templates select="."/>
+  </xsl:template>
+  
+  <xsl:variable name="body-section" as="node()*">
+    <xsl:for-each select="$template/w:document/w:body/w:sectPr[position() = last()]">
+      <xsl:copy-of select="."/>
+    </xsl:for-each>
+  </xsl:variable>
+
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="body">
     <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
   </xsl:template>

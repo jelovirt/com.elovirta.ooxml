@@ -44,7 +44,6 @@
       </xsl:for-each>
       <!-- original numberings -->
       <xsl:copy-of select="$doc/w:numbering/w:num"/>
-      
     </w:numbering>
   </xsl:template>
   
@@ -62,10 +61,8 @@
     <xsl:param name="indent-start" as="xs:integer"/>
     <!-- Ordered list -->
     <w:abstractNum w:abstractNumId="{$number}">
-      <!--w:nsid w:val="54120D7E"/-->
       <w:multiLevelType w:val="hybridMultilevel"/>
-      <w:tmpl w:val="7690F386"/>
-      <w:lvl w:ilvl="0" w:tplc="0809000F">
+      <w:lvl w:ilvl="0">
         <w:start w:val="1"/>
         <w:numFmt w:val="decimal"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -75,7 +72,7 @@
           <w:ind w:left="{$indent-start + 1 * xs:integer($increment-base)}" w:hanging="360"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="1" w:tplc="08090019">
+      <w:lvl w:ilvl="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="lowerLetter"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -85,7 +82,7 @@
           <w:ind w:left="{$indent-start + 2 * xs:integer($increment-base)}" w:hanging="360"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="2" w:tplc="0809001B" w:tentative="1">
+      <w:lvl w:ilvl="2" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="lowerRoman"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -95,7 +92,7 @@
           <w:ind w:left="{$indent-start + 3 * xs:integer($increment-base)}" w:hanging="180"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="3" w:tplc="0809000F" w:tentative="1">
+      <w:lvl w:ilvl="3" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="decimal"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -105,7 +102,7 @@
           <w:ind w:left="{$indent-start + 4 * xs:integer($increment-base)}" w:hanging="360"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="4" w:tplc="08090019" w:tentative="1">
+      <w:lvl w:ilvl="4" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="lowerLetter"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -115,7 +112,7 @@
           <w:ind w:left="{$indent-start + 5 * xs:integer($increment-base)}" w:hanging="360"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="5" w:tplc="0809001B" w:tentative="1">
+      <w:lvl w:ilvl="5" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="lowerRoman"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -125,7 +122,7 @@
           <w:ind w:left="{$indent-start + 6 * xs:integer($increment-base)}" w:hanging="180"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="6" w:tplc="0809000F" w:tentative="1">
+      <w:lvl w:ilvl="6" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="decimal"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -135,7 +132,7 @@
           <w:ind w:left="{$indent-start + 7 * xs:integer($increment-base)}" w:hanging="360"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="7" w:tplc="08090019" w:tentative="1">
+      <w:lvl w:ilvl="7" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="lowerLetter"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -145,7 +142,7 @@
           <w:ind w:left="{$indent-start + 8 * xs:integer($increment-base)}" w:hanging="360"/>
         </w:pPr>
       </w:lvl>
-      <w:lvl w:ilvl="8" w:tplc="0809001B" w:tentative="1">
+      <w:lvl w:ilvl="8" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="lowerRoman"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -171,10 +168,8 @@
     <xsl:param name="number"/>
     <xsl:param name="indent-start" as="xs:integer"/>
     <w:abstractNum w:abstractNumId="{$number}">
-      <!--w:nsid w:val="5910710B"/-->
       <w:multiLevelType w:val="hybridMultilevel"/>
-      <w:tmpl w:val="0316CE72"/>
-      <w:lvl w:ilvl="0" w:tplc="08090001">
+      <w:lvl w:ilvl="0">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -187,7 +182,7 @@
           <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="1" w:tplc="08090003" w:tentative="1">
+      <w:lvl w:ilvl="1" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -201,7 +196,7 @@
             w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="2" w:tplc="08090005" w:tentative="1">
+      <w:lvl w:ilvl="2" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -214,7 +209,7 @@
           <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="3" w:tplc="08090001" w:tentative="1">
+      <w:lvl w:ilvl="3" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -227,7 +222,7 @@
           <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="4" w:tplc="08090003" w:tentative="1">
+      <w:lvl w:ilvl="4" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -241,7 +236,7 @@
             w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="5" w:tplc="08090005" w:tentative="1">
+      <w:lvl w:ilvl="5" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -254,7 +249,7 @@
           <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="6" w:tplc="08090001" w:tentative="1">
+      <w:lvl w:ilvl="6" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -267,7 +262,7 @@
           <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="7" w:tplc="08090003" w:tentative="1">
+      <w:lvl w:ilvl="7" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>
@@ -281,7 +276,7 @@
             w:hint="default"/>
         </w:rPr>
       </w:lvl>
-      <w:lvl w:ilvl="8" w:tplc="08090005" w:tentative="1">
+      <w:lvl w:ilvl="8" w:tentative="1">
         <w:start w:val="1"/>
         <w:numFmt w:val="bullet"/>
         <xsl:apply-templates select="parent::*" mode="block-style"/>

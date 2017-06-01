@@ -190,7 +190,7 @@
     </zip>
   </target>
   
-  <target name="docx.package.media" depends="docx.package.media.check" unless="media.skip">
+  <target name="docx.package.media" unless="media.skip">
     <!--copy todir="${dita.temp.dir}/docx/word/media">
       <fileset dir="${user.input.dir}/" includesfile="${dita.temp.dir}/${imagefile}">
         <exclude name="**/*.mml"/>
@@ -206,11 +206,6 @@
         <include name="**/*.svg"/>
       </fileset>
     </delete>
-  </target>
-  <target name="docx.package.media.check">
-    <condition property="media.skip">
-      <length file="${dita.temp.dir}/${imagefile}" length="0"/>
-    </condition>
   </target>
     
 </project>

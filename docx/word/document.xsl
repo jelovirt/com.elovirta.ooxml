@@ -41,6 +41,7 @@
   <xsl:output indent="no"/>
 
   <xsl:param name="input.dir.url"/>
+  <xsl:param name="debug" as="xs:boolean?" select="false()"/>
   
   <xsl:variable name="template" select="document(concat($template.dir, '/word/document.xml'))" as="document-node()?"/>
   <xsl:variable name="root" select="/" as="document-node()"/>
@@ -50,7 +51,5 @@
   <xsl:variable name="body-width" as="xs:integer">
     <xsl:sequence select="xs:integer($sectPr/w:pgSz/@w:w) - xs:integer($sectPr/w:pgMar/@w:left) - xs:integer($sectPr/w:pgMar/@w:right)"/>
   </xsl:variable>
-
-  <xsl:key name="map-id" match="opentopic:map//*[@id]" use="@id"/>
 
 </xsl:stylesheet>

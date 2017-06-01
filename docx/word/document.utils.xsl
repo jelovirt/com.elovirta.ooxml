@@ -26,7 +26,28 @@
 
   <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
 
+  <xsl:key name="map-id"
+    match="opentopic:map//*[@id][empty(ancestor::*[contains(@class, ' map/reltable ')])]"
+    use="@id"/>
+
   <!-- Utilities -->
+  
+  <xsl:function name="x:parse-dateTime" as="xs:dateTime">
+    <xsl:param name="dateTime" as="xs:string"/>
+    <xsl:choose>
+      <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}$')">
+        <xsl:sequence select="xs:dateTime(xs:date($dateTime))"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="xs:dateTime($dateTime)"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+  
+  <xsl:function name="x:iso-dateTime" as="xs:string">
+    <xsl:param name="dateTime" as="xs:dateTime"/>
+    <xsl:value-of select="format-dateTime($dateTime, '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01][Z00:00t]')"/>
+  </xsl:function>
   
   <xsl:function name="x:get-topicref">
     <xsl:param name="topic" as="element()"/>
@@ -75,6 +96,9 @@
       <xsl:when test="$unit = 'in'">
         <xsl:sequence select="xs:integer(round($value * 914400))"/>
       </xsl:when>
+      <xsl:when test="$unit = 'pt'">
+        <xsl:sequence select="xs:integer(round($value * 12700))"/>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:message terminate="yes">ERROR: Unsupported unit "<xsl:value-of select="$unit"/>"</xsl:message>
       </xsl:otherwise>
@@ -92,7 +116,7 @@
                           contains($class, ' topic/fig ') or
                           contains($class, ' topic/li ') or
                           contains($class, ' topic/sli ') or
-                          contains($class, ' topic/dt ') or
+                          (:contains($class, ' topic/dt ') or:)
                           contains($class, ' topic/dd ') or
                           contains($class, ' topic/itemgroup ') or
                           contains($class, ' topic/draft-comment ') or
@@ -253,10 +277,20 @@
   </xsl:template>
   
   <xsl:template match="w:t[@xml:space = 'preserve']" mode="whitespace" priority="10">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()" mode="whitespace"/>
-    </xsl:copy>
+    <xsl:copy-of select="."/>
   </xsl:template>
+
+  <xsl:function name="x:generate-id" as="xs:string">
+    <xsl:param name="node" as="node()"/>
+    <!--xsl:choose>
+      <xsl:when test="$node/self::*/@id">
+        <xsl:value-of select="$node/@id"/>
+      </xsl:when>
+      <xsl:otherwise-->
+        <xsl:value-of select="generate-id($node)"/>
+      <!--/xsl:otherwise>
+    </xsl:choose-->
+  </xsl:function>
 
   <!-- PI -->
   
