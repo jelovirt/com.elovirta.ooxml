@@ -45,7 +45,7 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:if test="@time">
-        <xsl:attribute name="w:date" select="@time"/>
+        <xsl:attribute name="w:date" select="x:iso-dateTime(x:parse-dateTime(@time))"/>
       </xsl:if>
       <w:p>
         <w:pPr>
@@ -78,7 +78,7 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:if test="$attributes/@timestamp">
-        <xsl:attribute name="w:date" select="replace($attributes/@timestamp, '(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})([-+]\d{4}|Z)', '$1-$2-$3T$4:$5:$6$7')"/>
+        <xsl:attribute name="w:date" select="x:iso-dateTime(x:parse-dateTime(replace($attributes/@timestamp, '(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})([-+]\d{4}|Z)', '$1-$2-$3T$4:$5:$6$7')))"/>
       </xsl:if>
       <w:p>
         <w:pPr>
