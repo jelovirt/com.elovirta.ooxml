@@ -108,9 +108,7 @@
       <xsl:apply-templates select="@* | node()" mode="number"/>
     </xsl:copy>
   </xsl:template>
-  
-  <xsl:key name="map-id" match="opentopic:map//*[@id]" use="@id"/>
-  
+    
   <xsl:template match="*[contains(@class, ' topic/topic ')]"
                 mode="number">
     <xsl:param name="draft-comment-lists" as="xs:string*" tunnel="yes"/>

@@ -26,6 +26,10 @@
 
   <xsl:variable name="map" select="/*[contains(@class, ' map/map ')]/opentopic:map" as="element()"/>
 
+  <xsl:key name="map-id"
+    match="opentopic:map//*[@id][empty(ancestor::*[contains(@class, ' map/reltable ')])]"
+    use="@id"/>
+
   <!-- Utilities -->
   
   <xsl:function name="x:get-topicref">

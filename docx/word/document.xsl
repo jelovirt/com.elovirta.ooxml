@@ -52,6 +52,4 @@
     <xsl:sequence select="xs:integer($sectPr/w:pgSz/@w:w) - xs:integer($sectPr/w:pgMar/@w:left) - xs:integer($sectPr/w:pgMar/@w:right)"/>
   </xsl:variable>
 
-  <xsl:key name="map-id" match="opentopic:map//*[@id]" use="@id"/>
-
 </xsl:stylesheet>

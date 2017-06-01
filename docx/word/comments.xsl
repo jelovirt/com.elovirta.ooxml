@@ -61,8 +61,8 @@
       <xsl:apply-templates/>      
     </w:comment>
   </xsl:template>
-
-<xsl:template match="processing-instruction('oxy_comment_start')">
+  
+  <xsl:template match="processing-instruction('oxy_comment_start')">
     <xsl:variable name="attributes" as="element()">
       <res>
         <xsl:apply-templates select="." mode="x:parse-pi"/>

@@ -31,9 +31,6 @@
   <xsl:variable name="auto-number" select="true()" as="xs:boolean"/>
 
   <xsl:key name="id" match="*[@id]" use="@id"/>
-  <xsl:key name="map-id"
-           match="opentopic:map//*[@id][empty(ancestor::*[contains(@class, ' map/reltable ')])]"
-           use="@id"/>
   <xsl:key name="topic-id"
            match="*[@id][contains(@class, ' topic/topic ')] |
            ot-placeholder:*[@id]"
