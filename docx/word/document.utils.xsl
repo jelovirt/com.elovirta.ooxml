@@ -32,6 +32,23 @@
 
   <!-- Utilities -->
   
+  <xsl:function name="x:parse-dateTime" as="xs:dateTime">
+    <xsl:param name="dateTime" as="xs:string"/>
+    <xsl:choose>
+      <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}$')">
+        <xsl:sequence select="xs:dateTime(xs:date($dateTime))"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="xs:dateTime($dateTime)"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+  
+  <xsl:function name="x:iso-dateTime" as="xs:string">
+    <xsl:param name="dateTime" as="xs:dateTime"/>
+    <xsl:value-of select="format-dateTime($dateTime, '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01][Z00:00t]')"/>
+  </xsl:function>
+  
   <xsl:function name="x:get-topicref">
     <xsl:param name="topic" as="element()"/>
     <xsl:variable name="id" select="$topic/ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id" as="attribute()"/>

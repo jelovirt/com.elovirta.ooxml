@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <x:description xmlns:x="http://www.jenitennison.com/xslt/xspec"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:ooxml="com.elovirta.ooxml"
                stylesheet="document.utils.xsl">
   
@@ -52,6 +53,60 @@
         <x:param select="()"/>
       </x:call>
       <x:expect label="" select="12700"/>
+    </x:scenario>
+  </x:scenario>
+
+  <x:scenario label="date-time parsing">
+    <x:scenario label="ISO data">
+      <x:call function="ooxml:parse-dateTime">
+        <x:param select="'2017-01-31'"/>
+      </x:call>
+      <x:expect label="" select="xs:dateTime('2017-01-31T00:00:00')"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time">
+      <x:call function="ooxml:parse-dateTime">
+        <x:param select="'2017-01-31T12:13:14'"/>
+      </x:call>
+      <x:expect label="" select="xs:dateTime('2017-01-31T12:13:14')"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time with Z timezone">
+      <x:call function="ooxml:parse-dateTime">
+        <x:param select="'2017-01-31T12:13:14Z'"/>
+      </x:call>
+      <x:expect label="" select="xs:dateTime('2017-01-31T12:13:14Z')"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time +2 timezone">
+      <x:call function="ooxml:parse-dateTime">
+        <x:param select="'2017-01-31T12:13:14+02:00'"/>
+      </x:call>
+      <x:expect label="" select="xs:dateTime('2017-01-31T12:13:14+02:00')"/>
+    </x:scenario>
+  </x:scenario>
+  
+  <x:scenario label="ISO date-time">
+    <x:scenario label="ISO data">
+      <x:call function="ooxml:iso-dateTime">
+        <x:param select="xs:dateTime('2017-01-31T00:00:00')"/>
+      </x:call>
+      <x:expect label="" select="'2017-01-31T00:00:00'"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time">
+      <x:call function="ooxml:iso-dateTime">
+        <x:param select="xs:dateTime('2017-01-31T12:13:14')"/>
+      </x:call>
+      <x:expect label="" select="'2017-01-31T12:13:14'"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time with Z timezone">
+      <x:call function="ooxml:iso-dateTime">
+        <x:param select="xs:dateTime('2017-01-31T12:13:14Z')"/>
+      </x:call>
+      <x:expect label="" select="'2017-01-31T12:13:14Z'"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time +2 timezone">
+      <x:call function="ooxml:iso-dateTime">
+        <x:param select="xs:dateTime('2017-01-31T12:13:14+02:00')"/>
+      </x:call>
+      <x:expect label="" select="'2017-01-31T12:13:14+02:00'"/>
     </x:scenario>
   </x:scenario>
 
