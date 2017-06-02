@@ -81,6 +81,18 @@
       </x:call>
       <x:expect label="" select="xs:dateTime('2017-01-31T12:13:14+02:00')"/>
     </x:scenario>
+    <x:scenario label="ISO data-time +2 timezone without minutes">
+      <x:call function="ooxml:parse-dateTime">
+        <x:param select="'2017-01-31T12:13:14+02'"/>
+      </x:call>
+      <x:expect label="" select="xs:dateTime('2017-01-31T12:13:14+02:00')"/>
+    </x:scenario>
+    <x:scenario label="ISO data-time +2 timezone without separator">
+      <x:call function="ooxml:parse-dateTime">
+        <x:param select="'2017-01-31T12:13:14+0200'"/>
+      </x:call>
+      <x:expect label="" select="xs:dateTime('2017-01-31T12:13:14+02:00')"/>
+    </x:scenario>
   </x:scenario>
   
   <x:scenario label="ISO date-time">
