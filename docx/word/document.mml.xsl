@@ -3,7 +3,7 @@
   xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:x="com.elovirta.ooxml" exclude-result-prefixes="mml x">
+  xmlns:x="com.elovirta.ooxml" exclude-result-prefixes="mml x xs">
 
   <xsl:template match="mml:math">
     <xsl:variable name="content" as="element()*">
@@ -33,7 +33,7 @@
       test="
         following-sibling::*[1][self::mml:mi | self::mml:mo | self::mml:ms | self::mml:mn] and
         exists(parent::mml:math | parent::mml:mrow)">
-      <mml:mspace/>
+      <mml:mspace width="0"/>
     </xsl:if>
   </xsl:template>
 
@@ -714,9 +714,7 @@
       </m:rPr>
     </xsl:if>
     <xsl:variable name="font" as="element()*">
-      <!--xsl:if test="some $t in text() satisfies matches($t, '[^\w]')">
-        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>      
-      </xsl:if-->
+      <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
       <xsl:if test="$ndCur/self::mml:mi and empty($mathvariant)">
         <w:i/>
       </xsl:if>
@@ -1268,7 +1266,7 @@
           3)  the character of the mml:mo is the correct under/over bar. -->
   <xsl:function name="x:FIsBar" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
-    <xsl:variable name="fUnder" as="xs:boolean" select="$ndCur[self::mml:munder]"/>
+    <xsl:variable name="fUnder" as="xs:boolean" select="exists($ndCur[self::mml:munder])"/>
     <xsl:variable name="fAccent" as="xs:boolean"
       select="lower-case(($ndCur/@accentunder, $ndCur/@accent)[1]) = 'true'"/>
 
@@ -1746,6 +1744,13 @@
         ($fChCloseValid and not($chClose = ')')) or
         not($chSep = '|')">
       <m:dPr>
+        <m:shp m:val="match"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i w:val="0"/>
+          </w:rPr>
+        </m:ctrlPr>
         <!-- the default for MathML and OMML is '('. -->
         <xsl:if test="$fChOpenValid and not($chOpen = '(')">
           <m:begChr m:val="{$chOpen}"/>
