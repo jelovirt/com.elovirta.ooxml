@@ -35,13 +35,12 @@
   <xsl:function name="x:parse-dateTime" as="xs:dateTime">
     <xsl:param name="dateTime" as="xs:string"/>
     <xsl:choose>
-      <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[-+]\d{4}$')">
+      <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?[-+]\d{4}$')">
         <xsl:sequence select="xs:dateTime(replace($dateTime, '(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(\.\d{3})?([-+]\d{2})(\d{2})', '$1-$2-$3T$4:$5:$6$7$8:$9'))"/>
       </xsl:when>
-      <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[-+]\d{2}$')">
+      <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?[-+]\d{2}$')">
         <xsl:sequence select="xs:dateTime(concat($dateTime, ':00'))"/>
       </xsl:when>
-      
       <xsl:when test="matches($dateTime, '^\d{4}-\d{2}-\d{2}$')">
         <xsl:sequence select="xs:dateTime(xs:date($dateTime))"/>
       </xsl:when>
