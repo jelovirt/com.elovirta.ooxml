@@ -714,7 +714,9 @@
       </m:rPr>
     </xsl:if>
     <xsl:variable name="font" as="element()*">
+      <!--
       <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+      -->
       <xsl:if test="$ndCur/self::mml:mi and empty($mathvariant)">
         <w:i/>
       </xsl:if>
@@ -1275,9 +1277,7 @@
       <xsl:when test="
           not($fAccent)
           and $ndCur/*[2]/self::mml:mo">
-        <xsl:variable name="sOperator" as="xs:string">
-          <xsl:value-of select="$ndCur/*[2]"/>
-        </xsl:variable>
+        <xsl:variable name="sOperator" as="xs:string" select="$ndCur/*[2]"/>
         <xsl:choose>
           <!-- Should we write an underbar? -->
           <xsl:when test="$fUnder">
@@ -1310,9 +1310,7 @@
       <xsl:when test="
           $fAccent
           and $ndCur/*[2][self::mml:mo]">
-        <xsl:variable name="sOperator" as="xs:string">
-          <xsl:value-of select="$ndCur/*[2]"/>
-        </xsl:variable>
+        <xsl:variable name="sOperator" as="xs:string" select="$ndCur/*[2]"/>
         <xsl:choose>
           <!-- There is only one operator, this is a valid Omml accent! -->
           <xsl:when test="string-length($sOperator) &lt;= 1">
@@ -1370,12 +1368,9 @@
           and count($ndCur/*) = 2
           and (($ndCur/*[1][self::mml:mrow] and $ndCur/*[2][self::mml:mo])
           or ($ndCur/*[1][self::mml:mo] and $ndCur/*[2][self::mml:mrow]))">
-        <xsl:variable name="sOperator" as="xs:string">
-          <xsl:value-of select="$ndCur/mml:mo"/>
-        </xsl:variable>
+        <xsl:variable name="sOperator" as="xs:string" select="$ndCur/mml:mo"/>
         <xsl:sequence select="string-length($sOperator) &lt;= 1"/>
       </xsl:when>
-
       <xsl:otherwise>
         <xsl:sequence select="false()"/>
       </xsl:otherwise>
@@ -1391,9 +1386,7 @@
       <xsl:when test="$fNary">
         <m:nary>
           <xsl:call-template name="CreateNaryProp">
-            <xsl:with-param name="chr">
-              <xsl:value-of select="normalize-space(*[1])"/>
-            </xsl:with-param>
+            <xsl:with-param name="chr" select="normalize-space(*[1])"/>
             <xsl:with-param name="sMathmlType" select="'munder'"/>
           </xsl:call-template>
           <m:sub>
@@ -1433,9 +1426,7 @@
               <xsl:when test="$fGroupChr">
                 <m:groupChr>
                   <xsl:call-template name="CreateGroupChrPr">
-                    <xsl:with-param name="chr">
-                      <xsl:value-of select="mml:mo"/>
-                    </xsl:with-param>
+                    <xsl:with-param name="chr" select="mml:mo"/>
                     <xsl:with-param name="pos">
                       <xsl:choose>
                         <xsl:when test="*[1][self::mml:mrow]">bot</xsl:when>
@@ -1492,9 +1483,7 @@
       <xsl:when test="$fNary">
         <m:nary>
           <xsl:call-template name="CreateNaryProp">
-            <xsl:with-param name="chr">
-              <xsl:value-of select="normalize-space(*[1])"/>
-            </xsl:with-param>
+            <xsl:with-param name="chr" select="normalize-space(*[1])"/>
             <xsl:with-param name="sMathmlType" select="'mover'"/>
           </xsl:call-template>
           <m:sub>
@@ -1552,9 +1541,7 @@
                   <xsl:when test="$fGroupChr">
                     <m:groupChr>
                       <xsl:call-template name="CreateGroupChrPr">
-                        <xsl:with-param name="chr">
-                          <xsl:value-of select="mml:mo"/>
-                        </xsl:with-param>
+                        <xsl:with-param name="chr" select="mml:mo"/>
                         <xsl:with-param name="pos">
                           <xsl:choose>
                             <xsl:when test="*[1][self::mml:mrow]">top</xsl:when>
@@ -1599,9 +1586,7 @@
       <xsl:when test="$fNary">
         <m:nary>
           <xsl:call-template name="CreateNaryProp">
-            <xsl:with-param name="chr">
-              <xsl:value-of select="normalize-space(*[1])"/>
-            </xsl:with-param>
+            <xsl:with-param name="chr" select="normalize-space(*[1])"/>
             <xsl:with-param name="sMathmlType" select="'munderover'"/>
           </xsl:call-template>
           <m:sub>
@@ -1647,50 +1632,33 @@
   <!-- %%Template: match mfenced -->
   <xsl:template match="mml:mfenced">
     <m:d>
-      <xsl:variable name="fChSeparatorsValid" as="xs:integer">
-        <xsl:choose>
-          <xsl:when test="@separators">
-            <xsl:value-of select="1"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="0"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:variable>
+      <xsl:variable name="fChSeparatorsValid"
+        select="
+          if (exists(@separators)) then
+            1
+          else
+            0"
+        as="xs:integer"/>
       <xsl:call-template name="CreateDelimProp">
-        <xsl:with-param name="fChOpenValid">
-          <xsl:choose>
-            <xsl:when test="@open">
-              <xsl:value-of select="1"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="0"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:with-param>
-        <xsl:with-param name="chOpen">
-          <xsl:value-of select="@open"/>
-        </xsl:with-param>
+        <xsl:with-param name="fChOpenValid"
+          select="
+            if (exists(@open)) then
+              1
+            else
+              0"/>
+        <xsl:with-param name="chOpen" select="@open"/>
         <xsl:with-param name="fChSeparatorsValid" select="$fChSeparatorsValid"/>
-        <xsl:with-param name="chSeparators">
-          <xsl:value-of select="@separators"/>
-        </xsl:with-param>
-        <xsl:with-param name="fChCloseValid">
-          <xsl:choose>
-            <xsl:when test="@close">
-              <xsl:value-of select="1"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="0"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:with-param>
-        <xsl:with-param name="chClose">
-          <xsl:value-of select="@close"/>
-        </xsl:with-param>
+        <xsl:with-param name="chSeparators" select="@separators"/>
+        <xsl:with-param name="fChCloseValid"
+          select="
+            if (exists(@close)) then
+              1
+            else
+              0"/>
+        <xsl:with-param name="chClose" select="@close"/>
       </xsl:call-template>
       <xsl:choose>
-        <xsl:when test="not($fChSeparatorsValid) and empty(*[not(self::mml:mtext)])">
+        <xsl:when test="not($fChSeparatorsValid = 1) and empty(*[not(self::mml:mtext)])">
           <m:e>
             <xsl:call-template name="CreateArgProp"/>
             <xsl:for-each select="*">
@@ -1729,11 +1697,11 @@
 	-->
   <xsl:template name="CreateDelimProp">
     <xsl:param name="fChOpenValid" as="xs:integer"/>
-    <xsl:param name="chOpen" as="xs:string"/>
+    <xsl:param name="chOpen" as="xs:string?"/>
     <xsl:param name="fChSeparatorsValid" as="xs:integer"/>
-    <xsl:param name="chSeparators" as="xs:string"/>
+    <xsl:param name="chSeparators" as="xs:string?"/>
     <xsl:param name="fChCloseValid" as="xs:integer"/>
-    <xsl:param name="chClose" as="xs:string"/>
+    <xsl:param name="chClose" as="xs:string?"/>
     <xsl:variable name="chSep" select="substring($chSeparators, 1, 1)" as="xs:string"/>
 
     <!-- do we need a dPr at all? If everything's at its default value, then 
@@ -1745,12 +1713,14 @@
         not($chSep = '|')">
       <m:dPr>
         <m:shp m:val="match"/>
+        <!--
         <m:ctrlPr>
           <w:rPr>
             <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
             <w:i w:val="0"/>
           </w:rPr>
         </m:ctrlPr>
+        -->
         <!-- the default for MathML and OMML is '('. -->
         <xsl:if test="$fChOpenValid and not($chOpen = '(')">
           <m:begChr m:val="{$chOpen}"/>
@@ -1835,9 +1805,7 @@
       <xsl:when test="$fNary">
         <m:nary>
           <xsl:call-template name="CreateNaryProp">
-            <xsl:with-param name="chr">
-              <xsl:value-of select="normalize-space(*[1])"/>
-            </xsl:with-param>
+            <xsl:with-param name="chr" select="normalize-space(*[1])"/>
             <xsl:with-param name="sMathmlType" select="'msub'"/>
           </xsl:call-template>
           <m:sub>
@@ -1878,9 +1846,7 @@
       <xsl:when test="$fNary">
         <m:nary>
           <xsl:call-template name="CreateNaryProp">
-            <xsl:with-param name="chr">
-              <xsl:value-of select="normalize-space(*[1])"/>
-            </xsl:with-param>
+            <xsl:with-param name="chr" select="normalize-space(*[1])"/>
             <xsl:with-param name="sMathmlType" select="'msup'"/>
           </xsl:call-template>
           <m:sub>
@@ -1921,9 +1887,7 @@
       <xsl:when test="$fNary">
         <m:nary>
           <xsl:call-template name="CreateNaryProp">
-            <xsl:with-param name="chr">
-              <xsl:value-of select="normalize-space(*[1])"/>
-            </xsl:with-param>
+            <xsl:with-param name="chr" select="normalize-space(*[1])"/>
             <xsl:with-param name="sMathmlType" select="'msubsup'"/>
           </xsl:call-template>
           <m:sub>
@@ -2252,7 +2216,9 @@
         <xsl:value-of select="$strBuilding"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:sequence select="x:ConcatStringRepeat($strToRepeat, $iRepetitions - 1, concat($strBuilding, $strToRepeat))"/>
+        <xsl:sequence
+          select="x:ConcatStringRepeat($strToRepeat, $iRepetitions - 1, concat($strBuilding, $strToRepeat))"
+        />
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
@@ -2320,7 +2286,8 @@
             select="count(descendant::mml:malignmark)"/>
           <!-- Output all maligngroups and malignmarks as '&' -->
           <xsl:if test="$cMalignGroups + $cMalignMarks gt 0">
-            <xsl:variable name="str" as="xs:string" select="x:ConcatStringRepeat('&amp;', $cMalignGroups + $cMalignMarks, '')"/>
+            <xsl:variable name="str" as="xs:string"
+              select="x:ConcatStringRepeat('&amp;', $cMalignGroups + $cMalignMarks, '')"/>
             <m:r>
               <m:t>
                 <xsl:call-template name="OutputText">
@@ -2836,7 +2803,7 @@
   <xsl:function name="x:isNary" as="xs:boolean">
     <!-- ndCur is the element around the nAry operator -->
     <xsl:param name="ndCur" as="element()?"/>
-    
+
     <xsl:variable name="sNdCur" as="xs:string" select="normalize-space($ndCur)"/>
     <xsl:variable name="fNaryOper" as="xs:boolean" select="x:isNaryOper($sNdCur)"/>
     <!-- Narys shouldn't be MathML accents.  -->
@@ -2879,18 +2846,10 @@
       <m:limLoc>
         <xsl:attribute name="m:val">
           <xsl:choose>
-            <xsl:when
-              test="
-                $sMathmlType = 'munder' or
-                $sMathmlType = 'mover' or
-                $sMathmlType = 'munderover'">
+            <xsl:when test="$sMathmlType = ('munder', 'mover', 'munderover')">
               <xsl:text>undOvr</xsl:text>
             </xsl:when>
-            <xsl:when
-              test="
-                $sMathmlType = 'msub' or
-                $sMathmlType = 'msup' or
-                $sMathmlType = 'msubsup'">
+            <xsl:when test="$sMathmlType = ('msub', 'msup', 'msubsup')">
               <xsl:text>subSup</xsl:text>
             </xsl:when>
           </xsl:choose>
@@ -2900,10 +2859,7 @@
       <m:subHide>
         <xsl:attribute name="m:val">
           <xsl:choose>
-            <xsl:when
-              test="
-                $sMathmlType = 'mover' or
-                $sMathmlType = 'msup'">
+            <xsl:when test="$sMathmlType = ('mover', 'msup')">
               <xsl:text>on</xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -2915,10 +2871,7 @@
       <m:supHide>
         <xsl:attribute name="m:val">
           <xsl:choose>
-            <xsl:when
-              test="
-                $sMathmlType = 'munder' or
-                $sMathmlType = 'msub'">
+            <xsl:when test="$sMathmlType = ('munder', 'msub')">
               <xsl:text>on</xsl:text>
             </xsl:when>
             <xsl:otherwise>
