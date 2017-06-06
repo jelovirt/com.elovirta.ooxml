@@ -6,7 +6,7 @@
   xmlns:x="com.elovirta.ooxml" exclude-result-prefixes="mml x xs">
 
   <xsl:template match="mml:math">
-    <xsl:variable name="content" as="element()*">
+    <xsl:variable name="content" as="node()*">
       <xsl:apply-templates mode="add-space"/>
     </xsl:variable>
     <xsl:choose>
@@ -203,10 +203,14 @@
               <xsl:with-param name="mathbackground" select="@mathbackground"/>
               <xsl:with-param name="mathcolor" select="@mathcolor"/>
               <xsl:with-param name="mathvariant" select="@mathvariant"/>
+              <!-- Deprecated -->
               <xsl:with-param name="color" select="@color"/>
               <xsl:with-param name="font-family" select="@fontfamily"/>
+              <!-- Deprecated -->
               <xsl:with-param name="fontsize" select="@fontsize"/>
+              <!-- Deprecated -->
               <xsl:with-param name="fontstyle" select="@fontstyle"/>
+              <!-- Deprecated -->
               <xsl:with-param name="fontweight" select="@fontweight"/>
               <xsl:with-param name="mathsize" select="@mathsize"/>
               <xsl:with-param name="ndTokenFirst" select="."/>
@@ -220,11 +224,15 @@
           <!--Create Run Properties based on current node's attributes-->
           <xsl:call-template name="CreateRunProp">
             <xsl:with-param name="mathvariant" select="@mathvariant"/>
+            <!-- Deprecated -->
             <xsl:with-param name="fontstyle" select="@fontstyle"/>
+            <!-- Deprecated -->
             <xsl:with-param name="fontweight" select="@fontweight"/>
             <xsl:with-param name="mathcolor" select="@mathcolor"/>
             <xsl:with-param name="mathsize" select="@mathsize"/>
+            <!-- Deprecated -->
             <xsl:with-param name="color" select="@color"/>
+            <!-- Deprecated -->
             <xsl:with-param name="fontsize" select="@fontsize"/>
             <xsl:with-param name="ndCur" select="."/>
             <xsl:with-param name="fNor" select="x:FNor(.)"/>
@@ -255,7 +263,7 @@
 
     <!--Given mathcolor, color, mstyle's (ancestor) color, and precedence of 
 			said attributes, determine the actual color of the current run-->
-    <xsl:variable name="sColorPropCur" as="xs:string">
+    <xsl:variable name="sColorPropCur" as="xs:string?">
       <xsl:choose>
         <xsl:when test="$mathcolor != ''">
           <xsl:value-of select="$mathcolor"/>
@@ -266,15 +274,12 @@
         <xsl:when test="$ndTokenFirst/ancestor::mml:mstyle[@color][1]/@color != ''">
           <xsl:value-of select="$ndTokenFirst/ancestor::mml:mstyle[@color][1]/@color"/>
         </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="''"/>
-        </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
     <!--Given mathsize, and fontsize and precedence of said attributes, 
 			determine the actual font size of the current run-->
-    <xsl:variable name="sSzCur" as="xs:string">
+    <xsl:variable name="sSzCur" as="xs:string?">
       <xsl:choose>
         <xsl:when test="$mathsize != ''">
           <xsl:value-of select="$mathsize"/>
@@ -282,9 +287,6 @@
         <xsl:when test="$fontsize != ''">
           <xsl:value-of select="$fontsize"/>
         </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="''"/>
-        </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
@@ -701,12 +703,10 @@
       </xsl:call-template>
     </xsl:variable>
     <xsl:variable name="mrPr" as="element()*">
-      <!--xsl:if test="$fNor or ($sFontCur != 'italic' and $sFontCur != '')"-->
       <xsl:call-template name="CreateMathScrStyProp">
         <xsl:with-param name="font" select="$sFontCur"/>
         <xsl:with-param name="fNor" select="$fNor"/>
       </xsl:call-template>
-      <!--/xsl:if-->
     </xsl:variable>
     <xsl:if test="exists($mrPr)">
       <m:rPr>
@@ -1347,14 +1347,14 @@
   <xsl:function name="x:FIsGroupChr" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
     <xsl:variable name="fUnder" as="xs:boolean" select="exists($ndCur/self::mml:munder)"/>
-    <xsl:variable name="sLowerCaseAccent" as="xs:string">
+    <xsl:variable name="sLowerCaseAccent" as="xs:string?">
       <xsl:choose>
         <xsl:when test="$fUnder">
           <xsl:value-of select="lower-case($ndCur/@accentunder)"/>
         </xsl:when>
-        <xsl:otherwise>
+        <xsl:when test="$ndCur/@accent">
           <xsl:value-of select="lower-case($ndCur/@accent)"/>
-        </xsl:otherwise>
+        </xsl:when>
       </xsl:choose>
     </xsl:variable>
 
@@ -1934,7 +1934,7 @@
 		This template assumes you want to output both a sub and sup element.
 		-->
   <xsl:template name="SplitScripts">
-    <xsl:param name="ndScripts" as="element()"/>
+    <xsl:param name="ndScripts" as="element()*"/>
     <m:sub>
       <xsl:call-template name="CreateArgProp"/>
       <xsl:apply-templates select="$ndScripts[(position() mod 2) = 1]"/>
@@ -2494,13 +2494,17 @@
       mml:mo[mml:mglyph] |
       mml:ms[mml:mglyph] |
       mml:mtext[mml:mglyph]">
-    <xsl:variable name="mathvariant" as="xs:string" select="@mathvariant"/>
-    <xsl:variable name="fontstyle" as="xs:string" select="@fontstyle"/>
-    <xsl:variable name="fontweight" as="xs:string" select="@fontweight"/>
-    <xsl:variable name="mathcolor" as="xs:string" select="@mathcolor"/>
-    <xsl:variable name="mathsize" as="xs:string" select="@mathsize"/>
-    <xsl:variable name="color" as="xs:string" select="@color"/>
-    <xsl:variable name="fontsize" as="xs:string" select="@fontsize"/>
+    <xsl:variable name="mathvariant" as="xs:string?" select="@mathvariant"/>
+    <!-- Deprecated -->
+    <xsl:variable name="fontstyle" as="xs:string?" select="@fontstyle"/>
+    <!-- Deprecated -->
+    <xsl:variable name="fontweight" as="xs:string?" select="@fontweight"/>
+    <xsl:variable name="mathcolor" as="xs:string?" select="@mathcolor"/>
+    <xsl:variable name="mathsize" as="xs:string?" select="@mathsize"/>
+    <!-- Deprecated -->
+    <xsl:variable name="color" as="xs:string?" select="@color"/>
+    <!-- Deprecated -->
+    <xsl:variable name="fontsize" as="xs:string?" select="@fontsize"/>
     <xsl:variable name="fNor" as="xs:boolean" select="x:FNor(.)"/>
 
     <!-- Output MS Left Quote (if need be) -->
@@ -2530,7 +2534,7 @@
       </m:r>
     </xsl:if>
     <xsl:for-each select="mml:mglyph | text()">
-      <xsl:variable name="fForceNor" as="xs:boolean" select="self::mml:mglyph"/>
+      <xsl:variable name="fForceNor" as="xs:boolean" select="exists(self::mml:mglyph)"/>
       <xsl:variable name="str" as="xs:string">
         <xsl:choose>
           <xsl:when test="self::mml:mglyph">
@@ -2638,20 +2642,19 @@
        
        -->
   <xsl:function name="x:FFull" as="xs:boolean">
-    <xsl:param name="s" as="xs:string"/>
-
-    <xsl:variable name="fStrContainsNonZeroDigit" as="xs:boolean"
-      select="x:FStrContainsNonZeroDigit($s)"/>
-    <xsl:variable name="fStrContainsDigits" as="xs:boolean" select="x:FStrContainsDigits($s)"/>
+    <xsl:param name="s" as="xs:string?"/>
 
     <xsl:choose>
+      <xsl:when test="empty($s)">
+        <xsl:sequence select="true()"/>
+      </xsl:when>
       <!-- String contained non-zero digit -->
-      <xsl:when test="$fStrContainsNonZeroDigit">
+      <xsl:when test="x:FStrContainsNonZeroDigit($s)">
         <xsl:sequence select="true()"/>
       </xsl:when>
       <!-- String didn't contain a non-zero digit, but it did contain digits.
            This must mean that all digits in the string were 0s. -->
-      <xsl:when test="$fStrContainsDigits">
+      <xsl:when test="x:FStrContainsDigits($s)">
         <xsl:sequence select="false()"/>
       </xsl:when>
       <!-- Else, no digits, therefore, return true.
@@ -2757,9 +2760,9 @@
         <xsl:apply-templates select="*"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:variable name="sLowerCaseWidth" as="xs:string" select="@width"/>
-        <xsl:variable name="sLowerCaseHeight" as="xs:string" select="@height"/>
-        <xsl:variable name="sLowerCaseDepth" as="xs:string" select="@depth"/>
+        <xsl:variable name="sLowerCaseWidth" as="xs:string?" select="@width"/>
+        <xsl:variable name="sLowerCaseHeight" as="xs:string?" select="@height"/>
+        <xsl:variable name="sLowerCaseDepth" as="xs:string?" select="@depth"/>
 
         <xsl:variable name="fFullWidth" as="xs:boolean" select="x:FFull($sLowerCaseWidth)"/>
         <xsl:variable name="fFullHeight" as="xs:boolean" select="x:FFull($sLowerCaseHeight)"/>
@@ -2809,14 +2812,14 @@
     <!-- Narys shouldn't be MathML accents.  -->
     <xsl:variable name="fUnder" as="xs:boolean" select="exists($ndCur/parent::*[self::mml:munder])"/>
 
-    <xsl:variable name="sLowerCaseAccent" as="xs:string">
+    <xsl:variable name="sLowerCaseAccent" as="xs:string?">
       <xsl:choose>
         <xsl:when test="$fUnder">
           <xsl:value-of select="lower-case($ndCur/parent::*[self::mml:munder]/@accentunder)"/>
         </xsl:when>
-        <xsl:otherwise>
+        <xsl:when test="$ndCur/parent::*/@accent">
           <xsl:value-of select="lower-case($ndCur/parent::*/@accent)"/>
-        </xsl:otherwise>
+        </xsl:when>
       </xsl:choose>
     </xsl:variable>
 
