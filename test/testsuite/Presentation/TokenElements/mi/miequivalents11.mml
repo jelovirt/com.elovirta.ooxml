@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+  <mtable>
+    <mtr>
+      <mtd> 
+        <mi>A</mi> 
+        <mo>=</mo>  
+        <mi mathvariant="normal">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd> 
+        <mi>𝐀</mi> 
+        <mo>=</mo>  
+        <mi mathvariant="bold">A</mi> 
+      </mtd> 
+    </mtr>  
+    <mtr>
+      <mtd>
+        <mi>𝐴</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="italic">A</mi>  
+      </mtd> 
+    </mtr> 
+    <mtr> 
+      <mtd>
+        <mi>𝑨</mi>  
+        <mo>=</mo> 
+        <mi mathvariant="bold-italic">A</mi>  
+      </mtd> 
+    </mtr> 
+    <mtr> 
+      <mtd>
+        <mi>𝔸</mi>  
+        <mo>=</mo> 
+        <mi mathvariant="double-struck">A</mi> 
+        <mo>=</mo> 
+        <mi>𝔸</mi> 
+      </mtd>  
+    </mtr> 
+    <mtr>
+      <mtd> 
+        <mi>𝒜</mi> 
+        <mo>=</mo>  
+        <mi mathvariant="script">A</mi> 
+        <mo>=</mo>  
+        <mi>𝒜</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd> 
+        <mi>𝓐</mi> 
+        <mo>=</mo>  
+        <mi mathvariant="bold-script">A</mi> 
+      </mtd> 
+    </mtr>  
+    <mtr>
+      <mtd>
+        <mi>𝔄</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="fraktur">A</mi>  
+        <mo>=</mo> 
+        <mi>𝔄</mi>  
+      </mtd> 
+    </mtr> 
+    <mtr> 
+      <mtd>
+        <mi>𝕬</mi>  
+        <mo>=</mo> 
+        <mi mathvariant="bold-fraktur">A</mi>  
+      </mtd> 
+    </mtr> 
+    <mtr> 
+      <mtd>
+        <mi>𝖠</mi>  
+        <mo>=</mo> 
+        <mi mathvariant="sans-serif">A</mi> 
+      </mtd>  
+    </mtr> 
+    <mtr>
+      <mtd> 
+        <mi>𝗔</mi> 
+        <mo>=</mo>  
+        <mi mathvariant="bold-sans-serif">A</mi>  
+      </mtd> 
+    </mtr> 
+    <mtr> 
+      <mtd>
+        <mi>𝘈</mi>  
+        <mo>=</mo> 
+        <mi mathvariant="sans-serif-italic">A </mi> 
+      </mtd> 
+    </mtr>  
+    <mtr>
+      <mtd>
+        <mi>𝘽</mi>  
+        <mo>=</mo> 
+        <mi mathvariant="sans-serif-bold-italic">A </mi> 
+      </mtd> 
+    </mtr>  
+    <mtr>
+      <mtd> 
+        <mi>𝙰</mi> 
+        <mo>=</mo>  
+        <mi mathvariant="monospace">A</mi> 
+      </mtd> 
+    </mtr>  
+  </mtable> 
+</math>

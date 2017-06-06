@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mcolumn>
+    <mstyle mathsize="71%">
+      <mn>1</mn> 
+      <mn>1</mn>  
+      <mspace spacing="0"></mspace> 
+    </mstyle> 
+    <mstyle mathsize="71%">
+      <mn>1</mn> 
+      <mn>1</mn> 
+      <mspace spacing="0"></mspace> 
+    </mstyle> 
+    <mrow>
+      <mo rspace="thinmathspace">×</mo>  
+      <mn>4,321</mn> 
+    </mrow> 
+    <mline spacing="× 0,000"></mline> 
+    <mstyle mathsize="71%">
+      <mn>1</mn> 
+      <mspace spacing=","></mspace> 
+      <mn>1</mn> 
+      <mn>1</mn> 
+      <mn>1</mn> 
+      <mspace spacing=","></mspace> 
+      <mn>1</mn> 
+      <mspace spacing="00"></mspace> 
+    </mstyle> 
+    <mn>1,234</mn> 
+    <mrow>
+      <mn>24,68</mn>
+      <mspace spacing="0"></mspace>
+    </mrow> 
+    <mrow>
+      <mn>370,2</mn>
+      <mspace spacing="00"></mspace>
+    </mrow> 
+    <mrow>
+      <mn>4,936</mn>
+      <mspace spacing=",000"></mspace>
+    </mrow> 
+    <mline spacing="5,332,114"></mline> 
+    <mn>5,332,114</mn>  
+  </mcolumn> 
+</math>

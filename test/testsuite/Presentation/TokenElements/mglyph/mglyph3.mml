@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mi>
+      <mglyph src="my-braid-23" alt="23braid"></mglyph>
+    </mi> 
+    <mo>+</mo> 
+    <mi>
+      <mglyph src="my-braid-132" alt="132braid"></mglyph>
+    </mi> 
+    <mo>=</mo> 
+    <mi>
+      <mglyph src="my-braid-13" alt="13braid"></mglyph>
+    </mi> 
+  </mrow>  
+</math>

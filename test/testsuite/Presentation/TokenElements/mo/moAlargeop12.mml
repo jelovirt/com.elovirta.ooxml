@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+  <mrow>
+    <mo>∫</mo> 
+    <mi>x</mi>  
+    <mo>=</mo> 
+    <mo largeop="true">∫</mo> 
+    <mi>x</mi>  
+    <mo>=</mo> 
+    <mo largeop="false">∫</mo> 
+    <mi>x</mi>  
+    <mo>=</mo> 
+    <mstyle displaystyle="true">
+      <mo>∫</mo>  
+      <mi>x</mi> 
+      <mo>=</mo>  
+      <mo largeop="true">∫</mo> 
+      <mi>x</mi> 
+      <mo>=</mo> 
+      <mo largeop="false">∫</mo> 
+      <mi>x</mi>  
+    </mstyle> 
+  </mrow> 
+</math>

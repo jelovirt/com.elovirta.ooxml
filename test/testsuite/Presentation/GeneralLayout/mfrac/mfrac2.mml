@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+  <mfrac>
+    <mo>ⅆ</mo> 
+    <mrow> 
+      <mo>ⅆ</mo> 
+      <mi>x</mi>  
+    </mrow> 
+  </mfrac> 
+</math>

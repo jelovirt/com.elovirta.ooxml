@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <semantics>
+    <mfrac>
+      <mrow> 
+        <mrow>
+          <menclose notation="updiagonalstrike">
+            <mo>(</mo> 
+            <mrow>
+              <mi>a</mi>  
+              <mo>−</mo> 
+              <mn>3</mn>  
+            </mrow> 
+            <mo>)</mo>  
+          </menclose> 
+        </mrow> 
+        <mo>−</mo> 
+        <mn>18</mn> 
+        <mi>a</mi> 
+      </mrow>  
+      <mrow>
+        <mrow>
+          <menclose notation="updiagonalstrike"> 
+            <mo>(</mo> 
+            <mrow> 
+              <mi>a</mi> 
+              <mo>−</mo>  
+              <mn>3</mn> 
+            </mrow> 
+            <mo>)</mo>  
+          </menclose> 
+        </mrow> 
+        <mrow> 
+          <mo>(</mo> 
+          <mrow>
+            <mtext>a+3</mtext> 
+          </mrow> 
+          <mo>)</mo>  
+        </mrow> 
+      </mrow> 
+    </mfrac> 
+  </semantics> </math>

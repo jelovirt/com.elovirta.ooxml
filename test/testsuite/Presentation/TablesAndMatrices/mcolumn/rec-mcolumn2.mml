@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mcolumn>
+    <mstyle mathsize="71%">
+      <menclose notation="bottom">
+        <mn>10</mn> 
+      </menclose> 
+    </mstyle> 
+    <mn>5̸2</mn>  
+    <mrow>
+      <mo>−</mo> 
+      <mn>7</mn> 
+    </mrow> 
+    <mline spacing="45"></mline> 
+    <mn>45</mn> 
+  </mcolumn> 
+</math>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfenced> 
+    <mrow>
+      <mi>a</mi> 
+      <mo>+</mo>  
+      <mi>b</mi> 
+    </mrow> 
+  </mfenced>  
+  <mo>+</mo> 
+  <mfenced>
+    <mfrac> 
+      <mi>1</mi> 
+      <mi>2</mi> 
+    </mfrac>  
+  </mfenced> 
+</math>

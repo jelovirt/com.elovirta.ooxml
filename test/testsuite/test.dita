@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_zdr_42k_d1b">
+  <title>MathML</title>
+  <refbody>
+    <section>
+      <image href="Presentation/DynamicExpressions/maction/mactionBhigh1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/DynamicExpressions/maction/mactionBhigh1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBhigh1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/DynamicExpressions/maction/mactionBstatus1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/DynamicExpressions/maction/mactionBstatus1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBstatus1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/DynamicExpressions/maction/mactionBtoggle1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/DynamicExpressions/maction/mactionBtoggle1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBtoggle1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/DynamicExpressions/maction/mactionBtooltip1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/DynamicExpressions/maction/mactionBtooltip1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBtooltip1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/menclose/menclose-cancellation1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/menclose/menclose-cancellation1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/menclose/menclose-cancellation1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/menclose/menclose1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/menclose/menclose1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/menclose/menclose1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/menclose/rec-enclose1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/menclose/rec-enclose1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/menclose/rec-enclose1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/menclose/rec-enclose2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/menclose/rec-enclose2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/menclose/rec-enclose2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/menclose/rec-enclose3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/menclose/rec-enclose3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/menclose/rec-enclose3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/merror/merror1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/merror/merror1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/merror/merror1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/merror/merrorB3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/merror/merrorB3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/merror/merrorB3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedAempty.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedAempty.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedAempty.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedBfences7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedBfences7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedBfences7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAcss8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAcss8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAcss8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBalign16.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBalign16.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBalign16.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBheight17.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBheight17.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBheight17.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBvert12.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBvert12.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBvert12.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracSfonts13.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracSfonts13.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracSfonts13.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mfrac/mfracZComp1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mfrac/mfracZComp1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracZComp1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded10.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded10.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded10.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded11.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded11.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded11.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded12.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded12.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded12.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded13.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded13.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded13.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded14.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded14.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded14.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded15.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded15.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded15.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded16.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded16.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded16.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded17.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded17.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded17.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded18.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded18.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded18.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomB1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomB1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomB1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomScolor4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomScolor4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomScolor4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mrow/mrow1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mrow/mrow1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrow1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mrow/mrowAbg4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mrow/mrowAbg4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrowAbg4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mrow/mrowBinferred2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mrow/mrowBinferred2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrowBinferred2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mrow/mrowBnested3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mrow/mrowBnested3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrowBnested3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mstyle/mstyle1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mstyle/mstyle1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyle1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleA2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleA2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleA2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAdep1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAdep1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAdep1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/mover/mover1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/mover/mover1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/mover/mover1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/mover/mover2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/mover/mover2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/mover/mover2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/mover/mover3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/mover/mover3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/mover/mover3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msub/msub1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msub/msub1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msub/msub1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msubsup/msubsup1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msubsup/msubsup1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msubsup/msubsup1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msup1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msup1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msup1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msup2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msup2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msup2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBnest1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBnest1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBnest1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBsize1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBsize1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBsize1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBsize2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBsize2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBsize2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBsize3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBsize3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBsize3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/msup/msupSadvance1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/msup/msupSadvance1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupSadvance1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/munder/munder1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/munder/munder1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/munder/munder1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/ScriptsAndLimits/munder/munder2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/ScriptsAndLimits/munder/munder2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/ScriptsAndLimits/munder/munder2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/deprecated-test3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/deprecated-test3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/deprecated-test3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/maligngroup1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/maligngroup1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/maligngroup1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtable1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtable1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtable1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtable2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtable2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtable2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAalign1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAalign1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAalign2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAalign2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAalign3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAalign3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAframe1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAframe1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAframe1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAframe2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAframe2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAframe2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAlines1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAlines1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAlines1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAlines2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAlines2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAlines2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBgap1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBgap1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBgap1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBsize1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBsize1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBsize1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBsize2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBsize2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBsize2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBspan3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBspan3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBspan3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/mtable/rec-mtable1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/mtable/rec-mtable1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/rec-mtable1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/nested/mtableAwidth1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/nested/mtableAwidth1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/nested/mtableAwidth1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TablesAndMatrices/nested/nestedAwidth1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TablesAndMatrices/nested/nestedAwidth1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TablesAndMatrices/nested/nestedAwidth1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/CommonAttributes/hexcolors2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/CommonAttributes/hexcolors2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/CommonAttributes/hexcolors2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/CommonAttributes/sizeunits3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/CommonAttributes/sizeunits3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/CommonAttributes/sizeunits3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/CommonAttributes/sizeunits4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/CommonAttributes/sizeunits4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/CommonAttributes/sizeunits4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mglyph/mglyph3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mglyph/mglyph3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mglyph/mglyph3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mglyph/rec-mglyph1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mglyph/rec-mglyph1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mglyph/rec-mglyph1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mglyph/rec-mglyph2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mglyph/rec-mglyph2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mglyph/rec-mglyph2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mi1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mi1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mi1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mi2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mi2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mi2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mi3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mi3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mi3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mi4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mi4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mi4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miAtoken5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miAtoken5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miAtoken5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miequivalents11.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miequivalents11.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miequivalents11.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mifontstyle12.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mifontstyle12.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mifontstyle12.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mimathvariant13.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mimathvariant13.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mimathvariant13.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/mimathvariant14.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/mimathvariant14.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/mimathvariant14.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miScolorname15.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miScolorname15.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miScolorname15.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miScolorname6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miScolorname6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miScolorname6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miScolorscope7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miScolorscope7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miScolorscope7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miSfonts8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miSfonts8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miSfonts8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miSfontsize9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miSfontsize9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miSfontsize9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miSmathsize16.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miSmathsize16.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miSmathsize16.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miSmathsize17.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miSmathsize17.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miSmathsize17.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mi/miStoken10.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mi/miStoken10.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mi/miStoken10.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mline/rec-mline1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mline/rec-mline1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mline/rec-mline1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mline/rec-mline2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mline/rec-mline2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mline/rec-mline2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mline/rec-mline3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mline/rec-mline3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mline/rec-mline3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mn1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mn1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mn1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mn2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mn2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mn2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mn3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mn3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mn3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mn4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mn4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mn4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnAcolorname5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnAcolorname5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnAcolorname5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnAtoken6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnAtoken6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnAtoken6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnAtoken7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnAtoken7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnAtoken7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnScolor8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnScolor8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnScolor8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnSdisplaystyle9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnSdisplaystyle9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnSdisplaystyle9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnSfont10.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnSfont10.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnSfont10.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mn/mnSscriptlevel11.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mn/mnSscriptlevel11.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mn/mnSscriptlevel11.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/mo8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/mo8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/mo8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAaccent10.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAaccent10.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAaccent10.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAaccent9.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAaccent9.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAaccent9.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAform11.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAform11.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAform11.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAlargeop12.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAlargeop12.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAlargeop12.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAlrspace13.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAlrspace13.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAlrspace13.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAminmax14.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAminmax14.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAminmax14.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAmovable15.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAmovable15.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAmovable15.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAprime16.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAprime16.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAprime16.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAsep17.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAsep17.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAsep17.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAstretchy18.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAstretchy18.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAstretchy18.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moAsymmetric19.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moAsymmetric19.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moAsymmetric19.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mo/moSminmax20.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mo/moSminmax20.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mo/moSminmax20.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/ms1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/ms1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/ms1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msAdisplaystyle2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msAdisplaystyle2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msAdisplaystyle2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msAquotes3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msAquotes3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msAquotes3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msAtoken4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msAtoken4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msAtoken4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msAtoken5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msAtoken5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msAtoken5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msScolorscope6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msScolorscope6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msScolorscope6.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msSinheritance7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msSinheritance7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msSinheritance7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/ms/msSinheritance8.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/ms/msSinheritance8.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/ms/msSinheritance8.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mspace/mspace1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mspace/mspace1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mspace/mspace1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mspace/mspace2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mspace/mspace2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mspace/mspace2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mspace/mspaceAbreak3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mspace/mspaceAbreak3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mspace/mspaceAbreak3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mspace/mspacestruts2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mspace/mspacestruts2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mspace/mspacestruts2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mspace/rec-mspace1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mspace/rec-mspace1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mspace/rec-mspace1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtext1.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtext1.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtext1.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtext2.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtext2.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtext2.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtextAtoken3.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtextAtoken3.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtextAtoken3.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtextSbg4.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtextSbg4.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtextSbg4.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtextScolor5.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtextScolor5.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtextScolor5.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtextspaces7.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtextspaces7.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtextspaces7.mml"/></codeblock>
+    </section>
+    <section>
+      <image href="Presentation/TokenElements/mtext/mtextStoken6.png"/>
+      <equation-block>
+        <mathml>
+          <mathmlref href="Presentation/TokenElements/mtext/mtextStoken6.mml"/>
+        </mathml>
+      </equation-block>
+      <codeblock><coderef href="Presentation/TokenElements/mtext/mtextStoken6.mml"/></codeblock>
+    </section>
+  </refbody>
+</reference>

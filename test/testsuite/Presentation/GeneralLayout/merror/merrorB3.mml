@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <merror>
+    <mtext>Unrecognized element: &lt;mfraction&gt; arguments were:</mtext> 
+    <mrow> 
+      <mn>1</mn> 
+      <mo>+</mo> 
+      <msqrt> 
+        <mn>5</mn> 
+      </msqrt>  
+    </mrow> 
+    <mtext>  and  </mtext>  
+    <mn>2</mn> 
+  </merror> 
+</math>

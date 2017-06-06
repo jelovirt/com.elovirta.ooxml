@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle background="#88cc88"> 
+    <mfenced>
+      <mrow> 
+        <mi>a</mi> 
+        <mo>+</mo> 
+        <mi>b</mi> 
+      </mrow> 
+    </mfenced> 
+  </mstyle>  
+  <mo>=</mo> 
+  <mstyle fontweight="bold">
+    <mfenced> 
+      <mfrac>
+        <mi>α</mi>  
+        <mi>β</mi> 
+      </mfrac> 
+    </mfenced>  
+  </mstyle> 
+  <mo>=</mo> 
+  <mstyle fontfamily="Helvetica">
+    <mfenced open="["> 
+      <mrow>
+        <mi>a</mi>  
+        <mo>+</mo> 
+        <mi>b</mi>  
+      </mrow> 
+    </mfenced> 
+  </mstyle> 
+</math>

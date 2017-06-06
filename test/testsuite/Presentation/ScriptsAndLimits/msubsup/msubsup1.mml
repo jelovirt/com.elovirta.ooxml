@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow> 
+    <msubsup>
+      <mo>∫</mo> 
+      <mn>0</mn> 
+      <mn>1</mn> 
+    </msubsup>  
+    <mrow>
+      <msup>
+        <mi>ⅇ</mi> 
+        <mi>x</mi> 
+      </msup> 
+      <mo>⁢</mo> 
+      <mrow> 
+        <mo>ⅆ</mo> 
+        <mi>x</mi>  
+      </mrow> 
+    </mrow> 
+  </mrow>  
+</math>

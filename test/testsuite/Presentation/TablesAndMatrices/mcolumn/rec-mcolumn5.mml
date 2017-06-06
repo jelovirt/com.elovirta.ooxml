@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd columnalign="right">
+        <mn>435.3̅</mn>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd columnalign="left">
+        <mn>3</mn>
+      </mtd> 
+      <mtd columnalign="left">
+        <mcolumn align="left"> 
+          <menclose notation="longdiv">
+            <mn>1306</mn>
+          </menclose> 
+          <mn>12</mn> 
+          <mline spacing="00"></mline> 
+          <mrow>
+            <mspace spacing="0"></mspace>
+            <mn>10</mn>
+          </mrow> 
+          <mrow>
+            <mspace spacing="00"></mspace>
+            <mn>9</mn>
+          </mrow> 
+          <mrow>
+            <mspace spacing="0"></mspace>
+            <mline spacing="00"></mline>
+          </mrow> 
+          <mrow>
+            <mspace spacing="00"></mspace>
+            <mn>16</mn>
+          </mrow>  
+          <mrow>
+            <mspace spacing="00"></mspace>
+            <mn>15</mn>
+          </mrow> 
+          <mrow>
+            <mspace spacing="00"></mspace>
+            <mline spacing="00"></mline>
+          </mrow> 
+          <mrow>
+            <mspace spacing="000"></mspace>
+            <mn>1.0</mn>
+          </mrow> 
+          <mrow>
+            <mspace spacing="0000."></mspace>
+            <mn>9</mn>
+          </mrow>  
+          <mrow>
+            <mspace spacing="000"></mspace>
+            <mline spacing="0.0"></mline>
+          </mrow> 
+          <mrow>
+            <mspace spacing="0000."></mspace>
+            <mn>1</mn>
+          </mrow> 
+        </mcolumn> 
+      </mtd> 
+    </mtr>  
+  </mtable> 
+</math>

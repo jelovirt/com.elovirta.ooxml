@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover align="right">
+    <mn> 0.142857</mn> 
+    <mrow>
+      <mo>.</mo> 
+      <mspace spacing="4285"></mspace> 
+      <mo>.</mo> 
+    </mrow> 
+  </mover> 
+</math>
