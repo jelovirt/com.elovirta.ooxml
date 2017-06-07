@@ -2,6 +2,9 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="reference_zdr_42k_d1b">
   <title>MathML</title>
+  <prolog>
+    <source href="http://jeuclid.sourceforge.net/jeuclid-testsuite/svg3/toc-full.xhtml"/>
+  </prolog>
   <topic id="mactionBhigh1">
     <title>mactionBhigh1</title>
     <body>

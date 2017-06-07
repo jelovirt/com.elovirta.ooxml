@@ -73,12 +73,6 @@
           </w:rPr>
           <m:t>x</m:t>
         </m:r>
-        <m:r>
-          <m:rPr>
-            <m:nor/>
-          </m:rPr>
-          <m:t>Add 2 to the value of x</m:t>
-        </m:r>
       </m:oMath>
     </x:expect>
   </x:scenario>
@@ -123,95 +117,6 @@
           </m:rPr>
           <m:t>2</m:t>
         </m:r>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar"/>
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:nor/>
-                <m:sty m:val="i"/>
-              </m:rPr>
-              <w:rPr>
-                <w:i/>
-              </w:rPr>
-              <m:t>x</m:t>
-            </m:r>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p"/>
-              </m:rPr>
-              <m:t>2</m:t>
-            </m:r>
-          </m:den>
-        </m:f>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p"/>
-          </m:rPr>
-          <m:t>+</m:t>
-        </m:r>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar"/>
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p"/>
-              </m:rPr>
-              <m:t>2</m:t>
-            </m:r>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p"/>
-              </m:rPr>
-              <m:t>2</m:t>
-            </m:r>
-          </m:den>
-        </m:f>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar"/>
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:nor/>
-                <m:sty m:val="i"/>
-              </m:rPr>
-              <w:rPr>
-                <w:i/>
-              </w:rPr>
-              <m:t>x</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p"/>
-              </m:rPr>
-              <m:t>+</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p"/>
-              </m:rPr>
-              <m:t>2</m:t>
-            </m:r>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p"/>
-              </m:rPr>
-              <m:t>2</m:t>
-            </m:r>
-          </m:den>
-        </m:f>
       </m:oMath>
     </x:expect>
   </x:scenario>
@@ -244,12 +149,6 @@
             </m:r>
           </m:den>
         </m:f>
-        <m:r>
-          <m:rPr>
-            <m:nor/>
-          </m:rPr>
-          <m:t>Divide y by x</m:t>
-        </m:r>
       </m:oMath>
     </x:expect>
   </x:scenario>

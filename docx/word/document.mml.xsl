@@ -29,12 +29,25 @@
     <xsl:copy>
       <xsl:apply-templates select="node() | @*" mode="#current"/>
     </xsl:copy>
+    <!-- XXX: Add space between elements to disable grouping -->
     <xsl:if
       test="
         following-sibling::*[1][self::mml:mi | self::mml:mo | self::mml:ms | self::mml:mn] and
         exists(parent::mml:math | parent::mml:mrow)">
       <mml:mspace width="0"/>
     </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match="mml:maction" mode="add-space">
+    <xsl:choose>
+      <xsl:when test="@actiontype = 'toggle'">
+        <xsl:variable name="position" as="xs:integer" select="(@selection, 1)[1]"/>
+        <xsl:apply-templates select="*[$position]" mode="#current"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="*[1]" mode="#current"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="node() | @*" mode="add-space" priority="-10">
