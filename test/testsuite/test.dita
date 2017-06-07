@@ -4,7 +4,9 @@
   <title>MathML</title>
   <refbody>
     <section>
-      <image href="Presentation/DynamicExpressions/maction/mactionBhigh1.png"/>
+      <title>mactionBhigh1</title>
+      <image href="Presentation/DynamicExpressions/maction/mactionBhigh1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/DynamicExpressions/maction/mactionBhigh1.mml"/>
@@ -13,7 +15,9 @@
       <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBhigh1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/DynamicExpressions/maction/mactionBstatus1.png"/>
+      <title>mactionBstatus1</title>
+      <image href="Presentation/DynamicExpressions/maction/mactionBstatus1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/DynamicExpressions/maction/mactionBstatus1.mml"/>
@@ -22,7 +26,9 @@
       <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBstatus1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/DynamicExpressions/maction/mactionBtoggle1.png"/>
+      <title>mactionBtoggle1</title>
+      <image href="Presentation/DynamicExpressions/maction/mactionBtoggle1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/DynamicExpressions/maction/mactionBtoggle1.mml"/>
@@ -31,7 +37,9 @@
       <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBtoggle1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/DynamicExpressions/maction/mactionBtooltip1.png"/>
+      <title>mactionBtooltip1</title>
+      <image href="Presentation/DynamicExpressions/maction/mactionBtooltip1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/DynamicExpressions/maction/mactionBtooltip1.mml"/>
@@ -40,7 +48,9 @@
       <codeblock><coderef href="Presentation/DynamicExpressions/maction/mactionBtooltip1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/menclose/menclose-cancellation1.png"/>
+      <title>menclose-cancellation1</title>
+      <image href="Presentation/GeneralLayout/menclose/menclose-cancellation1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/menclose/menclose-cancellation1.mml"/>
@@ -49,7 +59,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/menclose/menclose-cancellation1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/menclose/menclose1.png"/>
+      <title>menclose1</title>
+      <image href="Presentation/GeneralLayout/menclose/menclose1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/menclose/menclose1.mml"/>
@@ -58,7 +70,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/menclose/menclose1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/menclose/rec-enclose1.png"/>
+      <title>rec-enclose1</title>
+      <image href="Presentation/GeneralLayout/menclose/rec-enclose1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/menclose/rec-enclose1.mml"/>
@@ -67,7 +81,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/menclose/rec-enclose1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/menclose/rec-enclose2.png"/>
+      <title>rec-enclose2</title>
+      <image href="Presentation/GeneralLayout/menclose/rec-enclose2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/menclose/rec-enclose2.mml"/>
@@ -76,7 +92,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/menclose/rec-enclose2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/menclose/rec-enclose3.png"/>
+      <title>rec-enclose3</title>
+      <image href="Presentation/GeneralLayout/menclose/rec-enclose3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/menclose/rec-enclose3.mml"/>
@@ -85,7 +103,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/menclose/rec-enclose3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/merror/merror1.png"/>
+      <title>merror1</title>
+      <image href="Presentation/GeneralLayout/merror/merror1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/merror/merror1.mml"/>
@@ -94,7 +113,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/merror/merror1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/merror/merrorB3.png"/>
+      <title>merrorB3</title>
+      <image href="Presentation/GeneralLayout/merror/merrorB3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/merror/merrorB3.mml"/>
@@ -103,7 +123,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/merror/merrorB3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfenced1.png"/>
+      <title>mfenced1</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced1.mml"/>
@@ -112,7 +133,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfenced2.png"/>
+      <title>mfenced2</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced2.mml"/>
@@ -121,7 +143,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfenced3.png"/>
+      <title>mfenced3</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced3.mml"/>
@@ -130,7 +153,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfenced4.png"/>
+      <title>mfenced4</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced4.mml"/>
@@ -139,7 +163,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfenced5.png"/>
+      <title>mfenced5</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfenced5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfenced5.mml"/>
@@ -148,7 +173,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfenced5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.png"/>
+      <title>mfencedAdelims6</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.mml"/>
@@ -157,7 +184,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfencedAempty.png"/>
+      <title>mfencedAempty</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedAempty.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedAempty.mml"/>
@@ -166,7 +195,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedAempty.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfencedBfences7.png"/>
+      <title>mfencedBfences7</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedBfences7.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedBfences7.mml"/>
@@ -175,7 +206,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedBfences7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.png"/>
+      <title>mfencedBseparators8</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.mml"/>
@@ -184,7 +217,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedBseparators8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.png"/>
+      <title>mfencedSfonts9</title>
+      <image href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.mml"/>
@@ -193,7 +228,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfenced/mfencedSfonts9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac1.png"/>
+      <title>mfrac1</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac1.mml"/>
@@ -202,7 +238,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac2.png"/>
+      <title>mfrac2</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac2.mml"/>
@@ -211,7 +248,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac3.png"/>
+      <title>mfrac3</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac3.mml"/>
@@ -220,7 +258,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac4.png"/>
+      <title>mfrac4</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac4.mml"/>
@@ -229,7 +268,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac5.png"/>
+      <title>mfrac5</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac5.mml"/>
@@ -238,7 +278,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac6.png"/>
+      <title>mfrac6</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac6.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac6.mml"/>
@@ -247,7 +288,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfrac7.png"/>
+      <title>mfrac7</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfrac7.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfrac7.mml"/>
@@ -256,7 +298,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfrac7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.png"/>
+      <title>mfracAbevelled16</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.mml"/>
@@ -265,7 +309,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAbevelled16.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracAcss8.png"/>
+      <title>mfracAcss8</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAcss8.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAcss8.mml"/>
@@ -274,7 +319,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAcss8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.png"/>
+      <title>mfracAkeyword9</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.mml"/>
@@ -283,7 +330,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAkeyword9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.png"/>
+      <title>mfracAmultiplier10</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.mml"/>
@@ -292,7 +341,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracAmultiplier10.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracBalign16.png"/>
+      <title>mfracBalign16</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBalign16.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBalign16.mml"/>
@@ -301,7 +352,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBalign16.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracBheight17.png"/>
+      <title>mfracBheight17</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBheight17.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBheight17.mml"/>
@@ -310,7 +363,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBheight17.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.png"/>
+      <title>mfracBhoriz11</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.mml"/>
@@ -319,7 +374,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBhoriz11.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracBvert12.png"/>
+      <title>mfracBvert12</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracBvert12.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracBvert12.mml"/>
@@ -328,7 +385,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracBvert12.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracSfonts13.png"/>
+      <title>mfracSfonts13</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracSfonts13.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracSfonts13.mml"/>
@@ -337,7 +396,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracSfonts13.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.png"/>
+      <title>mfracSinheritance14</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.mml"/>
@@ -346,7 +407,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracSinheritance14.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.png"/>
+      <title>mfracSscriptlevel15</title>
+      <image href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.mml"/>
@@ -354,17 +417,19 @@
       </equation-block>
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracSscriptlevel15.mml"/></codeblock>
     </section>
-    <section>
-      <image href="Presentation/GeneralLayout/mfrac/mfracZComp1.png"/>
+    <!--section>
+      <title>mfracZComp1</title>
+<image href="Presentation/GeneralLayout/mfrac/mfracZComp1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mfrac/mfracZComp1.mml"/>
         </mathml>
       </equation-block>
       <codeblock><coderef href="Presentation/GeneralLayout/mfrac/mfracZComp1.mml"/></codeblock>
-    </section>
+    </section-->
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded1.png"/>
+      <title>mpadded1</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded1.mml"/>
@@ -373,7 +438,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded10.png"/>
+      <title>mpadded10</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded10.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded10.mml"/>
@@ -382,7 +449,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded10.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded11.png"/>
+      <title>mpadded11</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded11.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded11.mml"/>
@@ -391,7 +460,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded11.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded12.png"/>
+      <title>mpadded12</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded12.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded12.mml"/>
@@ -400,7 +471,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded12.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded13.png"/>
+      <title>mpadded13</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded13.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded13.mml"/>
@@ -409,7 +482,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded13.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded14.png"/>
+      <title>mpadded14</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded14.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded14.mml"/>
@@ -418,7 +493,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded14.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded15.png"/>
+      <title>mpadded15</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded15.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded15.mml"/>
@@ -427,7 +504,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded15.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded16.png"/>
+      <title>mpadded16</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded16.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded16.mml"/>
@@ -436,7 +515,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded16.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded17.png"/>
+      <title>mpadded17</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded17.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded17.mml"/>
@@ -445,7 +526,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded17.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded18.png"/>
+      <title>mpadded18</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded18.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded18.mml"/>
@@ -454,7 +537,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded18.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded2.png"/>
+      <title>mpadded2</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded2.mml"/>
@@ -463,7 +547,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded3.png"/>
+      <title>mpadded3</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded3.mml"/>
@@ -472,7 +557,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded4.png"/>
+      <title>mpadded4</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded4.mml"/>
@@ -481,7 +567,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded5.png"/>
+      <title>mpadded5</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded5.mml"/>
@@ -490,7 +577,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded6.png"/>
+      <title>mpadded6</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded6.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded6.mml"/>
@@ -499,7 +587,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded7.png"/>
+      <title>mpadded7</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded7.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded7.mml"/>
@@ -508,7 +597,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded8.png"/>
+      <title>mpadded8</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded8.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded8.mml"/>
@@ -517,7 +607,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpadded9.png"/>
+      <title>mpadded9</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpadded9.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpadded9.mml"/>
@@ -526,7 +617,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpadded9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.png"/>
+      <title>mpaddedAdepth2</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.mml"/>
@@ -535,7 +628,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAdepth2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.png"/>
+      <title>mpaddedAheight3</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.mml"/>
@@ -544,7 +639,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAheight3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.png"/>
+      <title>mpaddedAleft4</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.mml"/>
@@ -553,7 +650,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAleft4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.png"/>
+      <title>mpaddedAmixed5</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.mml"/>
@@ -562,7 +661,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAmixed5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.png"/>
+      <title>mpaddedAwidth6</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.mml"/>
@@ -571,7 +672,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedAwidth6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.png"/>
+      <title>mpaddedScolor7</title>
+      <image href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.mml"/>
@@ -580,7 +683,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mpadded/mpaddedScolor7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mphantom/mphantomB1.png"/>
+      <title>mphantomB1</title>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomB1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomB1.mml"/>
@@ -589,7 +694,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomB1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.png"/>
+      <title>mphantomBinferred2</title>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.mml"/>
@@ -598,7 +705,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomBinferred2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.png"/>
+      <title>mphantomBoperators3</title>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.mml"/>
@@ -607,7 +716,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomBoperators3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mphantom/mphantomScolor4.png"/>
+      <title>mphantomScolor4</title>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomScolor4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomScolor4.mml"/>
@@ -616,7 +727,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomScolor4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.png"/>
+      <title>mphantomSinheritance5</title>
+      <image href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.mml"/>
@@ -625,7 +738,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mphantom/mphantomSinheritance5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mrow/mrow1.png"/>
+      <title>mrow1</title>
+      <image href="Presentation/GeneralLayout/mrow/mrow1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mrow/mrow1.mml"/>
@@ -634,7 +748,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrow1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mrow/mrowAbg4.png"/>
+      <title>mrowAbg4</title>
+      <image href="Presentation/GeneralLayout/mrow/mrowAbg4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mrow/mrowAbg4.mml"/>
@@ -643,7 +758,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrowAbg4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mrow/mrowBinferred2.png"/>
+      <title>mrowBinferred2</title>
+      <image href="Presentation/GeneralLayout/mrow/mrowBinferred2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mrow/mrowBinferred2.mml"/>
@@ -652,7 +769,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrowBinferred2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mrow/mrowBnested3.png"/>
+      <title>mrowBnested3</title>
+      <image href="Presentation/GeneralLayout/mrow/mrowBnested3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mrow/mrowBnested3.mml"/>
@@ -661,7 +780,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mrow/mrowBnested3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.png"/>
+      <title>mrootB1</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.mml"/>
@@ -670,7 +791,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/mrootB1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.png"/>
+      <title>mrootSfonts3</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.mml"/>
@@ -679,7 +802,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/mrootSfonts3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.png"/>
+      <title>mrootSscriptlevel4</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.mml"/>
@@ -688,7 +813,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/mrootSscriptlevel4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.png"/>
+      <title>msqrt5</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.mml"/>
@@ -697,7 +824,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrt5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.png"/>
+      <title>msqrt6</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.mml"/>
@@ -706,7 +835,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrt6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.png"/>
+      <title>msqrtB7</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.mml"/>
@@ -715,7 +846,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrtB7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.png"/>
+      <title>msqrtBimplied8</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.mml"/>
@@ -724,7 +857,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrtBimplied8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.png"/>
+      <title>msqrtSinheritance9</title>
+      <image href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.mml"/>
@@ -733,7 +868,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/msqrt-mroot/msqrtSinheritance9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mstyle/mstyle1.png"/>
+      <title>mstyle1</title>
+      <image href="Presentation/GeneralLayout/mstyle/mstyle1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mstyle/mstyle1.mml"/>
@@ -742,7 +878,8 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyle1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mstyle/mstyleA2.png"/>
+      <title>mstyleA2</title>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleA2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleA2.mml"/>
@@ -751,7 +888,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleA2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mstyle/mstyleAdep1.png"/>
+      <title>mstyleAdep1</title>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAdep1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAdep1.mml"/>
@@ -760,7 +899,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAdep1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.png"/>
+      <title>mstyleAlinethick1</title>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.mml"/>
@@ -769,7 +910,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAlinethick1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.png"/>
+      <title>mstyleAminscript1</title>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.mml"/>
@@ -778,7 +921,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAminscript1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.png"/>
+      <title>mstyleAscriptlevel1</title>
+      <image href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.mml"/>
@@ -787,7 +932,9 @@
       <codeblock><coderef href="Presentation/GeneralLayout/mstyle/mstyleAscriptlevel1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.png"/>
+      <title>mmultiscripts1</title>
+      <image href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.mml"/>
@@ -796,7 +943,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.png"/>
+      <title>mmultiscripts2</title>
+      <image href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.mml"/>
@@ -805,7 +954,8 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/mmultiscripts/mmultiscripts2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/mover/mover1.png"/>
+      <title>mover1</title>
+      <image href="Presentation/ScriptsAndLimits/mover/mover1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/mover/mover1.mml"/>
@@ -814,7 +964,8 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/mover/mover1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/mover/mover2.png"/>
+      <title>mover2</title>
+      <image href="Presentation/ScriptsAndLimits/mover/mover2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/mover/mover2.mml"/>
@@ -823,7 +974,8 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/mover/mover2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/mover/mover3.png"/>
+      <title>mover3</title>
+      <image href="Presentation/ScriptsAndLimits/mover/mover3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/mover/mover3.mml"/>
@@ -832,7 +984,8 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/mover/mover3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msub/msub1.png"/>
+      <title>msub1</title>
+      <image href="Presentation/ScriptsAndLimits/msub/msub1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msub/msub1.mml"/>
@@ -841,7 +994,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msub/msub1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msubsup/msubsup1.png"/>
+      <title>msubsup1</title>
+      <image href="Presentation/ScriptsAndLimits/msubsup/msubsup1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msubsup/msubsup1.mml"/>
@@ -850,7 +1005,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msubsup/msubsup1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.png"/>
+      <title>msubsupBsize1</title>
+      <image href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.mml"/>
@@ -859,7 +1016,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.png"/>
+      <title>msubsupBsize2</title>
+      <image href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.mml"/>
@@ -868,7 +1027,8 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msubsup/msubsupBsize2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msup1.png"/>
+      <title>msup1</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msup1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msup1.mml"/>
@@ -877,7 +1037,8 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msup1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msup2.png"/>
+      <title>msup2</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msup2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msup2.mml"/>
@@ -886,7 +1047,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msup2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msupBnest1.png"/>
+      <title>msupBnest1</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBnest1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBnest1.mml"/>
@@ -895,7 +1058,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBnest1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msupBsize1.png"/>
+      <title>msupBsize1</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBsize1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBsize1.mml"/>
@@ -904,7 +1069,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBsize1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msupBsize2.png"/>
+      <title>msupBsize2</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBsize2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBsize2.mml"/>
@@ -913,7 +1080,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBsize2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msupBsize3.png"/>
+      <title>msupBsize3</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msupBsize3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msupBsize3.mml"/>
@@ -922,7 +1091,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupBsize3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/msup/msupSadvance1.png"/>
+      <title>msupSadvance1</title>
+      <image href="Presentation/ScriptsAndLimits/msup/msupSadvance1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/msup/msupSadvance1.mml"/>
@@ -931,7 +1102,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/msup/msupSadvance1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/munder/munder1.png"/>
+      <title>munder1</title>
+      <image href="Presentation/ScriptsAndLimits/munder/munder1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/munder/munder1.mml"/>
@@ -940,7 +1113,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/munder/munder1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/ScriptsAndLimits/munder/munder2.png"/>
+      <title>munder2</title>
+      <image href="Presentation/ScriptsAndLimits/munder/munder2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/ScriptsAndLimits/munder/munder2.mml"/>
@@ -949,7 +1124,9 @@
       <codeblock><coderef href="Presentation/ScriptsAndLimits/munder/munder2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.png"/>
+      <title>rec-mcolumn1</title>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.mml"/>
@@ -958,7 +1135,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.png"/>
+      <title>rec-mcolumn2</title>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.mml"/>
@@ -967,7 +1146,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.png"/>
+      <title>rec-mcolumn3</title>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.mml"/>
@@ -976,7 +1157,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.png"/>
+      <title>rec-mcolumn4</title>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.mml"/>
@@ -985,7 +1168,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.png"/>
+      <title>rec-mcolumn5</title>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.mml"/>
@@ -994,7 +1179,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn6.png"/>
+      <title>rec-mcolumn5</title>
+      <image href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn5.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn6.mml"/>
@@ -1003,7 +1190,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mcolumn/rec-mcolumn6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.png"/>
+      <title>mlabeledtr1</title>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.mml"/>
@@ -1012,7 +1201,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtr1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.png"/>
+      <title>mlabeledtrAside1</title>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.mml"/>
@@ -1021,7 +1212,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.png"/>
+      <title>mlabeledtrAside2</title>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.mml"/>
@@ -1030,7 +1223,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/mlabeledtrAside2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.png"/>
+      <title>rec-mlabeledtr</title>
+      <image href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.mml"/>
@@ -1039,7 +1234,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mlabeledtr/rec-mlabeledtr.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.png"/>
+      <title>deprecated-mtd1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.mml"/>
@@ -1048,7 +1245,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/deprecated-mtd1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.png"/>
+      <title>deprecated-mtd2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.mml"/>
@@ -1057,7 +1256,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/deprecated-mtd2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/deprecated-test3.png"/>
+      <title>deprecated-test3</title>
+      <image href="Presentation/TablesAndMatrices/mtable/deprecated-test3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/deprecated-test3.mml"/>
@@ -1066,7 +1267,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/deprecated-test3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/maligngroup1.png"/>
+      <title>maligngroup1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/maligngroup1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/maligngroup1.mml"/>
@@ -1075,7 +1278,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/maligngroup1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtable1.png"/>
+      <title>mtable1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtable1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtable1.mml"/>
@@ -1084,7 +1289,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtable1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtable2.png"/>
+      <title>mtable2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtable2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtable2.mml"/>
@@ -1093,7 +1300,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtable2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign1.png"/>
+      <title>mtableAalign1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAalign1.mml"/>
@@ -1102,7 +1311,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAalign1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign2.png"/>
+      <title>mtableAalign2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAalign2.mml"/>
@@ -1111,7 +1322,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAalign2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign3.png"/>
+      <title>mtableAalign3</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAalign3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAalign3.mml"/>
@@ -1120,7 +1333,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAalign3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAframe1.png"/>
+      <title>mtableAframe1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAframe1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAframe1.mml"/>
@@ -1129,7 +1344,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAframe1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAframe2.png"/>
+      <title>mtableAframe2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAframe2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAframe2.mml"/>
@@ -1138,7 +1355,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAframe2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.png"/>
+      <title>mtableAgroupalign</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.mml"/>
@@ -1147,7 +1366,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAgroupalign.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAlines1.png"/>
+      <title>mtableAlines1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAlines1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAlines1.mml"/>
@@ -1156,7 +1377,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAlines1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAlines2.png"/>
+      <title>mtableAlines2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAlines2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAlines2.mml"/>
@@ -1165,7 +1388,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAlines2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.png"/>
+      <title>mtableAspacing1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.mml"/>
@@ -1174,7 +1399,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.png"/>
+      <title>mtableAspacing2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.mml"/>
@@ -1183,7 +1410,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.png"/>
+      <title>mtableAspacing3</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.mml"/>
@@ -1192,7 +1421,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.png"/>
+      <title>mtableAspacing4</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.mml"/>
@@ -1201,7 +1432,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAspacing4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.png"/>
+      <title>mtableAwidth1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.mml"/>
@@ -1210,7 +1443,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.png"/>
+      <title>mtableAwidth2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.mml"/>
@@ -1219,7 +1454,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.png"/>
+      <title>mtableAwidth3</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.mml"/>
@@ -1228,7 +1465,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.png"/>
+      <title>mtableAwidth4</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.mml"/>
@@ -1237,7 +1476,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableAwidth4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableBgap1.png"/>
+      <title>mtableBgap1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBgap1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBgap1.mml"/>
@@ -1246,7 +1487,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBgap1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableBsize1.png"/>
+      <title>mtableBsize1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBsize1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBsize1.mml"/>
@@ -1255,7 +1498,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBsize1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableBsize2.png"/>
+      <title>mtableBsize2</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBsize2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBsize2.mml"/>
@@ -1264,7 +1509,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBsize2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/mtableBspan3.png"/>
+      <title>mtableBspan3</title>
+      <image href="Presentation/TablesAndMatrices/mtable/mtableBspan3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/mtableBspan3.mml"/>
@@ -1273,7 +1520,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/mtableBspan3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/mtable/rec-mtable1.png"/>
+      <title>rec-mtable1</title>
+      <image href="Presentation/TablesAndMatrices/mtable/rec-mtable1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/mtable/rec-mtable1.mml"/>
@@ -1282,7 +1531,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/mtable/rec-mtable1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/nested/mtableAwidth1.png"/>
+      <title>mtableAwidth1</title>
+      <image href="Presentation/TablesAndMatrices/nested/mtableAwidth1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/nested/mtableAwidth1.mml"/>
@@ -1291,7 +1542,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/nested/mtableAwidth1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TablesAndMatrices/nested/nestedAwidth1.png"/>
+      <title>nestedAwidth1</title>
+      <image href="Presentation/TablesAndMatrices/nested/nestedAwidth1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TablesAndMatrices/nested/nestedAwidth1.mml"/>
@@ -1300,7 +1553,9 @@
       <codeblock><coderef href="Presentation/TablesAndMatrices/nested/nestedAwidth1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/CommonAttributes/hexcolors2.png"/>
+      <title>hexcolors2</title>
+      <image href="Presentation/TokenElements/CommonAttributes/hexcolors2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/CommonAttributes/hexcolors2.mml"/>
@@ -1309,7 +1564,9 @@
       <codeblock><coderef href="Presentation/TokenElements/CommonAttributes/hexcolors2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/CommonAttributes/sizeunits3.png"/>
+      <title>sizeunits3</title>
+      <image href="Presentation/TokenElements/CommonAttributes/sizeunits3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/CommonAttributes/sizeunits3.mml"/>
@@ -1318,7 +1575,9 @@
       <codeblock><coderef href="Presentation/TokenElements/CommonAttributes/sizeunits3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/CommonAttributes/sizeunits4.png"/>
+      <title>sizeunits4</title>
+      <image href="Presentation/TokenElements/CommonAttributes/sizeunits4.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/CommonAttributes/sizeunits4.mml"/>
@@ -1327,7 +1586,8 @@
       <codeblock><coderef href="Presentation/TokenElements/CommonAttributes/sizeunits4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mglyph/mglyph3.png"/>
+      <title>mglyph3</title>
+      <image href="Presentation/TokenElements/mglyph/mglyph3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mglyph/mglyph3.mml"/>
@@ -1336,7 +1596,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mglyph/mglyph3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mglyph/rec-mglyph1.png"/>
+      <title>rec-mglyph1</title>
+      <image href="Presentation/TokenElements/mglyph/rec-mglyph1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mglyph/rec-mglyph1.mml"/>
@@ -1345,7 +1607,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mglyph/rec-mglyph1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mglyph/rec-mglyph2.png"/>
+      <title>rec-mglyph2</title>
+      <image href="Presentation/TokenElements/mglyph/rec-mglyph2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mglyph/rec-mglyph2.mml"/>
@@ -1354,7 +1618,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mglyph/rec-mglyph2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mi1.png"/>
+      <title>mi1</title>
+      <image href="Presentation/TokenElements/mi/mi1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mi1.mml"/>
@@ -1363,7 +1628,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mi1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mi2.png"/>
+      <title>mi2</title>
+      <image href="Presentation/TokenElements/mi/mi2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mi2.mml"/>
@@ -1372,7 +1638,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mi2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mi3.png"/>
+      <title>mi3</title>
+      <image href="Presentation/TokenElements/mi/mi3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mi3.mml"/>
@@ -1381,7 +1648,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mi3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mi4.png"/>
+      <title>mi4</title>
+      <image href="Presentation/TokenElements/mi/mi4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mi4.mml"/>
@@ -1390,7 +1658,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mi4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miAtoken5.png"/>
+      <title>miAtoken5</title>
+      <image href="Presentation/TokenElements/mi/miAtoken5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miAtoken5.mml"/>
@@ -1399,7 +1668,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miAtoken5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miequivalents11.png"/>
+      <title>miequivalents11</title>
+      <image href="Presentation/TokenElements/mi/miequivalents11.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miequivalents11.mml"/>
@@ -1408,7 +1679,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miequivalents11.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mifontstyle12.png"/>
+      <title>mifontstyle12</title>
+      <image href="Presentation/TokenElements/mi/mifontstyle12.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mifontstyle12.mml"/>
@@ -1417,7 +1689,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mifontstyle12.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mimathvariant13.png"/>
+      <title>mimathvariant13</title>
+      <image href="Presentation/TokenElements/mi/mimathvariant13.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mimathvariant13.mml"/>
@@ -1426,7 +1700,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mimathvariant13.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/mimathvariant14.png"/>
+      <title>mimathvariant14</title>
+      <image href="Presentation/TokenElements/mi/mimathvariant14.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/mimathvariant14.mml"/>
@@ -1435,7 +1711,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/mimathvariant14.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miScolorname15.png"/>
+      <title>miScolorname15</title>
+      <image href="Presentation/TokenElements/mi/miScolorname15.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miScolorname15.mml"/>
@@ -1444,7 +1722,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miScolorname15.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miScolorname6.png"/>
+      <title>miScolorname6</title>
+      <image href="Presentation/TokenElements/mi/miScolorname6.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miScolorname6.mml"/>
@@ -1453,7 +1732,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miScolorname6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miScolorscope7.png"/>
+      <title>miScolorscope7</title>
+      <image href="Presentation/TokenElements/mi/miScolorscope7.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miScolorscope7.mml"/>
@@ -1462,7 +1743,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miScolorscope7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miSfonts8.png"/>
+      <title>miSfonts8</title>
+      <image href="Presentation/TokenElements/mi/miSfonts8.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miSfonts8.mml"/>
@@ -1471,7 +1753,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miSfonts8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miSfontsize9.png"/>
+      <title>miSfontsize9</title>
+      <image href="Presentation/TokenElements/mi/miSfontsize9.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miSfontsize9.mml"/>
@@ -1480,7 +1763,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miSfontsize9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miSmathsize16.png"/>
+      <title>miSmathsize16</title>
+      <image href="Presentation/TokenElements/mi/miSmathsize16.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miSmathsize16.mml"/>
@@ -1489,7 +1773,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miSmathsize16.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miSmathsize17.png"/>
+      <title>miSmathsize17</title>
+      <image href="Presentation/TokenElements/mi/miSmathsize17.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miSmathsize17.mml"/>
@@ -1498,7 +1783,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miSmathsize17.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mi/miStoken10.png"/>
+      <title>miStoken10</title>
+      <image href="Presentation/TokenElements/mi/miStoken10.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mi/miStoken10.mml"/>
@@ -1507,7 +1793,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mi/miStoken10.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mline/rec-mline1.png"/>
+      <title>rec-mline1</title>
+      <image href="Presentation/TokenElements/mline/rec-mline1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mline/rec-mline1.mml"/>
@@ -1516,7 +1803,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mline/rec-mline1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mline/rec-mline2.png"/>
+      <title>rec-mline2</title>
+      <image href="Presentation/TokenElements/mline/rec-mline2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mline/rec-mline2.mml"/>
@@ -1525,7 +1813,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mline/rec-mline2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mline/rec-mline3.png"/>
+      <title>rec-mline3</title>
+      <image href="Presentation/TokenElements/mline/rec-mline3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mline/rec-mline3.mml"/>
@@ -1534,7 +1823,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mline/rec-mline3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mn1.png"/>
+      <title>mn1</title>
+      <image href="Presentation/TokenElements/mn/mn1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mn1.mml"/>
@@ -1543,7 +1833,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mn1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mn2.png"/>
+      <title>mn2</title>
+      <image href="Presentation/TokenElements/mn/mn2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mn2.mml"/>
@@ -1552,7 +1843,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mn2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mn3.png"/>
+      <title>mn3</title>
+      <image href="Presentation/TokenElements/mn/mn3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mn3.mml"/>
@@ -1561,7 +1853,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mn3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mn4.png"/>
+      <title>mn4</title>
+      <image href="Presentation/TokenElements/mn/mn4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mn4.mml"/>
@@ -1570,7 +1863,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mn4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnAcolorname5.png"/>
+      <title>mnAcolorname5</title>
+      <image href="Presentation/TokenElements/mn/mnAcolorname5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnAcolorname5.mml"/>
@@ -1579,7 +1873,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnAcolorname5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnAtoken6.png"/>
+      <title>mnAtoken6</title>
+      <image href="Presentation/TokenElements/mn/mnAtoken6.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnAtoken6.mml"/>
@@ -1588,7 +1883,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnAtoken6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnAtoken7.png"/>
+      <title>mnAtoken7</title>
+      <image href="Presentation/TokenElements/mn/mnAtoken7.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnAtoken7.mml"/>
@@ -1597,7 +1893,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnAtoken7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnScolor8.png"/>
+      <title>mnScolor8</title>
+      <image href="Presentation/TokenElements/mn/mnScolor8.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnScolor8.mml"/>
@@ -1606,7 +1903,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnScolor8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnSdisplaystyle9.png"/>
+      <title>mnSdisplaystyle9</title>
+      <image href="Presentation/TokenElements/mn/mnSdisplaystyle9.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnSdisplaystyle9.mml"/>
@@ -1615,7 +1914,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnSdisplaystyle9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnSfont10.png"/>
+      <title>mnSfont10</title>
+      <image href="Presentation/TokenElements/mn/mnSfont10.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnSfont10.mml"/>
@@ -1624,7 +1924,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnSfont10.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mn/mnSscriptlevel11.png"/>
+      <title>mnSscriptlevel11</title>
+      <image href="Presentation/TokenElements/mn/mnSscriptlevel11.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mn/mnSscriptlevel11.mml"/>
@@ -1633,7 +1935,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mn/mnSscriptlevel11.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo1.png"/>
+      <title>mo1</title>
+      <image href="Presentation/TokenElements/mo/mo1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo1.mml"/>
@@ -1642,7 +1945,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo2.png"/>
+      <title>mo2</title>
+      <image href="Presentation/TokenElements/mo/mo2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo2.mml"/>
@@ -1651,7 +1955,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo3.png"/>
+      <title>mo3</title>
+      <image href="Presentation/TokenElements/mo/mo3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo3.mml"/>
@@ -1660,7 +1965,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo4.png"/>
+      <title>mo4</title>
+      <image href="Presentation/TokenElements/mo/mo4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo4.mml"/>
@@ -1669,7 +1975,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo5.png"/>
+      <title>mo5</title>
+      <image href="Presentation/TokenElements/mo/mo5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo5.mml"/>
@@ -1678,7 +1985,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo6.png"/>
+      <title>mo6</title>
+      <image href="Presentation/TokenElements/mo/mo6.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo6.mml"/>
@@ -1687,7 +1995,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo7.png"/>
+      <title>mo7</title>
+      <image href="Presentation/TokenElements/mo/mo7.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo7.mml"/>
@@ -1696,7 +2005,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/mo8.png"/>
+      <title>mo8</title>
+      <image href="Presentation/TokenElements/mo/mo8.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/mo8.mml"/>
@@ -1705,7 +2015,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/mo8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAaccent10.png"/>
+      <title>moAaccent10</title>
+      <image href="Presentation/TokenElements/mo/moAaccent10.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAaccent10.mml"/>
@@ -1714,7 +2025,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAaccent10.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAaccent9.png"/>
+      <title>moAaccent9</title>
+      <image href="Presentation/TokenElements/mo/moAaccent9.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAaccent9.mml"/>
@@ -1723,7 +2035,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAaccent9.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAform11.png"/>
+      <title>moAform11</title>
+      <image href="Presentation/TokenElements/mo/moAform11.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAform11.mml"/>
@@ -1732,7 +2045,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAform11.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAlargeop12.png"/>
+      <title>moAlargeop12</title>
+      <image href="Presentation/TokenElements/mo/moAlargeop12.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAlargeop12.mml"/>
@@ -1741,7 +2055,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAlargeop12.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAlrspace13.png"/>
+      <title>moAlrspace13</title>
+      <image href="Presentation/TokenElements/mo/moAlrspace13.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAlrspace13.mml"/>
@@ -1750,7 +2065,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAlrspace13.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAminmax14.png"/>
+      <title>moAminmax14</title>
+      <image href="Presentation/TokenElements/mo/moAminmax14.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAminmax14.mml"/>
@@ -1759,7 +2075,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAminmax14.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAmovable15.png"/>
+      <title>moAmovable15</title>
+      <image href="Presentation/TokenElements/mo/moAmovable15.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAmovable15.mml"/>
@@ -1768,7 +2085,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAmovable15.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAprime16.png"/>
+      <title>moAprime16</title>
+      <image href="Presentation/TokenElements/mo/moAprime16.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAprime16.mml"/>
@@ -1777,7 +2095,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAprime16.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAsep17.png"/>
+      <title>moAsep17</title>
+      <image href="Presentation/TokenElements/mo/moAsep17.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAsep17.mml"/>
@@ -1786,7 +2105,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAsep17.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAstretchy18.png"/>
+      <title>moAstretchy18</title>
+      <image href="Presentation/TokenElements/mo/moAstretchy18.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAstretchy18.mml"/>
@@ -1795,7 +2115,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAstretchy18.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moAsymmetric19.png"/>
+      <title>moAsymmetric19</title>
+      <image href="Presentation/TokenElements/mo/moAsymmetric19.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moAsymmetric19.mml"/>
@@ -1804,7 +2126,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moAsymmetric19.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mo/moSminmax20.png"/>
+      <title>moSminmax20</title>
+      <image href="Presentation/TokenElements/mo/moSminmax20.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mo/moSminmax20.mml"/>
@@ -1813,7 +2136,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mo/moSminmax20.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/ms1.png"/>
+      <title>ms1</title>
+      <image href="Presentation/TokenElements/ms/ms1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/ms1.mml"/>
@@ -1822,7 +2146,9 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/ms1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msAdisplaystyle2.png"/>
+      <title>msAdisplaystyle2</title>
+      <image href="Presentation/TokenElements/ms/msAdisplaystyle2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msAdisplaystyle2.mml"/>
@@ -1831,7 +2157,8 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msAdisplaystyle2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msAquotes3.png"/>
+      <title>msAquotes3</title>
+      <image href="Presentation/TokenElements/ms/msAquotes3.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msAquotes3.mml"/>
@@ -1840,7 +2167,8 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msAquotes3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msAtoken4.png"/>
+      <title>msAtoken4</title>
+      <image href="Presentation/TokenElements/ms/msAtoken4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msAtoken4.mml"/>
@@ -1849,7 +2177,8 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msAtoken4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msAtoken5.png"/>
+      <title>msAtoken5</title>
+      <image href="Presentation/TokenElements/ms/msAtoken5.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msAtoken5.mml"/>
@@ -1858,7 +2187,9 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msAtoken5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msScolorscope6.png"/>
+      <title>msScolorscope6</title>
+      <image href="Presentation/TokenElements/ms/msScolorscope6.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msScolorscope6.mml"/>
@@ -1867,7 +2198,9 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msScolorscope6.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msSinheritance7.png"/>
+      <title>msSinheritance7</title>
+      <image href="Presentation/TokenElements/ms/msSinheritance7.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msSinheritance7.mml"/>
@@ -1876,7 +2209,9 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msSinheritance7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/ms/msSinheritance8.png"/>
+      <title>msSinheritance8</title>
+      <image href="Presentation/TokenElements/ms/msSinheritance8.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/ms/msSinheritance8.mml"/>
@@ -1885,7 +2220,8 @@
       <codeblock><coderef href="Presentation/TokenElements/ms/msSinheritance8.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mspace/mspace1.png"/>
+      <title>mspace1</title>
+      <image href="Presentation/TokenElements/mspace/mspace1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mspace/mspace1.mml"/>
@@ -1894,7 +2230,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mspace/mspace1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mspace/mspace2.png"/>
+      <title>mspace2</title>
+      <image href="Presentation/TokenElements/mspace/mspace2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mspace/mspace2.mml"/>
@@ -1903,7 +2240,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mspace/mspace2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mspace/mspaceAbreak3.png"/>
+      <title>mspaceAbreak3</title>
+      <image href="Presentation/TokenElements/mspace/mspaceAbreak3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mspace/mspaceAbreak3.mml"/>
@@ -1912,7 +2251,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mspace/mspaceAbreak3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mspace/mspacestruts2.png"/>
+      <title>mspacestruts2</title>
+      <image href="Presentation/TokenElements/mspace/mspacestruts2.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mspace/mspacestruts2.mml"/>
@@ -1921,7 +2262,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mspace/mspacestruts2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mspace/rec-mspace1.png"/>
+      <title>rec-mspace1</title>
+      <image href="Presentation/TokenElements/mspace/rec-mspace1.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mspace/rec-mspace1.mml"/>
@@ -1930,7 +2273,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mspace/rec-mspace1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtext1.png"/>
+      <title>mtext1</title>
+      <image href="Presentation/TokenElements/mtext/mtext1.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtext1.mml"/>
@@ -1939,7 +2283,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mtext/mtext1.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtext2.png"/>
+      <title>mtext2</title>
+      <image href="Presentation/TokenElements/mtext/mtext2.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtext2.mml"/>
@@ -1948,7 +2293,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mtext/mtext2.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtextAtoken3.png"/>
+      <title>mtextAtoken3</title>
+      <image href="Presentation/TokenElements/mtext/mtextAtoken3.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtextAtoken3.mml"/>
@@ -1957,7 +2304,8 @@
       <codeblock><coderef href="Presentation/TokenElements/mtext/mtextAtoken3.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtextSbg4.png"/>
+      <title>mtextSbg4</title>
+      <image href="Presentation/TokenElements/mtext/mtextSbg4.png" placement="break" align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtextSbg4.mml"/>
@@ -1966,7 +2314,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mtext/mtextSbg4.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtextScolor5.png"/>
+      <title>mtextScolor5</title>
+      <image href="Presentation/TokenElements/mtext/mtextScolor5.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtextScolor5.mml"/>
@@ -1975,7 +2325,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mtext/mtextScolor5.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtextspaces7.png"/>
+      <title>mtextspaces7</title>
+      <image href="Presentation/TokenElements/mtext/mtextspaces7.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtextspaces7.mml"/>
@@ -1984,7 +2336,9 @@
       <codeblock><coderef href="Presentation/TokenElements/mtext/mtextspaces7.mml"/></codeblock>
     </section>
     <section>
-      <image href="Presentation/TokenElements/mtext/mtextStoken6.png"/>
+      <title>mtextStoken6</title>
+      <image href="Presentation/TokenElements/mtext/mtextStoken6.png" placement="break"
+        align="center"/>
       <equation-block>
         <mathml>
           <mathmlref href="Presentation/TokenElements/mtext/mtextStoken6.mml"/>

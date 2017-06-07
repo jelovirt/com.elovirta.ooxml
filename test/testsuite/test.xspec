@@ -4530,7 +4530,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario label="mfracZComp1">
+  <!--x:scenario label="mfracZComp1">
     <x:context href="Presentation/GeneralLayout/mfrac/mfracZComp1.mml" select="*"/>
     <x:expect label="" select="*">
       <m:oMath>
@@ -4587,7 +4587,7 @@
         </m:f>
       </m:oMath>
     </x:expect>
-  </x:scenario>
+  </x:scenario-->
   <x:scenario label="mpadded1">
     <x:context href="Presentation/GeneralLayout/mpadded/mpadded1.mml" select="*"/>
     <x:expect label="" select="*">

@@ -21,7 +21,10 @@
   <xsl:template match="*[contains(@class, ' pr-d/codeblock ')]" mode="block-style">
     <w:pStyle w:val="HTMLPreformatted"/>
   </xsl:template>
-
+  <xsl:template match="*[contains(@class, ' pr-d/codeblock ')]" mode="inline-style">
+    <w:rStyle w:val="HTMLCode"/>
+  </xsl:template>
+  
   <!-- monospaced -->
   <xsl:template match="*[contains(@class, ' pr-d/apiname ')]" mode="inline-style">
     <w:rStyle w:val="HTMLTypewriter"/>
@@ -29,7 +32,7 @@
   
   <!-- monospaced -->
   <xsl:template match="*[contains(@class, ' pr-d/codeph ')]" mode="inline-style">
-    <w:rStyle w:val="HTMLTypewriter"/>
+    <w:rStyle w:val="HTMLCode"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' pr-d/var ')]" mode="inline-style">
