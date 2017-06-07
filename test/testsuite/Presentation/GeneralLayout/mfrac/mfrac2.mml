@@ -1,9 +1,9 @@
-<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+<math xmlns="http://www.w3.org/1998/Math/MathML">
   <mfrac>
-    <mo>ⅆ</mo> 
-    <mrow> 
-      <mo>ⅆ</mo> 
-      <mi>x</mi>  
-    </mrow> 
-  </mfrac> 
+    <mo>ⅆ</mo>
+    <mrow>
+      <mo>ⅆ</mo>
+      <mi>x</mi>
+    </mrow>
+  </mfrac>
 </math>

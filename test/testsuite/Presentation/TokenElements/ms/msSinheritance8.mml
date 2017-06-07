@@ -1,17 +1,17 @@
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle fontstyle="italic" fontfamily="Helvetica">
     <mrow>
-      <ms>a</ms> 
-      <mo>+</mo> 
-      <ms fontweight="bold">b</ms>  
-      <mo>+</mo> 
-      <ms fontstyle="normal">c</ms> 
-      <mo>+</mo> 
-      <ms fontfamily="Courier" color="#00ff00">f</ms>  
-      <mo>+</mo> 
-      <ms fontsize="36pt">Γ</ms> 
-      <mo>+</mo> 
-      <ms fontweight="bold" fontstyle="normal">d</ms>  
-    </mrow> 
-  </mstyle> 
+      <ms>a</ms>
+      <mo>+</mo>
+      <ms fontweight="bold">b</ms>
+      <mo>+</mo>
+      <ms fontstyle="normal">c</ms>
+      <mo>+</mo>
+      <ms fontfamily="Courier" color="#00ff00">f</ms>
+      <mo>+</mo>
+      <ms fontsize="36pt">Γ</ms>
+      <mo>+</mo>
+      <ms fontweight="bold" fontstyle="normal">d</ms>
+    </mrow>
+  </mstyle>
 </math>

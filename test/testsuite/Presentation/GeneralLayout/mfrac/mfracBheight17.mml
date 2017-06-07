@@ -1,66 +1,66 @@
-<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+<math xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd> 
-        <mtext>taller num</mtext> 
-      </mtd>  
       <mtd>
-        <msup> 
-          <mi>x</mi> 
-          <mn>2</mn>  
-        </msup> 
-        <mo>+</mo>  
-        <msup>
-          <mfrac> 
-            <mi>h</mi> 
-            <mi>x</mi>  
-          </mfrac> 
-          <mn>2</mn>  
-        </msup> 
-        <mo>+</mo>  
-        <msup>
-          <mrow> 
-            <mo>(</mo> 
-            <mfrac> 
-              <mi>h</mi>  
-              <mi>x</mi> 
-            </mfrac>  
-            <mo>)</mo> 
-          </mrow>  
-          <mn>2</mn> 
-        </msup>  
-      </mtd> 
-    </mtr> 
-    <mtr> 
+        <mtext>taller num</mtext>
+      </mtd>
       <mtd>
-        <mtext>taller denom</mtext>  
-      </mtd> 
-      <mtd> 
         <msup>
-          <mi>x</mi>  
-          <mn>2</mn> 
-        </msup>  
-        <mo>+</mo> 
-        <msup> 
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
           <mfrac>
-            <mi>x</mi>  
-            <mi>y</mi> 
-          </mfrac>  
-          <mn>2</mn> 
-        </msup>  
-        <mo>+</mo> 
-        <msup> 
+            <mi>h</mi>
+            <mi>x</mi>
+          </mfrac>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
           <mrow>
-            <mo>(</mo>  
+            <mo>(</mo>
             <mfrac>
-              <mi>x</mi>  
-              <mi>y</mi>  
-            </mfrac> 
-            <mo>)</mo>  
-          </mrow> 
-          <mn>2</mn>  
-        </msup> 
-      </mtd> 
-    </mtr>  
-  </mtable> 
+              <mi>h</mi>
+              <mi>x</mi>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext>taller denom</mtext>
+      </mtd>
+      <mtd>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mfrac>
+            <mi>x</mi>
+            <mi>y</mi>
+          </mfrac>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

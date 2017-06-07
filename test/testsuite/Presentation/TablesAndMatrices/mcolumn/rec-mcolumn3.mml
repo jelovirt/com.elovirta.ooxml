@@ -1,16 +1,16 @@
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mcolumn>
     <mstyle mathsize="71%">
-      <mn>1</mn> 
-      <mn>1</mn> 
-      <mspace spacing="0"></mspace>
-    </mstyle> 
-    <mn>987</mn> 
+      <mn>1</mn>
+      <mn>1</mn>
+      <mspace spacing="0"/>
+    </mstyle>
+    <mn>987</mn>
     <mrow>
-      <mo>+</mo> 
-      <mn>456</mn> 
-    </mrow> 
-    <mline spacing="+1443"></mline> 
-    <mn>1443</mn> 
-  </mcolumn> 
+      <mo>+</mo>
+      <mn>456</mn>
+    </mrow>
+    <mline spacing="+1443"/>
+    <mn>1443</mn>
+  </mcolumn>
 </math>

@@ -1,12 +1,12 @@
-<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+<math xmlns="http://www.w3.org/1998/Math/MathML">
   <mfrac>
     <mrow>
-      <mn>1</mn> 
-      <mo>+</mo> 
-      <msqrt> 
-        <mn>5</mn> 
-      </msqrt>  
-    </mrow> 
-    <mn>2</mn> 
-  </mfrac> 
+      <mn>1</mn>
+      <mo>+</mo>
+      <msqrt>
+        <mn>5</mn>
+      </msqrt>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
 </math>

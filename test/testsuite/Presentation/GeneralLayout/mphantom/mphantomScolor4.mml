@@ -1,11 +1,11 @@
-<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+<math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mi>A</mi> 
-    <mstyle color="Red" background="Green"> 
+    <mi>A</mi>
+    <mstyle color="Red" background="Green">
       <mphantom>
-        <mi>A</mi>  
-      </mphantom> 
-    </mstyle> 
-    <mi>A</mi> 
-  </mrow> 
+        <mi>A</mi>
+      </mphantom>
+    </mstyle>
+    <mi>A</mi>
+  </mrow>
 </math>

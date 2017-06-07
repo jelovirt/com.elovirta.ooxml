@@ -1,26 +1,26 @@
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mo> there exists</mo> 
-    <mrow> 
+    <mo> there exists</mo>
+    <mrow>
       <mrow>
-        <mi>δ</mi>  
-        <mo>&gt;</mo> 
-        <mn>0</mn>  
-      </mrow> 
-      <mo>such that</mo>  
+        <mi>δ</mi>
+        <mo>&gt;</mo>
+        <mn>0</mn>
+      </mrow>
+      <mo>such that</mo>
       <mrow>
-        <mrow> 
-          <mi>f</mi> 
-          <mo>⁡</mo>  
+        <mrow>
+          <mi>f</mi>
+          <mo>⁡</mo>
           <mrow>
-            <mo>(</mo>  
-            <mi>x</mi>  
-            <mo>)</mo> 
-          </mrow>  
-        </mrow> 
-        <mo>&gt;</mo>  
-        <mn>1</mn> 
-      </mrow> 
-    </mrow>  
-  </mrow> 
+            <mo>(</mo>
+            <mi>x</mi>
+            <mo>)</mo>
+          </mrow>
+        </mrow>
+        <mo>&gt;</mo>
+        <mn>1</mn>
+      </mrow>
+    </mrow>
+  </mrow>
 </math>

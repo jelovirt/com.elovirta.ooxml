@@ -1,25 +1,25 @@
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mover accent="true"> 
+    <mover accent="true">
       <mrow>
-        <mi>x</mi>  
-        <mo>+</mo> 
-        <mi>y</mi>  
-        <mo>+</mo> 
-        <mi>z</mi>  
-      </mrow> 
-      <mo>¯</mo> 
-    </mover> 
-    <mtext>    vs    </mtext>  
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>y</mi>
+        <mo>+</mo>
+        <mi>z</mi>
+      </mrow>
+      <mo>¯</mo>
+    </mover>
+    <mtext>    vs    </mtext>
     <mover accent="false">
-      <mrow> 
-        <mi>x</mi> 
-        <mo>+</mo>  
-        <mi>y</mi> 
-        <mo>+</mo>  
-        <mi>z</mi> 
-      </mrow>  
-      <mo>¯</mo> 
-    </mover> 
-  </mrow> 
+      <mrow>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>y</mi>
+        <mo>+</mo>
+        <mi>z</mi>
+      </mrow>
+      <mo>¯</mo>
+    </mover>
+  </mrow>
 </math>

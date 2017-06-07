@@ -1,41 +1,41 @@
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <munderover> 
-      <mo>∑</mo> 
-      <mi>x</mi>  
-      <mn>0</mn> 
-    </munderover> 
-    <mo>=</mo>  
     <munderover>
-      <mo movablelimits="true">∑</mo>  
-      <mi>x</mi> 
-      <mn>0</mn> 
-    </munderover> 
-    <mo>=</mo> 
-    <munderover> 
-      <mo movablelimits="false">∑</mo> 
-      <mi>x</mi>  
-      <mn>0</mn> 
-    </munderover> 
-    <mo>=</mo>  
+      <mo>∑</mo>
+      <mi>x</mi>
+      <mn>0</mn>
+    </munderover>
+    <mo>=</mo>
+    <munderover>
+      <mo movablelimits="true">∑</mo>
+      <mi>x</mi>
+      <mn>0</mn>
+    </munderover>
+    <mo>=</mo>
+    <munderover>
+      <mo movablelimits="false">∑</mo>
+      <mi>x</mi>
+      <mn>0</mn>
+    </munderover>
+    <mo>=</mo>
     <mstyle displaystyle="true">
-      <munderover> 
-        <mo>∑</mo> 
-        <mi>x</mi> 
-        <mn>0</mn> 
-      </munderover> 
-      <mo>=</mo>  
       <munderover>
-        <mo movablelimits="true">∑ </mo> 
-        <mi>x</mi> 
-        <mn>0</mn> 
-      </munderover> 
-      <mo>=</mo>  
+        <mo>∑</mo>
+        <mi>x</mi>
+        <mn>0</mn>
+      </munderover>
+      <mo>=</mo>
       <munderover>
-        <mo movablelimits="false">∑ </mo> 
-        <mi>x</mi> 
-        <mn>0</mn> 
-      </munderover> 
-    </mstyle> 
-  </mrow>  
+        <mo movablelimits="true">∑ </mo>
+        <mi>x</mi>
+        <mn>0</mn>
+      </munderover>
+      <mo>=</mo>
+      <munderover>
+        <mo movablelimits="false">∑ </mo>
+        <mi>x</mi>
+        <mn>0</mn>
+      </munderover>
+    </mstyle>
+  </mrow>
 </math>

@@ -1,61 +1,61 @@
 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable frame="solid" columnlines="solid" rowlines="solid" side="left"> 
+  <mtable frame="solid" columnlines="solid" rowlines="solid" side="left">
     <mlabeledtr>
       <mtd>
-        <mtext>1st</mtext>  
-      </mtd> 
+        <mtext>1st</mtext>
+      </mtd>
       <mtd>
         <mfrac>
           <mrow>
-            <mi>a</mi> 
-            <mo>+</mo>  
-            <mn>1</mn> 
-          </mrow>  
-          <mi>2</mi> 
-        </mfrac> 
-      </mtd>  
+            <mi>a</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+          <mi>2</mi>
+        </mfrac>
+      </mtd>
       <mtd>
-        <mi>b</mi> 
-      </mtd> 
+        <mi>b</mi>
+      </mtd>
       <mtd>
-        <mi>c</mi>  
-      </mtd> 
-    </mlabeledtr> 
-    <mlabeledtr> 
+        <mi>c</mi>
+      </mtd>
+    </mlabeledtr>
+    <mlabeledtr>
       <mtd>
-        <mtext>2nd</mtext> 
-      </mtd>  
+        <mtext>2nd</mtext>
+      </mtd>
       <mtd>
-        <mi>x</mi>  
-      </mtd> 
+        <mi>x</mi>
+      </mtd>
       <mtd>
-        <mrow> 
+        <mrow>
           <mfrac>
-            <mn>2</mn>  
-            <mn>3</mn> 
-          </mfrac>  
-          <mi>y</mi> 
-          <mo>+</mo>  
-          <mn>5</mn> 
-        </mrow>  
-      </mtd> 
+            <mn>2</mn>
+            <mn>3</mn>
+          </mfrac>
+          <mi>y</mi>
+          <mo>+</mo>
+          <mn>5</mn>
+        </mrow>
+      </mtd>
       <mtd>
-        <mi>z</mi>  
-      </mtd> 
-    </mlabeledtr> 
-    <mlabeledtr> 
+        <mi>z</mi>
+      </mtd>
+    </mlabeledtr>
+    <mlabeledtr>
       <mtd>
-        <mtext>3rd</mtext> 
-      </mtd> 
+        <mtext>3rd</mtext>
+      </mtd>
       <mtd>
-        <mn>1</mn>  
-      </mtd> 
+        <mn>1</mn>
+      </mtd>
       <mtd>
-        <mn>2</mn>  
-      </mtd> 
+        <mn>2</mn>
+      </mtd>
       <mtd>
-        <mn>5</mn> 
-      </mtd> 
-    </mlabeledtr> 
-  </mtable>  
+        <mn>5</mn>
+      </mtd>
+    </mlabeledtr>
+  </mtable>
 </math>

@@ -1,16 +1,16 @@
-<math xmlns="http://www.w3.org/1998/Math/MathML"> 
+<math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
-      <mfrac> 
+      <mfrac>
         <mrow>
-          <mi>x</mi>  
-        </mrow> 
-        <mrow> 
+          <mi>x</mi>
+        </mrow>
+        <mrow>
           <mrow>
-            <mi>y</mi>  
-          </mrow> 
-        </mrow> 
-      </mfrac>  
-    </mrow> 
-  </mrow> 
+            <mi>y</mi>
+          </mrow>
+        </mrow>
+      </mfrac>
+    </mrow>
+  </mrow>
 </math>
