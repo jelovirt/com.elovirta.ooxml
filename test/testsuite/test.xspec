@@ -367,28 +367,7 @@
                 <m:t>actuarial</m:t>
               </m:r>
             </m:e>
-            <m:e>
-              <m:borderBox>
-                <m:borderBoxPr>
-                  <m:hideTop m:val="on"/>
-                  <m:hideBot m:val="on"/>
-                  <m:hideLeft m:val="on"/>
-                  <m:hideRight m:val="on"/>
-                </m:borderBoxPr>
-                <m:e>
-                  <m:r>
-                    <m:rPr>
-                      <m:nor/>
-                      <m:sty m:val="i"/>
-                    </m:rPr>
-                    <w:rPr>
-                      <w:i/>
-                    </w:rPr>
-                    <m:t>abcdefg</m:t>
-                  </m:r>
-                </m:e>
-              </m:borderBox>
-            </m:e>
+            <m:e/>
           </m:mr>
           <m:mr>
             <m:e>
@@ -4429,7 +4408,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <!--x:scenario label="mfracZComp1">
+  <x:scenario label="mfracZComp1" pending="">
     <x:context href="Presentation/GeneralLayout/mfrac/mfracZComp1.mml" select="*"/>
     <x:expect label="" select="*">
       <m:oMath>
@@ -4486,7 +4465,7 @@
         </m:f>
       </m:oMath>
     </x:expect>
-  </x:scenario-->
+  </x:scenario>
   <x:scenario label="mpadded1">
     <x:context href="Presentation/GeneralLayout/mpadded/mpadded1.mml" select="*"/>
     <x:expect label="" select="*">
