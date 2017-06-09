@@ -56,30 +56,11 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:function name="x:replace" as="xs:string">
-    <xsl:param name="sInput" as="xs:string"/>
-    <xsl:param name="sOrig" as="xs:string"/>
-    <xsl:param name="sReplacement" as="xs:string"/>
-
-    <xsl:choose>
-      <xsl:when test="not(contains($sInput, $sOrig))">
-        <xsl:value-of select="$sInput"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:variable name="sBefore" select="substring-before($sInput, $sOrig)" as="xs:string"/>
-        <xsl:variable name="sAfter" select="substring-after($sInput, $sOrig)" as="xs:string"/>
-        <xsl:variable name="sAfterProcessed" select="x:replace($sAfter, $sOrig, $sReplacement)"
-          as="xs:string"/>
-        <xsl:value-of select="concat($sBefore, $sReplacement, $sAfterProcessed)"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:function>
-
   <xsl:template name="OutputText">
     <xsl:param name="sInput" as="xs:string"/>
     <!-- TODO: This should be done as preprocessing -->
     <xsl:value-of
-      select="x:replace(translate($sInput, '&#xa0;&#x2062;&#x200B;', ' '), '&#x2A75;', '==')"/>
+      select="replace(translate($sInput, '&#xa0;&#x2062;&#x200B;', ' '), '&#x2A75;', '==')"/>
   </xsl:template>
 
   <!-- Template that determines whether or the given node 
@@ -139,19 +120,16 @@
          the base being an n-ary operator) then ignore this. Otherwise
          pass through -->
   <xsl:template match="mml:mrow | mml:mstyle">
-    <xsl:variable name="fNaryArgument" as="xs:boolean" select="x:FIsNaryArgument(.)"/>
-    <xsl:if test="not($fNaryArgument)">
-      <xsl:variable name="fLinearFrac" as="xs:boolean" select="x:FLinearFrac(.)"/>
+    <xsl:if test="not(x:FIsNaryArgument(.))">
       <xsl:choose>
-        <xsl:when test="$fLinearFrac">
+        <xsl:when test="x:FLinearFrac(.)">
           <xsl:call-template name="MakeLinearFraction">
             <xsl:with-param name="ndCur" select="."/>
           </xsl:call-template>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:variable name="fFunc" as="xs:boolean" select="x:FIsFunc(.)"/>
           <xsl:choose>
-            <xsl:when test="$fFunc">
+            <xsl:when test="x:FIsFunc(.)">
               <xsl:call-template name="WriteFunc"/>
             </xsl:when>
             <xsl:otherwise>
@@ -1240,18 +1218,15 @@
 							The mrow itself will be skipped, see template above. -->
     <xsl:choose>
       <xsl:when test="$ndCur[self::mml:mrow]">
-        <!-- Check for linear fraction -->
-        <xsl:variable name="fLinearFrac" as="xs:boolean" select="x:FLinearFrac($ndCur)"/>
         <xsl:choose>
-          <xsl:when test="$fLinearFrac">
+          <xsl:when test="x:FLinearFrac($ndCur)">
             <xsl:call-template name="MakeLinearFraction">
               <xsl:with-param name="ndCur" select="$ndCur"/>
             </xsl:call-template>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:variable name="fFunc" as="xs:boolean" select="x:FIsFunc(.)"/>
             <xsl:choose>
-              <xsl:when test="$fFunc">
+              <xsl:when test="x:FIsFunc(.)">
                 <xsl:call-template name="WriteFunc"/>
               </xsl:when>
               <xsl:otherwise>
