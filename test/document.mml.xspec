@@ -4,6 +4,7 @@
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:ooxml="com.elovirta.ooxml" xmlns:x="http://www.jenitennison.com/xslt/xspec"
   stylesheet="document.mml.xsl">
+  <x:import href="testsuite/test.xspec"/>
   <x:scenario label="3 × input_x">
     <x:context select="*">
       <mml:math>

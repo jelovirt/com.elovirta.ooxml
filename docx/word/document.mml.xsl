@@ -129,7 +129,7 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:choose>
-            <xsl:when test="x:FIsFunc(.)">
+            <xsl:when test="x:isFunction(.)">
               <xsl:call-template name="WriteFunc"/>
             </xsl:when>
             <xsl:otherwise>
@@ -167,7 +167,7 @@
       <!-- If this mi/mo/mn/ms . . . is part the numerator or denominator of a linear fraction, then don't collect. -->
       <xsl:variable name="fLinearFracParent" as="xs:boolean" select="x:FLinearFrac(parent::*)"/>
       <!-- If this mi/mo/mn/ms . . . is part of the name of a function, then don't collect. -->
-      <xsl:variable name="fFunctionName" as="xs:boolean" select="x:FIsFunc(parent::*)"/>
+      <xsl:variable name="fFunctionName" as="xs:boolean" select="x:isFunction(parent::*)"/>
       <xsl:sequence
         select="
           (not($fLinearFracParent) and not($fFunctionName)) and
@@ -1140,7 +1140,7 @@
 					5.  The third child is an <mml:mrow>
 					6.  The second child's text is '&#x02061;'
        -->
-  <xsl:function name="x:FIsFunc" as="xs:boolean">
+  <xsl:function name="x:isFunction" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
     <xsl:variable name="sNdText" as="xs:string" select="normalize-space($ndCur/*[2])"/>
 
@@ -1226,7 +1226,7 @@
           </xsl:when>
           <xsl:otherwise>
             <xsl:choose>
-              <xsl:when test="x:FIsFunc(.)">
+              <xsl:when test="x:isFunction(.)">
                 <xsl:call-template name="WriteFunc"/>
               </xsl:when>
               <xsl:otherwise>
@@ -2194,21 +2194,14 @@
 	
 			 Given strToRepeat, create a string that has strToRepeat repeated iRepitions times. 
 	-->
-  <xsl:function name="x:ConcatStringRepeat" as="xs:string">
+  <xsl:function name="x:repeat" as="xs:string">
     <xsl:param name="strToRepeat" as="xs:string"/>
     <xsl:param name="iRepetitions" as="xs:integer"/>
-    <xsl:param name="strBuilding" as="xs:string"/>
-
-    <xsl:choose>
-      <xsl:when test="$iRepetitions le 0">
-        <xsl:value-of select="$strBuilding"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:sequence
-          select="x:ConcatStringRepeat($strToRepeat, $iRepetitions - 1, concat($strBuilding, $strToRepeat))"
-        />
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:value-of>
+     <xsl:for-each select="0 to ($iRepetitions - 1) ">
+       <xsl:value-of select="$strToRepeat"/>
+     </xsl:for-each>
+    </xsl:value-of>
   </xsl:function>
 
   <!-- This template determines if ndCur is a special collection.
@@ -2222,7 +2215,7 @@
     <xsl:choose>
       <xsl:when test="$ndCur/self::mml:mrow">
         <xsl:variable name="fLinearFraction" as="xs:boolean" select="x:FLinearFrac($ndCur)"/>
-        <xsl:variable name="fFunc" as="xs:boolean" select="x:FIsFunc($ndCur)"/>
+        <xsl:variable name="fFunc" as="xs:boolean" select="x:isFunction($ndCur)"/>
         <xsl:sequence select="$fLinearFraction or $fFunc"/>
       </xsl:when>
       <xsl:otherwise>
@@ -2274,12 +2267,10 @@
             select="count(descendant::mml:malignmark)"/>
           <!-- Output all maligngroups and malignmarks as '&' -->
           <xsl:if test="$cMalignGroups + $cMalignMarks gt 0">
-            <xsl:variable name="str" as="xs:string"
-              select="x:ConcatStringRepeat('&amp;', $cMalignGroups + $cMalignMarks, '')"/>
             <m:r>
               <m:t>
                 <xsl:call-template name="OutputText">
-                  <xsl:with-param name="sInput" select="$str"/>
+                  <xsl:with-param name="sInput" select="x:repeat('&amp;', $cMalignGroups + $cMalignMarks)"/>
                 </xsl:call-template>
               </m:t>
             </m:r>
@@ -2596,22 +2587,12 @@
 
   <xsl:function name="x:FStrContainsNonZeroDigit" as="xs:boolean">
     <xsl:param name="s" as="xs:string"/>
-
-    <!-- Translate any nonzero digit into a 9 -->
-    <xsl:variable name="sNonZeroDigitsToNineDigit" select="translate($s, '12345678', '99999999')"
-      as="xs:string"/>
-    <!-- Search for 9s -->
-    <xsl:sequence select="contains($sNonZeroDigitsToNineDigit, '9')"/>
+    <xsl:sequence select="contains(translate($s, '12345678', '99999999'), '9')"/>
   </xsl:function>
 
   <xsl:function name="x:FStrContainsDigits" as="xs:boolean">
     <xsl:param name="s" as="xs:string"/>
-
-    <!-- Translate any digit into a 0 -->
-    <xsl:variable name="sDigitsToZeroDigit" select="translate($s, '123456789', '000000000')"
-      as="xs:string"/>
-    <!-- Search for 0s -->
-    <xsl:sequence select="contains($sDigitsToZeroDigit, '0')"/>
+    <xsl:sequence select="contains(translate($s, '123456789', '000000000'), '0')"/>
   </xsl:function>
 
 
@@ -2714,22 +2695,11 @@
 
             This test is used to allow roundtripping smashed invisible phantoms. -->
       <xsl:when test="count($ndCur/*) = 1 and count($ndCur/mml:mpadded) = 1">
-        <xsl:variable name="sLowerCaseWidth" as="xs:string"
-          select="lower-case($ndCur/mml:mpadded/@width)"/>
-        <xsl:variable name="sLowerCaseHeight" as="xs:string"
-          select="lower-case($ndCur/mml:mpadded/@height)"/>
-        <xsl:variable name="sLowerCaseDepth" as="xs:string"
-          select="lower-case($ndCur/mml:mpadded/@depth)"/>
-
-        <xsl:variable name="fFullWidth" as="xs:boolean" select="x:FFull($sLowerCaseWidth)"/>
-        <xsl:variable name="fFullHeight" as="xs:boolean" select="x:FFull($sLowerCaseHeight)"/>
-        <xsl:variable name="fFullDepth" as="xs:boolean" select="x:FFull($sLowerCaseDepth)"/>
-
         <xsl:call-template name="CreatePhantPropertiesCore">
           <xsl:with-param name="fShow" select="$fShow"/>
-          <xsl:with-param name="fFullWidth" select="$fFullWidth"/>
-          <xsl:with-param name="fFullHeight" select="$fFullHeight"/>
-          <xsl:with-param name="fFullDepth" select="$fFullDepth"/>
+          <xsl:with-param name="fFullWidth" select="x:FFull($ndCur/mml:mpadded/@width)"/>
+          <xsl:with-param name="fFullHeight" select="x:FFull($ndCur/mml:mpadded/@height)"/>
+          <xsl:with-param name="fFullDepth" select="x:FFull($ndCur/mml:mpadded/@depth)"/>
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
@@ -2748,20 +2718,12 @@
         <xsl:apply-templates select="*"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:variable name="sLowerCaseWidth" as="xs:string?" select="@width"/>
-        <xsl:variable name="sLowerCaseHeight" as="xs:string?" select="@height"/>
-        <xsl:variable name="sLowerCaseDepth" as="xs:string?" select="@depth"/>
-
-        <xsl:variable name="fFullWidth" as="xs:boolean" select="x:FFull($sLowerCaseWidth)"/>
-        <xsl:variable name="fFullHeight" as="xs:boolean" select="x:FFull($sLowerCaseHeight)"/>
-        <xsl:variable name="fFullDepth" as="xs:boolean" select="x:FFull($sLowerCaseDepth)"/>
-
         <m:phant>
           <xsl:call-template name="CreatePhantPropertiesCore">
             <xsl:with-param name="fShow" select="true()" as="xs:boolean"/>
-            <xsl:with-param name="fFullWidth" select="$fFullWidth"/>
-            <xsl:with-param name="fFullHeight" select="$fFullHeight"/>
-            <xsl:with-param name="fFullDepth" select="$fFullDepth"/>
+            <xsl:with-param name="fFullWidth" select="x:FFull(@width)"/>
+            <xsl:with-param name="fFullHeight" select="x:FFull(@height)"/>
+            <xsl:with-param name="fFullDepth" select="x:FFull(@depth)"/>
           </xsl:call-template>
           <m:e>
             <xsl:apply-templates select="*"/>
