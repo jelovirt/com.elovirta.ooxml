@@ -903,10 +903,10 @@
   </xsl:template>
 
   <xsl:template match="mml:menclose | mml:msqrt">
-    <xsl:variable name="sLowerCaseNotation" as="xs:string?"
+    <xsl:variable name="sLowerCaseNotation" as="xs:string*"
       select="
-        if (@notation) then
-          lower-case(@notation)
+        if (exists(@notation)) then
+          tokenize(normalize-space(@notation), '\s+')
         else
           ()"/>
 
@@ -915,8 +915,7 @@
       <xsl:when
         test="
           $sLowerCaseNotation = 'radical'
-          or not($sLowerCaseNotation)
-          or $sLowerCaseNotation = ''
+          or empty($sLowerCaseNotation)
           or self::mml:msqrt">
         <m:rad>
           <m:radPr>
@@ -933,58 +932,32 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
-          <xsl:when test="$sLowerCaseNotation = 'actuarial' or $sLowerCaseNotation = 'longdiv'"/>
+          <xsl:when test="$sLowerCaseNotation = ('actuarial', 'longdiv')"/>
           <xsl:otherwise>
             <m:borderBox>
               <!-- Dealing with more complex notation attribute -->
-              <xsl:variable name="fBox" as="xs:boolean">
-                <xsl:choose>
-                  <!-- Word doesn't have circle and roundedbox concepts, therefore, map both to a 
-                       box. -->
-                  <xsl:when
-                    test="
-                      contains($sLowerCaseNotation, 'box')
-                      or contains($sLowerCaseNotation, 'circle')
-                      or contains($sLowerCaseNotation, 'roundedbox')">
-                    <xsl:sequence select="true()"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:sequence select="false()"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:variable>
-              <xsl:variable name="fTop" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'top')"/>
-              <xsl:variable name="fBot" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'bottom')"/>
-              <xsl:variable name="fLeft" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'left')"/>
-              <xsl:variable name="fRight" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'right')"/>
+              <xsl:variable name="fBox" as="xs:boolean"
+                select="$sLowerCaseNotation = ('box', 'circle', 'roundedbox')"/>
+              <xsl:variable name="fTop" as="xs:boolean" select="$sLowerCaseNotation = 'top'"/>
+              <xsl:variable name="fBot" as="xs:boolean" select="$sLowerCaseNotation = 'bottom'"/>
+              <xsl:variable name="fLeft" as="xs:boolean" select="$sLowerCaseNotation = 'left'"/>
+              <xsl:variable name="fRight" as="xs:boolean" select="$sLowerCaseNotation = 'right'"/>
               <xsl:variable name="fStrikeH" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'horizontalstrike')"/>
+                select="$sLowerCaseNotation = 'horizontalstrike'"/>
               <xsl:variable name="fStrikeV" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'verticalstrike')"/>
+                select="$sLowerCaseNotation = 'verticalstrike'"/>
               <xsl:variable name="fStrikeBLTR" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'updiagonalstrike')"/>
+                select="$sLowerCaseNotation = 'updiagonalstrike'"/>
               <xsl:variable name="fStrikeTLBR" as="xs:boolean"
-                select="contains($sLowerCaseNotation, 'downdiagonalstrike')"/>
+                select="$sLowerCaseNotation = 'downdiagonalstrike'"/>
 
               <!-- Should we create borderBoxPr? 
                    We should if the enclosure isn't Word's default, which is
                    a plain box -->
               <xsl:if
                 test="
-                  $fStrikeH
-                  or $fStrikeV
-                  or $fStrikeBLTR
-                  or $fStrikeTLBR
-                  or (not($fBox)
-                  and not($fTop
-                  and $fBot
-                  and $fLeft
-                  and $fRight)
-                  )">
+                  $fStrikeH or $fStrikeV or $fStrikeBLTR or $fStrikeTLBR or (not($fBox)
+                  and not($fTop and $fBot and $fLeft and $fRight))">
                 <m:borderBoxPr>
                   <xsl:if test="not($fBox)">
                     <xsl:if test="not($fTop)">
@@ -1026,12 +999,10 @@
   </xsl:template>
 
   <xsl:template name="CreateArgProp" as="element()?">
-    <xsl:if test="not(count(ancestor-or-self::mml:mstyle[@scriptlevel = ('0', '1', '2')]) = 0)">
+    <xsl:variable name="scriptlevel" as="attribute()?" select="ancestor-or-self::mml:mstyle[@scriptlevel][1]/@scriptlevel"/>
+    <xsl:if test="$scriptlevel = ('0', '1', '2')">
       <m:argPr>
-        <m:scrLvl>
-          <xsl:attribute name="m:val"
-            select="ancestor-or-self::mml:mstyle[@scriptlevel][1]/@scriptlevel"/>
-        </m:scrLvl>
+        <m:scrLvl m:val="{$scriptlevel}"/>
       </m:argPr>
     </xsl:if>
   </xsl:template>
