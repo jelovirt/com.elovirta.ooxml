@@ -999,7 +999,8 @@
   </xsl:template>
 
   <xsl:template name="CreateArgProp" as="element()?">
-    <xsl:variable name="scriptlevel" as="attribute()?" select="ancestor-or-self::mml:mstyle[@scriptlevel][1]/@scriptlevel"/>
+    <xsl:variable name="scriptlevel" as="attribute()?"
+      select="ancestor-or-self::mml:mstyle[@scriptlevel][1]/@scriptlevel"/>
     <xsl:if test="$scriptlevel = ('0', '1', '2')">
       <m:argPr>
         <m:scrLvl m:val="{$scriptlevel}"/>
@@ -1046,20 +1047,13 @@
   <xsl:function name="x:FLinearFrac" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
     <xsl:variable name="sNdText" as="xs:string" select="normalize-space($ndCur/*[2])"/>
-    
-    <xsl:choose>
-      <xsl:when
-        test="
-          $ndCur/self::mml:mrow
-          and count($ndCur/*) = 3
-          and $ndCur/*[2][self::mml:mo]
-          and $sNdText = '/'">
-        <xsl:sequence select="true()"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:sequence select="false()"/>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:sequence
+      select="
+        $ndCur/self::mml:mrow
+        and count($ndCur/*) = 3
+        and $ndCur/*[2][self::mml:mo]
+        and $sNdText = '/'"
+    />
   </xsl:function>
 
 
@@ -1090,21 +1084,13 @@
   <xsl:function name="x:isFunction" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
     <xsl:variable name="sNdText" as="xs:string" select="normalize-space($ndCur/*[2])"/>
-
-    <xsl:choose>
-      <!-- Is this an omml function -->
-      <xsl:when
-        test="
-          count($ndCur/*) = 3
-          and $ndCur/self::*[self::mml:mrow]
-          and $ndCur/*[2][self::mml:mo]
-          and $sNdText = '&#x02061;'">
-        <xsl:sequence select="true()"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:sequence select="false()"/>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:sequence
+      select="
+        count($ndCur/*) = 3
+        and $ndCur/self::*[self::mml:mrow]
+        and $ndCur/*[2][self::mml:mo]
+        and $sNdText = '&#x02061;'"
+    />
   </xsl:function>
 
 
@@ -2144,16 +2130,9 @@
 	-->
   <xsl:function name="x:FSpecialCollection" as="xs:boolean">
     <xsl:param name="ndCur" as="element()?"/>
-    <xsl:choose>
-      <xsl:when test="$ndCur/self::mml:mrow">
-        <xsl:variable name="fLinearFraction" as="xs:boolean" select="x:FLinearFrac($ndCur)"/>
-        <xsl:variable name="fFunc" as="xs:boolean" select="x:isFunction($ndCur)"/>
-        <xsl:sequence select="$fLinearFraction or $fFunc"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:sequence select="false()"/>
-      </xsl:otherwise>
-    </xsl:choose>
+
+    <xsl:sequence select="$ndCur/self::mml:mrow and (x:FLinearFrac($ndCur) or x:isFunction($ndCur))"
+    />
   </xsl:function>
 
   <!-- This template iterates through the children of an equation array row (mtr) and outputs
