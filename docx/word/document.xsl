@@ -36,6 +36,8 @@
   <xsl:import href="document.table.xsl"/>
   <xsl:import href="document.task.xsl"/>
   <xsl:import href="document.link.xsl"/>
+  <xsl:import href="document.mathml-d.xsl"/>
+  <xsl:import href="document.mml.xsl"/>
   <xsl:import href="document.root.xsl"/>
 
   <xsl:output indent="no"/>

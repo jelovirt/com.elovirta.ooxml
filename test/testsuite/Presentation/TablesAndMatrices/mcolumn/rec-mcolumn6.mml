@@ -1,0 +1,62 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="left">
+        <menclose notation="left">
+          <mcolumn justify="left">
+            <mn>1306</mn>
+            <mn>12</mn>
+            <mline spacing="00"/>
+            <mrow>
+              <mspace spacing="0"/>
+              <mn>10</mn>
+            </mrow>
+            <mrow>
+              <mspace spacing="00"/>
+              <mn>9</mn>
+            </mrow>
+            <mrow>
+              <mspace spacing="0"/>
+              <mline spacing="00"/>
+            </mrow>
+            <mrow>
+              <mspace spacing="00"/>
+              <mn>16</mn>
+            </mrow>
+            <mrow>
+              <mspace spacing="00"/>
+              <mn>15</mn>
+            </mrow>
+            <mrow>
+              <mspace spacing="00"/>
+              <mline spacing="00"/>
+            </mrow>
+            <mrow>
+              <mspace spacing="000"/>
+              <mn>1,0</mn>
+            </mrow>
+            <mrow>
+              <mspace spacing="0000,"/>
+              <mn>9</mn>
+            </mrow>
+            <mrow>
+              <mspace spacing="000"/>
+              <mline spacing="0,0"/>
+            </mrow>
+            <mrow>
+              <mspace spacing="0000,"/>
+              <mn>1</mn>
+            </mrow>
+          </mcolumn>
+        </menclose>
+      </mtd>
+      <mtd columnalign="left">
+        <mcolumn justify="left">
+          <mn>3</mn>
+          <mline spacing="000,0"/>
+          <mn>435,3̅</mn>
+        </mcolumn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

@@ -1,0 +1,17 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <munder>
+        <mo>∫</mo>
+        <mn>0</mn>
+      </munder>
+      <mi>∞</mi>
+    </mover>
+    <mtext>    vs     </mtext>
+    <munderover>
+      <mo>∫</mo>
+      <mn>0</mn>
+      <mi>∞</mi>
+    </munderover>
+  </mrow>
+</math>
