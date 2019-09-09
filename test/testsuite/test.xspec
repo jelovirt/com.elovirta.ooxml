@@ -1331,7 +1331,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario label="mfencedAdelims6">
+  <x:scenario label="mfencedAdelims6" pending="Disabled because XSpec implementation fails on close curly brace">
     <x:context href="Presentation/GeneralLayout/mfenced/mfencedAdelims6.mml" select="*"/>
     <x:expect label="" select="*">
       <m:oMath>

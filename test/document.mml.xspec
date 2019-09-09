@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <x:description xmlns:mml="http://www.w3.org/1998/Math/MathML"
   xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:ooxml="com.elovirta.ooxml" xmlns:x="http://www.jenitennison.com/xslt/xspec"
-  stylesheet="document.mml.xsl">
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:ooxml="com.elovirta.ooxml"
+  xmlns:x="http://www.jenitennison.com/xslt/xspec" stylesheet="document.mml.xsl">
   <x:import href="testsuite/test.xspec"/>
   <x:scenario label="3 × input_x">
     <x:context select="*">
@@ -4616,8 +4615,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="C R = O S + w S ref_screen_ratio × X screen Y screen h S 2 × ref_screen_ratio × Z screen + 1">
+  <x:scenario label="C R = O S + w S ref_screen_ratio × X screen Y screen h S 2 × ref_screen_ratio × Z screen + 1">
     <x:context select="*">
       <mml:math>
         <mml:msub>
@@ -7641,8 +7639,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="N j , k = 1 n × exp ⁡ i × π × k + 1 2 × j - 2 × n + 1 2 n , 0 ≤ k &lt; n 0 ≤ j &lt; 2 × n">
+  <x:scenario label="N j , k = 1 n × exp ⁡ i × π × k + 1 2 × j - 2 × n + 1 2 n , 0 ≤ k &lt; n 0 ≤ j &lt; 2 × n">
     <x:context select="*">
       <mml:math>
         <mml:msub>
@@ -10117,8 +10114,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="panner_gain_Y mdu = pan_Y panner_target_Y panner_target_Z object_position_Y mdu">
+  <x:scenario label="panner_gain_Y mdu = pan_Y panner_target_Y panner_target_Z object_position_Y mdu">
     <x:context select="*">
       <mml:math>
         <mml:mi>panner_gain_Y</mml:mi>
@@ -10244,8 +10240,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="panner_gain_X mdu = pan_X panner_target_X panner_target_Y panner_target_Z object_position_X mdu">
+  <x:scenario label="panner_gain_X mdu = pan_X panner_target_X panner_target_Y panner_target_Z object_position_X mdu">
     <x:context select="*">
       <mml:math>
         <mml:mi>panner_gain_X</mml:mi>
@@ -11369,8 +11364,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="panner_gain_X s x = pan_X panner_target_X panner_target_Y panner_target_Z vsource_X s x">
+  <x:scenario label="panner_gain_X s x = pan_X panner_target_X panner_target_Y panner_target_Z vsource_X s x">
     <x:context select="*">
       <mml:math>
         <mml:mi>panner_gain_X</mml:mi>
@@ -12766,8 +12760,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="weight_X s x mdu = weight vsource_X s x object_position_X mdu object_size_X_lb mdu">
+  <x:scenario label="weight_X s x mdu = weight vsource_X s x object_position_X mdu object_size_X_lb mdu">
     <x:context select="*">
       <mml:math>
         <mml:mi>weight_X</mml:mi>
@@ -13012,8 +13005,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="weight_Y s y mdu = weight vsource_Y s y object_position_Y mdu object_size_Y_lb mdu">
+  <x:scenario label="weight_Y s y mdu = weight vsource_Y s y object_position_Y mdu object_size_Y_lb mdu">
     <x:context select="*">
       <mml:math>
         <mml:mi>weight_Y</mml:mi>
@@ -13258,8 +13250,7 @@
       </m:oMath>
     </x:expect>
   </x:scenario>
-  <x:scenario
-    label="weight_Z s z mdu = weight vsource_Z s z max flr object_position_Z mdu object_size_Z_lb mdu">
+  <x:scenario label="weight_Z s z mdu = weight vsource_Z s z max flr object_position_Z mdu object_size_Z_lb mdu">
     <x:context select="*">
       <mml:math>
         <mml:mi>weight_Z</mml:mi>
