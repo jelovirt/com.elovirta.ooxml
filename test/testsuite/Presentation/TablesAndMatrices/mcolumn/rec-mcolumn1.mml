@@ -1,0 +1,20 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mcolumn>
+    <mn>123</mn>
+    <mrow>
+      <mo>×</mo>
+      <mn>321</mn>
+    </mrow>
+    <mline spacing="12345"/>
+    <mn>123</mn>
+    <mrow>
+      <mn>246</mn>
+      <mspace spacing="0"/>
+    </mrow>
+    <mrow>
+      <mn>369</mn>
+      <mspace spacing="00"/>
+    </mrow>
+    <mline spacing="36900"/>
+  </mcolumn>
+</math>

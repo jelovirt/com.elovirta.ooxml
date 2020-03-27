@@ -10,7 +10,13 @@ Standard DITA-OT plug-in installation, see [DITA-OT documentation](http://www.di
 Only latests stable version of DITA-OT is supported, but older version may work.
 
 ```shell
-$ dita -install https://github.com/jelovirt/com.elovirta.ooxml/archive/1.3.0.zip
+$ dita --install com.elovirta.ooxml
+```
+
+For older versions of DITA-OT that do not support plug-in registry:
+
+```shell
+$ dita -install https://github.com/jelovirt/com.elovirta.ooxml/archive/1.4.0.zip
 ```
 
 Running

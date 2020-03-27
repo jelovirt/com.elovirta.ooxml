@@ -561,6 +561,12 @@
       <xsl:call-template name="image.inline"/>
     </w:p>
   </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/image ')][@placement = 'break']" mode="block-style">
+    <xsl:if test="exists(@align)">
+      <w:jc w:val="{@align}"/>
+    </xsl:if>
+  </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/dl ')]" name="dl">
     <w:tbl>
