@@ -40,5 +40,9 @@
   <xsl:template match="*[contains(@class, ' hi-d/line-through ')]" mode="inline-style">
     <w:strike/>
   </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' hi-d/tt ')]" mode="inline-style">
+    <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>
+  </xsl:template>
     
 </xsl:stylesheet>
