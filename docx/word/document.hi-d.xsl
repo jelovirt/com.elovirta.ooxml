@@ -36,5 +36,9 @@
   <xsl:template match="*[contains(@class, ' hi-d/sub ')]" mode="inline-style">
     <w:vertAlign w:val="subscript"/>
   </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' hi-d/line-through ')]" mode="inline-style">
+    <w:strike/>
+  </xsl:template>
     
 </xsl:stylesheet>
