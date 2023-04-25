@@ -8,8 +8,8 @@
     <property name="docx.dir" location="${dita.plugin.com.elovirta.ooxml.dir}/docx"/>
     <property name="dotx.file" location="${dita.plugin.com.elovirta.ooxml.dir}/resources/Normal.docx"/>
     <property name="args.rellinks" value="nofamily"/>
-    <property name="preprocess.copy-image.skip" value="true"/>
-    <property name="preprocess.copy-html.skip" value="true"/>
+    <property name="build-step.copy-image" value="false"/>
+    <property name="build-step.copy-html" value="false"/>
     <property environment="env"/>
     <condition property="inkscape.exec" value="/Applications/Inkscape.app/Contents/Resources/bin/inkscape">
       <available file="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"/>
