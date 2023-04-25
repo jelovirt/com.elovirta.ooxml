@@ -16,7 +16,8 @@
                xmlns:opentopic="http://www.idiominc.com/opentopic"
                xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
                xmlns:x="com.elovirta.ooxml"
-               exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder"
+               xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+               exclude-result-prefixes="x xs opentopic opentopic-index ot-placeholder dita-ot"
                version="2.0">
 
   <xsl:variable name="table-col-total" select="xs:integer($body-width)" as="xs:integer"/>
@@ -208,8 +209,63 @@
           <xsl:copy-of select="$styles"/>
         </w:trPr>
       </xsl:if>
-      <xsl:apply-templates select="*[contains(@class, ' topic/entry ')][1]"/>
+      <xsl:call-template name="walk-entries">
+        <xsl:with-param name="row" select="."/>
+        <xsl:with-param name="entries" select="*[contains(@class, ' topic/entry ')]"/>
+        <xsl:with-param name="i" select="1"/>
+        <xsl:with-param name="cols" select="xs:integer(../../@cols)"/>
+      </xsl:call-template>  
     </w:tr>
+  </xsl:template>
+  
+   <xsl:template name="walk-entries">
+    <xsl:param name="row" as="element()"/>
+    <xsl:param name="entries" as="element()*"/>
+    <xsl:param name="i" as="xs:integer"/>
+    <xsl:param name="cols" as="xs:integer"/>
+    
+    <xsl:variable name="entry" select="$entries[@dita-ot:x = $i]" as="element()?"/>
+    <xsl:variable name="morecols" as="xs:integer">
+      <xsl:variable name="start-entry" as="element()">
+        <xsl:choose>
+          <xsl:when test="exists($entry)">
+            <xsl:sequence select="$entry"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:variable name="start-row" select="$row/preceding-sibling::*[*/@dita-ot:x = $i][1]" as="element()?"/>
+            <xsl:sequence select="$start-row/*[@dita-ot:x = $i]"/>            
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:sequence select="if (exists($start-entry/@dita-ot:morecols)) then xs:integer($start-entry/@dita-ot:morecols) else xs:integer(0)"/>
+    </xsl:variable>
+    
+    <xsl:choose>
+      <xsl:when test="exists($entry)">
+        <xsl:apply-templates select="$entry"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <w:tc>
+          <w:tcPr xml:lang="en">
+            <xsl:if test="$morecols gt 0">
+              <w:gridSpan w:val="{$morecols + 1}"/>
+            </xsl:if>
+            <w:vMerge/>
+          </w:tcPr>
+          <w:p/>
+        </w:tc>
+      </xsl:otherwise>
+    </xsl:choose>
+
+    <xsl:variable name="next" select="$i + 1 + $morecols"/>
+    <xsl:if test="$next le $cols">
+      <xsl:call-template name="walk-entries">
+        <xsl:with-param name="row" select="$row"/>
+        <xsl:with-param name="entries" select="$entries"/>
+        <xsl:with-param name="i" select="$next"/>
+        <xsl:with-param name="cols" select="$cols"/>
+      </xsl:call-template>  
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/tbody ')]/*[contains(@class, ' topic/row ')]" mode="block-style">
@@ -224,22 +280,6 @@
  
   <xsl:template match="*[contains(@class, ' topic/entry ')]">
     <xsl:param name="currentpos" select="1"/>
-    <xsl:variable name="col-max-num" as="xs:integer"
-                  select="xs:integer(../../../@cols)"/>
-    <xsl:variable name="startpos" as="xs:integer">
-      <xsl:call-template name="find-entry-start-position"/>
-    </xsl:variable>
-    <xsl:variable name="endpos" as="xs:integer">
-      <xsl:call-template name="find-entry-end-position">
-        <xsl:with-param name="startposition" select="$startpos"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:if test="$startpos gt $currentpos">
-      <xsl:call-template name="emit-empty-cell">
-        <xsl:with-param name="startpos" select="$startpos"/>
-        <xsl:with-param name="currentpos" select="$currentpos"/>
-      </xsl:call-template>
-    </xsl:if>
     <xsl:variable name="styles" as="node()*">
       <xsl:apply-templates select="." mode="block-style"/>
     </xsl:variable>
@@ -254,19 +294,6 @@
         <w:p/>
       </xsl:if>
     </w:tc>
-    <xsl:if test="following-sibling::*[contains(@class,' topic/entry ')]">
-      <xsl:apply-templates select="following-sibling::*[contains(@class,' topic/entry ')][1]">
-        <xsl:with-param name="currentpos" select="$endpos + 1"/>
-      </xsl:apply-templates>
-    </xsl:if>
-    <xsl:if test="not(following-sibling::*[contains(@class,' topic/entry ')]) and not(($endpos + 1) gt $col-max-num)">
-      <!-- if this is the last entry in current row and next position is not greater than the number of columns in a row-->
-      <xsl:call-template name="emit-empty-cell">
-        <xsl:with-param name="startpos" select="$col-max-num + 1"/>
-        <!-- make sure the remaining columns will be generated -->
-        <xsl:with-param name="currentpos" select="$endpos + 1"/>
-      </xsl:call-template>
-    </xsl:if>
   </xsl:template>
   
   <xsl:template match="*[contains(@class, ' topic/entry ')]" mode="block-style">
