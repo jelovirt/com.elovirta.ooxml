@@ -759,7 +759,7 @@
     </xsl:choose>
   </xsl:function>
   
-  <xsl:template match="*[contains(@class, ' topic/note ')]" mode="block-style">
+  <xsl:template match="*[contains(@class, ' topic/note ')]//*" mode="block-style">
     <w:pStyle w:val="Note"/>
   </xsl:template>
   
@@ -767,7 +767,7 @@
     <w:pStyle w:val="ListNote"/>
   </xsl:template>
   
-  <xsl:template match="*[contains(@class, ' topic/note ')]//*[contains(@class, ' topic/li ')]//*" mode="block-style">
+  <xsl:template match="*[contains(@class, ' topic/note ')]//*[contains(@class, ' topic/li ')]/*[1]" mode="block-style" priority="10">
     <w:pStyle w:val="ListNote"/>
   </xsl:template>
     
